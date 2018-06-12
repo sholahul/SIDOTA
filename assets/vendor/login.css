@@ -1,0 +1,111 @@
+body{
+    background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
+    font-family: 'Raleway', sans-serif
+}
+
+.middlePage {
+    width: 580px;
+    height: 600px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 30px;
+    right: 30px;
+    margin : auto;
+   
+    padding: auto;
+}
+
+.img1{
+    float: center;
+    text-align: center;
+    background-color: 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 370px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+    background-color: white;
+  width: 50%;
+
+}
+
+.right {
+    background-color: white;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+.sel {
+    margin-top: 5px;
+   /*background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;*/
+   height: 34px;
+   width: 230px;
+}
+

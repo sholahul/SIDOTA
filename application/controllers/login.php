@@ -9,9 +9,12 @@ class login extends CI_Controller {
 
 	public function index()
 	{
-		echo "hello world";
+		$this->load->view('login/login');
 	}
 
+	public function action_login(){
+		
+	}
 }
 
 /* End of file login.php */
