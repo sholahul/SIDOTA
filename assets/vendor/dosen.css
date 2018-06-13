@@ -1,0 +1,91 @@
+body{
+    background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
+    font-family: 'Raleway', sans-serif
+}
+
+.middlePage {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 30px;
+    right: 30px;
+    margin : auto;
+   
+    padding: auto;
+}
+
+.unsri{
+    width: 144px;
+    height: 144px;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 1px;
+    height: 220px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+    background-color: white;
+  width: 33%;
+
+}
+
+.middle {
+    background-color: white;
+  width: 33%;
+
+}
+
+.right {
+    background-color: white;
+  width: 33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.Datapribadi{
+    border: 3px solid #001a33;   
+}
+
+.DokumenTA{
+    border: 3px solid #001a33;
+}
+
+.UbahPassword{
+    border: 3px solid #001a33;
+}
+
+h4{
+    text-align: center;
+}
+
+.akun{
+    margin-left: 20px;
+    width: 144px;
+    height: 144px;
+}
+
+.doc{
+    margin-left: 20px;
+    width: 144px;
+    height: 144px;
+}
+
+.pass{
+    margin-left: 20px;
+    width: 144px;
+    height: 144px;
+}
