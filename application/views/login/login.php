@@ -32,7 +32,7 @@
 					<img src="<?=base_url('assets/img/ea.jpg')?>" alt="">
 				</div>
 				<div class="column right">
-					<form method="post" action='<?php echo base_url(); ?>Login'>
+					<form method="post" action='<?php echo base_url(); ?>login/process'>
 						<div class="container">
 							<label for="uname"><b>Username</b></label>
 							<input type="text" placeholder="Enter Username" name="username" required>

@@ -19,8 +19,19 @@ class Login extends CI_Controller {
 	}
 
 	public function process(){
-		echo "hello world";
-		// $this->load->model('m_login');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$role = $this->input->post('role');
+		
+		if($role == 'Admin'){
+			$this->load->view('admin/index');
+		}
+		else if($role == 'Dosen'){
+			$this->load->view('dosen/index');
+		}
+		else if($role == 'Mahasiswa'){
+			$this->load->view('mahasiswa/index');
+		}
 
 		// $result = $this->m_login->validate();
 
@@ -31,8 +42,7 @@ class Login extends CI_Controller {
 		// 	redirect('admin/admin','refresh');
 		// }
 
-		// $username = $this->input->post('username');
-		// $password = $this->input->post('password');
+		
 		// // $role = $this->input->post('username');
 		// $where = array(
 		// 	'username' => $username,
