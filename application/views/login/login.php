@@ -16,6 +16,7 @@
 		<link href="<?=base_url('assets/vendor/login.css')?>" rel="stylesheet">
 	</head>
 	<body>
+		
 		<div class="middlePage container-fluid">
 			<div class="page-header">
 				<div class="img1">
@@ -31,10 +32,10 @@
 					<img src="<?=base_url('assets/img/ea.jpg')?>" alt="">
 				</div>
 				<div class="column right">
-					<form action="<?php echo base_url(); ?>login/action_login" method="post">
+					<form method="post" action='<?php echo base_url(); ?>Login'>
 						<div class="container">
 							<label for="uname"><b>Username</b></label>
-							<input type="text" placeholder="Enter Username" name="nama" required>
+							<input type="text" placeholder="Enter Username" name="username" required>
 							<label for="psw"><b>Password</b></label>
 							<input type="password" placeholder="Enter Password" name="password" required>
 							
@@ -52,7 +53,6 @@
 								<input type="checkbox" checked="checked" name="remember"> Remember me
 							</label>
 						</div>
-						
 					</form>
 				</div>
 			</div>
