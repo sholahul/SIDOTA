@@ -9,34 +9,37 @@ class M_login extends CI_Model {
 		//Do your magic here
 	}
 
-	public function validate(){
-		$username = $this->security->xss_clean($this->input->post('username'));
-        $password = $this->security->xss_clean($this->input->post('password'));
-        
-        // Prep the query
-        $this->db->where('username', $username);
-        $this->db->where('password', $password);
-        
+	public function can_login($data){
         // Run the query
-        $query = $this->db->get('users');
+        if($data['role']=='Admin'){
+            $this->db->where('username', $data['username']);
+            $this->db->where('password', $data['password']);
+            $query = $this->db->get('admin');
+        }
+        else if($data['role']=='Dosen'){
+            $this->db->where('nip', $data['username']);
+            $this->db->where('password', $data['password']);
+            $query = $this->db->get('dosen');
+        }
+        if($data['role']=='Mahasiswa'){
+            $this->db->where('nim', $data['username']);
+            $this->db->where('password', $data['password']);
+            $query = $this->db->get('mahasiswa');
+        }
+
+        //select *from namatable where username =  '$username' and password = '$password'
+
         // Let's check if there are any results
-        if($query->num_rows == 1)
+        if($query->num_rows() == 1)
         {
             // If there is a user, then create session data
-            $row = $query->row();
-            $data = array(
-                    'userid' => $row->userid,
-                    'fname' => $row->fname,
-                    'lname' => $row->lname,
-                    'username' => $row->username,
-                    'validated' => true
-                    );
-            $this->session->set_userdata($data);
             return true;
         }
-        // If the previous process did not validate
-        // then return false.
-        return false;
+        else{
+            // If the previous process did not validate
+            // then return false.
+            return false;
+        }
 	}
 
 }

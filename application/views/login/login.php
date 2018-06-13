@@ -31,13 +31,17 @@
 				<div class="column left">
 					<img src="<?=base_url('assets/img/ea.jpg')?>" alt="">
 				</div>
+
 				<div class="column right">
+
+					<!-- redirect to process -->
 					<form method="post" action='<?php echo base_url(); ?>login/process'>
 						<div class="container">
-							<label for="uname"><b>Username</b></label>
-							<input type="text" placeholder="Enter Username" name="username" required>
+							<label for="uname"><b>Username/NIP/NIM</b></label>
+							<input type="text" placeholder="Enter Username/NIP/NIM" name="username" required>
 							<label for="psw"><b>Password</b></label>
-							<input type="password" placeholder="Enter Password" name="password" required>
+							<input type="password" value=
+							"" placeholder="Enter Password" name="password" required>
 							
 							<label for="psw"><b>Role</b></label>
 							<br>
@@ -47,11 +51,8 @@
 							  <option value="Dosen">Dosen</option>
 							  <option value="Mahasiswa">Mahasiswa</option>
 							</select>
-
+							<br><br>
 							<button type="submit">Login</button>
-							<label>
-								<input type="checkbox" checked="checked" name="remember"> Remember me
-							</label>
 						</div>
 					</form>
 				</div>
