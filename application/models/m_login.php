@@ -21,7 +21,7 @@ class M_login extends CI_Model {
             $this->db->where('password', $data['password']);
             $query = $this->db->get('dosen');
         }
-        if($data['role']=='Mahasiswa'){
+        else if($data['role']=='Mahasiswa'){
             $this->db->where('nim', $data['username']);
             $this->db->where('password', $data['password']);
             $query = $this->db->get('mahasiswa');

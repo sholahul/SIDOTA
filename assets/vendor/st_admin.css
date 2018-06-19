@@ -1,0 +1,114 @@
+body{
+    background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
+    margin : auto;
+}
+
+.navbar{
+    background-color: rgb(67,142,185);
+    font-weight: 700px;
+    margin-bottom: 0;
+}
+
+#mainnav 
+{
+    font-weight: 700px;
+    border: none;
+}
+
+/* bentuk navbar brand */
+#mainnav .navbar-brand {
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+
+}
+
+/* saat navbar brand di hover */
+#mainnav .navbar-brand.active,#mainnav .navbar-brand:hover  
+{
+    color: #FBC02D;
+}
+
+/* saat navbar brand on click */
+#mainnav .navbar-brand:focus
+{
+
+    color: #F7B100; 
+    background: transparent;
+     color : #18BC9C;
+}
+
+/* memberi jarak spasi pada navbar nav */
+#mainnav .navbar-nav {
+    letter-spacing: 1px; 
+}
+
+/* memberi warna dan ukuran pada item navbar */
+.navbar-nav li.nav-item a.nav-link 
+{
+    color: white;
+    font-weight: bold;
+    font-size : 14px;
+}
+/* menambahkan warna hover ketika mouse melewati/melihat item */
+#mainnav .navbar-nav li.nav-item a.nav-link:hover 
+{
+    /*background: white;*/
+    /* color: #FBC02D; */
+    background: #FBC02D;
+    outline: none; 
+}
+/* menambahkan on click/focus pada item navbar */
+#mainnav .navbar-nav li.nav-item a.nav-link:focus 
+{
+    background: #18BC9C;
+}
+
+/* memberi warna pada item toggler */
+#mainnav .navbar-toggler {
+    font-size: 14px;
+    
+}
+
+#mainnav .navbar-toggler:hover 
+{
+      color: #FBC02D;
+      background: transparent;
+      /*border-color: #FBC02D;*/
+}
+#mainnav .navbar-toggler:focus 
+{
+      color: #18BC9C;
+      border-color: white;
+}
+
+
+.navbarside{
+    width: 250px;
+    height: 666px;
+    background-color: #1A8DA9;
+    border: 3px;
+}
+.content{
+    background-color: white;
+    height: 100vh;
+    position: fixed;
+    margin-left: 160px;
+    padding-top: 20px;
+}
+
+.footer {
+    position: fixed;
+    left: 70px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+    font-weight: bold;
+}
+

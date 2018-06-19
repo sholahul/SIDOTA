@@ -1,9 +1,10 @@
 <?php 
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
-	// private $data = [];
+	public $error = "";
 
 	public function __construct()
 	{
@@ -11,14 +12,19 @@ class Login extends CI_Controller {
 		
 	}	
 
-	public function index()
+	public function index($error = NULL)
 	{
-		$this->load->view('login/login');
+		$data = array(
+            'title' => 'Login Page',
+            'action' => site_url('auth/login'),
+            'error' => $error
+        );
+		$this->load->view('login/login',$data);
 	}
 
 
 
-	public function process(){		
+	public function process(){	
         $data['username'] = $this->input->post('username');
         $data['password'] = $this->input->post('password');
         $data['role'] = $this->input->post('role');
@@ -26,9 +32,13 @@ class Login extends CI_Controller {
 
         if($data['role'] == 'Admin'){
           	if($this->m_login->can_login($data)){
-    			$this->load->view('admin/index',$data);	      
+          		$this->load->view('admin/header',$data);
+          		$this->load->view('admin/dashboard');
+          		$this->load->view('admin/footer');
+    			// $this->load->view('admin/index',$data);	      
            	}
            	else{
+           		 
 				redirect('Login');
 				exit;  
            	}			
