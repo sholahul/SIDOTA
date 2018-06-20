@@ -18,7 +18,7 @@
         <script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-        <link href="<?=base_url('assets/vendor/sts_input.css')?>" rel="stylesheet">
+        <link href="<?=base_url('assets/vendor/style_input.css')?>" rel="stylesheet">
     </head>
     <body>
         <div class="footer">

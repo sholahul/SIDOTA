@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 	public $data= [];
 	public $user,$pwd;
+	public $username;
 	public function __construct()
 	{
 		parent::__construct();
