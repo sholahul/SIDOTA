@@ -26,7 +26,7 @@
 				<hr>		
 			<!-- 	<?php echo $username."da" ?> -->
 				<div class="container ubah">
-					<form class="form-horizontal" action="<?php echo base_url() ?>admin/action_ubahpassword/<?php echo $username?>">
+					<form class="form-horizontal" method="post" action="<?php echo base_url() ?>admin/action_ubahpassword/<?php echo $username?>">
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="password">New Password :</label>
 							<div class="col-sm-7">

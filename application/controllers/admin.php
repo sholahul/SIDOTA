@@ -48,6 +48,7 @@ class Admin extends Login{
 			'pwd1' => $this->input->post('pwd1'),
 			'pwd2' => $this->input->post('pwd2'),
 		);
+		echo $data['username'];
 
 	}
 }
