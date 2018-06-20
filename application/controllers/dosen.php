@@ -9,9 +9,6 @@ class Dosen extends CI_Controller{
 		parent::__construct();
 		$this->load->library('session');
 		
-		$data2['username'] = $this->user;
-		$data2['password'] = $this->pwd;
-		
 		$username = $this->session->userdata('username');
 		$password = $this->session->userdata('password');
 
