@@ -1,0 +1,49 @@
+/* View Dokumen CSS */
+
+#searchInput {
+    background-image: url('../img/search-icon.png');
+    background-size: 25px 25px;
+    background-position: 8px 3px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+}
+
+th {
+    text-align: center;
+}
+
+#tblDokumen>tr>td>a {
+    color: black;
+}
+
+#tblDokumen>tr>td>a:link {
+    color: black;
+}
+
+#tblDokumen>tr>td>a:hover {
+    color: blue;
+}
+
+#tblDokumen>tr>td>a:active {
+    color: lightskyblue;
+}
+
+
+/* Detail TA CSS */
+
+.btn {
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: royalblue;
+}

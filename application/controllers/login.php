@@ -62,7 +62,12 @@ class Login extends CI_Controller {
 		}
 		else if($data['role'] == 'Mahasiswa'){
 			if($this->m_login->can_login($data)){
-    			$this->load->view('mahasiswa/index',$data);	      
+				$this->session->set_userdata($data);
+
+				$this->load->view('mahasiswa/header', $data);
+				$this->load->view('mahasiswa/dashboard', $data);
+				$this->load->view('mahasiswa/footer', $data);
+				
            	}
            	else{
 				redirect('Login');
