@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 		<!-- Our Styles -->
-		<link href="<?=base_url('assets/vendor/st_admin.css')?>" rel="stylesheet">
+		<link href="<?=base_url('assets/vendor/sts_admin.css')?>" rel="stylesheet">
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
@@ -23,7 +23,7 @@
 	<body>
 		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2>Dashboard</h2>
+				<h2><i class="fa fa-home"> </i> Dashboard</h2>
 				<hr>
 				
 			</div>

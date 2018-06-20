@@ -14,9 +14,11 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
         <!-- Our Styles -->
-        
+        <link href="<?=base_url('assets/vendor/sts_admin.css')?>" rel="stylesheet">
+        <script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
+        <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+        <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
     </head>
     <body id="page-top">
         <nav class="navbar navbar-inverse" id="mainnav">
@@ -26,7 +28,6 @@
                         <i class="fa fa-leaf"></i>
                         Admin
                     </a>
-
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -34,21 +35,29 @@
                     </button>
                     
                 </div>
+
+
                 <div class="navbar-collapse collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="" class="dropdown-toggle " data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-user"></span> Account <b class="caret"> </b>
+                                <span class="glyphicon glyphicon-user"></span> 
+                                <label name="username">
+                                    <?php echo $username?>
+                                </label>
+                                
+                                
+                                <b class="caret"> </b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url();?>admin/ubahpassword">
+                                <li><a href="<?php echo base_url()?>admin/ubahpassword/<?php echo $username?>" >
                                     <i class="fa fa-cog"></i>
                                 Ubah Password</a></li>
                                 <li><a href="#">
                                     <i class="fa fa-user"></i>
                                 Profile</a></li>
                                 <hr>
-                                <li><a href="#">
+                                <li><a href="<?php echo base_url();?>login/logout">
                                     <i class="fa fa-power-off"></i>
                                 Logout</a></li>
                             </ul>
@@ -60,24 +69,29 @@
         </nav>
         
         <!-- Sidebar -->
-        <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:160px">
+        <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:190px">
             <br>
             <ul>
                 <li>
-                    <a href="<?php echo base_url();?>admin/dashboard" class="w3-bar-item w3-button">
-                    <i class="fa fa-home"> </i>
-                    Dashboard 
+                    <a href="<?php echo base_url();?>admin/dashboard/<?php echo $username?>" class="w3-bar-item w3-button">
+                        <i class="fa fa-home"> </i>
+                        Dashboard
                     </a>
                 </li>
                 <li>
                     <a href="#" class="w3-bar-item w3-button dropdown-btn">
-                    <i class="fa fa-users"> </i>
+                        <i class="fa fa-users"> </i>
                     Administering  <b class="caret"> </b></a>
                 </li>
                 <li>
                     <a href="#" class="w3-bar-item w3-button">
-                    <span class="glyphicon glyphicon-th-list"></span>
-                    Dokumentasi TA</a> 
+                        <span class="glyphicon glyphicon-th-list"></span>
+                    Dokumentasi TA</a>
+                </li>
+                <li>
+                    <a href="#" class="w3-bar-item w3-button">
+                        <i class="fa fa-file-pdf-o"></i>
+                    View Dokumentasi TA</a>
                 </li>
             </ul>
         </div>

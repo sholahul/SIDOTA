@@ -34,7 +34,7 @@
 					<?php echo form_open('Login/process'); ?>				
 						<div class="container">
 							<h5>Selamat Datang.</h5>
-							<h6>Silakan Login Terlebih Dahulu.<?php echo $error; ?> </h6>
+							<h6>Silakan Login Terlebih Dahulu. </h6>
 							<label for="uname"><b>Username/NIP/NIM</b></label>
 							<br>
 							<input type="text" placeholder="Enter Username/NIP/NIM" name="username" required>

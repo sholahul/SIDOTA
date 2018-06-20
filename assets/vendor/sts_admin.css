@@ -87,7 +87,7 @@ body{
 
 
 .navbarside{
-    width: 250px;
+    width: 300px;
     height: 666px;
     background-color: #1A8DA9;
     border: 3px;
@@ -96,7 +96,7 @@ body{
     background-color: white;
     height: 100vh;
     position: fixed;
-    margin-left: 160px;
+    margin-left: 190px;
     padding-top: 20px;
 }
 
@@ -112,3 +112,12 @@ body{
     font-weight: bold;
 }
 
+.ubah{
+    background: #efefef;
+    width: 500px;
+    padding: 20px;
+}
+
+p{
+    
+}
