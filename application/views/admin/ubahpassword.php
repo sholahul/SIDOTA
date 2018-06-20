@@ -43,7 +43,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-4 col-sm-10">
 								<button type="submit" class="btn btn-default">Submit</button>
-								<label for="">ea</label>
+								<label for=""> <?php $error ?> </label>
 								 
 							</div>
 						</div>

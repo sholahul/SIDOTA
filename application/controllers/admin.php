@@ -47,8 +47,15 @@ class Admin extends Login{
 			'username' => $username, 
 			'pwd1' => $this->input->post('pwd1'),
 			'pwd2' => $this->input->post('pwd2'),
+			'error' => '',
 		);
-		echo $data['username'];
+		if($data['pwd1'] != $data['pwd2']){
+			$data['error'] = "password not match";
+			echo $data['error'];
+
+			redirect('Admin/ubahpassword','refresh');
+		}
+		// echo $data['username']."  ".$data['pwd1']."  ".$data['pwd2'];
 
 	}
 }
