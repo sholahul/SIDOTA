@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Admin</title>
+        <link rel="icon" href="<?=base_url('assets/img/icon.png')?>" type="image">
         <!-- Bootstrap template 3.3.7-->
         <link href="<?=base_url('assets/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -15,7 +16,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!-- Our Styles -->
-        <link href="<?=base_url('assets/vendor/sts_admin.css')?>" rel="stylesheet">
+        <link href="<?=base_url('assets/vendor/own_admin.css')?>" rel="stylesheet">
         <script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
@@ -35,13 +36,11 @@
                     </button>
                     
                 </div>
-
-
                 <div class="navbar-collapse collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="" class="dropdown-toggle " data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-user"></span> 
+                                <span class="glyphicon glyphicon-user"></span>
                                 <label name="username">
                                     <?php echo $username?>
                                 </label>
@@ -54,7 +53,7 @@
                                     <i class="fa fa-cog"></i>
                                 Ubah Password</a></li>
                                 <li><a href="#">
-                                    <i class="fa fa-user"></i>
+                                    <i class="fa fa-address-book-o"></i>
                                 Profile</a></li>
                                 <hr>
                                 <li><a href="<?php echo base_url();?>login/logout">
@@ -78,10 +77,31 @@
                         Dashboard
                     </a>
                 </li>
-                <li>
+                <!--               <li>
                     <a href="#" class="w3-bar-item w3-button dropdown-btn">
                         <i class="fa fa-users"> </i>
                     Administering  <b class="caret"> </b></a>
+                </li> -->
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle w3-bar-item w3-button" data-toggle="dropdown">
+                        <i class="fa fa-users"> </i>
+                        <label name="username">
+                            Administering
+                        </label>
+                        <b class="caret"> </b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo base_url()?>admin/admin_list/<?php echo $username?>" >
+                            <i class="fa fa-cog"></i>
+                        Admin</a></li>
+                        <li><a href="<?php echo base_url()?>admin/dosen_list/<?php echo $username?>"">
+                            <i class="fa fa-user"></i>
+                        Dosen</a></li>
+                        <li><a href="<?php echo base_url()?>admin/mahasiswa_list/<?php echo $username?>">
+                            <i class="fa fa-github"></i>
+                        Mahasiswa</a></li>
+                        
+                    </ul>
                 </li>
                 <li>
                     <a href="#" class="w3-bar-item w3-button">
@@ -93,6 +113,7 @@
                         <i class="fa fa-file-pdf-o"></i>
                     View Dokumentasi TA</a>
                 </li>
+                
             </ul>
         </div>
     </body>

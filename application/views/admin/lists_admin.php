@@ -21,11 +21,13 @@
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 	</head>
 	<body>
+	<!-- 	<div id="" style="overflow-y:scroll; overflow-x:hidden; height:400px;"> -->
+
 		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2><i class="fa fa-home"> </i> Dashboard</h2>
+				<h2><i class="fa fa-cog"> </i> Daftar Admin </h2>
 				<hr>
-				
+								
 			</div>
 		</div>
 	</body>

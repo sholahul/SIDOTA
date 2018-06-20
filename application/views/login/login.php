@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Login</title>
-		
+		<link rel="icon" href="<?=base_url('assets/img/icon.png')?>" type="imagef">
 		<!-- Bootstrap template 3.3.7-->
 		<link href="<?=base_url('assets/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
 		<!-- Bootstrap Core JS and jquery -->
@@ -16,6 +16,12 @@
 		
 		<!-- Our Styles -->
 		<link href="<?=base_url('assets/vendor/st_login.css')?>" rel="stylesheet">
+		<script>
+			function filter(input){
+				var hex = /[^a-z0-9]/gi;
+				input.value = input.value.replace(hex,"");
+			}
+		</script>
 	</head>
 	<body>
 		<div class="container middlepage">
@@ -37,11 +43,12 @@
 							<h6>Silakan Login Terlebih Dahulu. </h6>
 							<label for="uname"><b>Username/NIP/NIM</b></label>
 							<br>
-							<input type="text" placeholder="Enter Username/NIP/NIM" name="username" required>
+							<input type="text" maxlength="15" ="" onkeyup="filter(this)" placeholder="Enter Username/NIP/NIM" name="username" required>
 							<br>
 							<label for="psw"><b>Password</b></label>
 							<br>
-							<input type="password" value=
+
+							<input type="password" maxlength="15" onkeyup="filter(this)" value=
 							"" placeholder="Enter Password" name="password" required>
 							<br>
 							<label for="psw"><b>Role</b></label>

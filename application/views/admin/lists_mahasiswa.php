@@ -23,7 +23,7 @@
 	<body>
 		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2><i class="fa fa-home"> </i> Dashboard</h2>
+				<h2><i class="fa fa-github"> </i> Daftar Mahasiswa </h2>
 				<hr>
 				
 			</div>

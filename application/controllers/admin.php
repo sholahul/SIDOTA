@@ -1,21 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 include('login.php');
-class Admin extends Login{
-	public $data2 =[];
+class Admin extends CI_Controller{
+	public $data =[];
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library('session');
-		
-		$data2['username'] = $this->user;
-		$data2['password'] = $this->pwd;
-		
-		$username = $this->session->userdata('username');
-		$password = $this->session->userdata('password');
-
-		//echo $data2['username'];
+		$this->load->model('m_admin');
 		
 	}
 	public function index()
@@ -43,19 +35,64 @@ class Admin extends Login{
       	$this->load->view('admin/footer');
 	}
 	public function action_ubahpassword($username = ''){
+		$pwd1 = $this->input->post('pwd1');
+		$pwd2 = $this->input->post('pwd2');
+
 		$data = array(
 			'username' => $username, 
-			'pwd1' => $this->input->post('pwd1'),
-			'pwd2' => $this->input->post('pwd2'),
-			'error' => '',
+			'password' => $this->input->post('pwd1'),
 		);
-		if($data['pwd1'] != $data['pwd2']){
-			$data['error'] = "password not match";
-			echo $data['error'];
+		if($pwd1 != $pwd2){
+			echo '<script language="javascript">';
+			echo 'alert("password not match")';
+			echo '</script>';
 
-			redirect('Admin/ubahpassword','refresh');
+			$this->load->view('admin/header',$data);
+       		$this->load->view('admin/ubahpassword',$data);
+      		$this->load->view('admin/footer');
+		}else{
+			if($this->m_admin->update_pwd($data)){
+				echo '<script language="javascript">';
+				echo 'alert("Password Berhasil diubah silahkan login terlebih dahulu")';
+				echo '</script>';
+				
+				redirect('Login','refresh');
+				exit;
+			}
+			
+			
 		}
 		// echo $data['username']."  ".$data['pwd1']."  ".$data['pwd2'];
 
+	}
+
+	public function admin_list($username =''){
+		$data = array(
+			'username' => $username, 
+		);
+		
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/lists_admin',$data);
+      	$this->load->view('admin/footer');
+	}
+
+	public function dosen_list($username =''){
+		$data = array(
+			'username' => $username, 
+		);
+		
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/lists_dosen',$data);
+      	$this->load->view('admin/footer');
+	}
+
+	public function mahasiswa_list($username =''){
+		$data = array(
+			'username' => $username, 
+		);
+		
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/lists_mahasiswa',$data);
+      	$this->load->view('admin/footer');
 	}
 }
