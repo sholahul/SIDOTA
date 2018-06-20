@@ -124,6 +124,11 @@ body{
     padding: 20px;
 }
 
-p{
-    
+
+#id {
+    padding: 8px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }

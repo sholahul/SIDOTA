@@ -20,6 +20,7 @@
         <script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+        
     </head>
     <body id="page-top">
         <nav class="navbar navbar-inverse" id="mainnav">
@@ -52,7 +53,7 @@
                                 <li><a href="<?php echo base_url()?>admin/ubahpassword/<?php echo $username?>" >
                                     <i class="fa fa-cog"></i>
                                 Ubah Password</a></li>
-                                <li><a href="#">
+                                <li><a href="<?php echo base_url()?>admin/profile/<?php echo $username?>">
                                     <i class="fa fa-address-book-o"></i>
                                 Profile</a></li>
                                 <hr>

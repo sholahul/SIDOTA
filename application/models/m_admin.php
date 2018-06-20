@@ -19,6 +19,10 @@ class M_admin extends CI_Model {
         }
        
 	}
+	function show_profile($data){
+	    $this->db->where('username',$data['username']);
+	    return $this->db->get('admin');
+    }    
 }
 
 /* End of file m_admin.php */

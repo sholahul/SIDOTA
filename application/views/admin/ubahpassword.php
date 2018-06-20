@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<!-- Our Styles -->
 		<link href="<?=base_url('assets/vendor/own_admin.css')?>" rel="stylesheet">
+		<link href="<?=base_url('assets/vendor/input.css')?>" rel="stylesheet">
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
@@ -36,13 +37,13 @@
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="password">New Password :</label>
 							<div class="col-sm-7">
-								<input type="password" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Password" name="pwd1">
+								<input type="password" maxlength="15" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Password" name="pwd1" style="padding: ;">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="pwd">Konfirm Password :</label>
 							<div class="col-sm-7">
-								<input type="password" onkeyup="filter(this)"  class="form-control" id="pwd" placeholder="Enter password Again" name="pwd2">
+								<input type="password" maxlength="15" onkeyup="filter(this)"  class="form-control" id="pwd" placeholder="Enter password Again" name="pwd2">
 							</div>
 						</div>
 						

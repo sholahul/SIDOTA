@@ -13,21 +13,93 @@
 		<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 		<!-- Our Styles -->
 		<link href="<?=base_url('assets/vendor/own_admin.css')?>" rel="stylesheet">
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+
+		<script>
+			function filter(input){
+				var hex = /[^a-z0-9]/gi;
+				input.value = input.value.replace(hex,"");
+			}
+			function femail(input){
+				var hex = /[^a-z0-9@.]/gi;
+				input.value = input.value.replace(hex,"");
+			}
+			function fnohp(input){
+				var hex = /[^0-9]/gi;
+				input.value = input.value.replace(hex,"");
+			}
+		</script>
 	</head>
 	<body>
-	<!-- 	<div id="" style="overflow-y:scroll; overflow-x:hidden; height:400px;"> -->
-
 		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2><i class="fa fa-address-book-o"> </i> Profile </h2>
+				<h2><i class="fa fa-address-book-o"> </i> Profile</h2>
 				<hr>
-								
+				<div class="container ubah">
+					<?php foreach($content->result() as $key): ?>
+						<form onSubmit="return validate()" class="form-horizontal" method="post" action="">
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="password">Username :</label>
+								<div class="col-sm-7">
+									<input type="text" maxlength="15" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Username" name="username" value="<?php echo $key->username ?>">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-4" >Tempat Lahir :</label>
+								<div class="col-sm-7">
+									<input type="text" maxlength="15" onkeyup="filter(this)"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tanggal_lahir"  value="<?php echo $key->tempat_lahir ?>">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-4" >Tempat Lahir :</label>
+								<div class="col-sm-7">
+									<input type="text"  min="1945-08-17" max="3000-12-31"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tanggal_lahir"   onfocus="(this.type='date')"  value="<?php echo $key->tanggal_lahir ?>">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="email">Email :</label>
+								<div class="col-sm-7">
+									<input type="email" maxlength="40" onkeyup="femail(this)" required class="form-control" id="pwd" placeholder="Enter Email" name="email" value="<?php echo $key->email ?>">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-4" >Address :</label>
+								<div class="col-sm-7">
+									<textarea name="alamat" maxlength="100" onkeyup="femail(this)"><?php echo $key->alamat?></textarea>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-4" >No HP :</label>
+								<div class="col-sm-7">
+									<input type="text" maxlength="15" onkeyup="fnohp(this)"  class="form-control"  placeholder="Enter No HP" name="nohp"  value="<?php echo $key->nohp ?>">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-offset-4 col-sm-10">
+									<button type="submit" class="btn btn-default">Submit</button>
+								</div>
+							</div>
+
+
+						</form>
+					<?php endforeach  ?>
+				</div>
+				
+				<form action="<?php echo base_url(); ?>admin/action_updateprofile/<?php echo $key->username ?>" method="post">
+					<input type="text" name="nama" placeholder="Username " value="<?php echo $key->username ?>"> <br>
+					<input type="text" name="status" placeholder="Status" value="<?php echo $key->tempat_lahir ?>"> <br>
+					<input type="text" name="jurusan" placeholder="Jurusan " value="<?php echo $key->tanggal_lahir ?>"> <br>
+					<input type="submit" value="Save">
+				</form>
+				
+				
 			</div>
 		</div>
 	</body>

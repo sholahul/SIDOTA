@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 include('login.php');
-class Mahasiswa extends Login {
+class Mahasiswa extends CI_Controller{
 
 	public $data2 =[];
 

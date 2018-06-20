@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 include('login.php');
-class Dosen extends Login{
+class Dosen extends CI_Controller{
 	public $data2 =[];
 
 	public function __construct()

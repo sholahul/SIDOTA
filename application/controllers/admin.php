@@ -95,4 +95,30 @@ class Admin extends CI_Controller{
         $this->load->view('admin/lists_mahasiswa',$data);
       	$this->load->view('admin/footer');
 	}
+
+	public function profile($username = ''){
+		$data = array(
+			'username' => $username,
+		);
+
+		$data['content'] = $this->m_admin->show_profile($data);
+
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/profil',$data);
+      	$this->load->view('admin/footer');
+	}
+
+	public function action_updateprofile($id = '')
+	{
+		// $data = array(
+		// 	'nama' => $this->input->post('nama'),
+		// 	'status' => $this->input->post('status'),
+		// 	'jurusan' => $this->input->post('jurusan'), 
+		// );
+
+		// $this->db->where('id', $id);
+		// $this->db->update('identitas',$data);
+
+		// redirect('crud','refresh');
+	} 
 }
