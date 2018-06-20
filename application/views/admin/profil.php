@@ -83,7 +83,7 @@
 
 							<div class="form-group">
 								<div class="col-sm-offset-4 col-sm-10">
-									<button type="submit" class="btn btn-default">Submit</button>
+									<button type="submit" class="btn btn-success">Submit</button>
 								</div>
 							</div>
 
@@ -91,15 +91,6 @@
 						</form>
 					<?php endforeach  ?>
 				</div>
-				
-				<form action="<?php echo base_url(); ?>admin/action_updateprofile/<?php echo $key->username ?>" method="post">
-					<input type="text" name="nama" placeholder="Username " value="<?php echo $key->username ?>"> <br>
-					<input type="text" name="status" placeholder="Status" value="<?php echo $key->tempat_lahir ?>"> <br>
-					<input type="text" name="jurusan" placeholder="Jurusan " value="<?php echo $key->tanggal_lahir ?>"> <br>
-					<input type="submit" value="Save">
-				</form>
-				
-				
 			</div>
 		</div>
 	</body>
