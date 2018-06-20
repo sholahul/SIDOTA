@@ -110,6 +110,8 @@ class Admin extends CI_Controller{
 
 	public function action_updateprofile($username='')
 	{
+		$user = $username;
+
 		$data['username'] = $this->input->post('username');
         $data['tempat_lahir'] = $this->input->post('tempat_lahir');
         $data['tanggal_lahir'] = $this->input->post('tanggal_lahir');
@@ -117,7 +119,21 @@ class Admin extends CI_Controller{
         $data['alamat'] = $this->input->post('alamat');
         $data['nohp'] = $this->input->post('nohp');
 
-        echo $data;
+        // foreach ($data as $key){
+        // 	echo $key;
+        // }
+        if($this->m_admin->update_pwd($data,$user)){
+			echo '<script language="javascript">';
+			echo 'alert("Data Berhasil diubah")';
+			echo '</script>';
+			
+			$data['content'] = $this->m_admin->show_profile($data);
+			$this->load->view('admin/header',$data);
+        	$this->load->view('admin/profil',$data);
+      		$this->load->view('admin/footer');
+			
+		}
+        
 
 
 	} 

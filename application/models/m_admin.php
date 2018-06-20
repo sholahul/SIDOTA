@@ -23,6 +23,16 @@ class M_admin extends CI_Model {
 	    $this->db->where('username',$data['username']);
 	    return $this->db->get('admin');
     }    
+
+    function update_profile($data , $user){
+    	$this->db->where('username', $user);
+    	 if($this->db->update('admin',$data)){
+        	return true;
+        }
+        else{
+        	return false;
+        }
+    }
 }
 
 /* End of file m_admin.php */
