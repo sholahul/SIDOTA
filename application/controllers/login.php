@@ -53,7 +53,9 @@ class Login extends CI_Controller {
 
 		else if($data['role'] == 'Dosen'){
 			if($this->m_login->can_login($data)){
-    			$this->load->view('dosen/index',$data);	      
+    			$this->load->view('dosen/header',$data);
+    			$this->load->view('dosen/dashboard', $data);
+				$this->load->view('dosen/footer', $data);	      
            	}
            	else{
 				redirect('Login');
