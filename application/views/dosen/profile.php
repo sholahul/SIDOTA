@@ -80,8 +80,12 @@
                   </tr>
 
                 <?php endforeach;?>
-
       </table>
+            <div class="form-group">
+                  <div class="col-sm-offset-5 col-sm-8">
+                        <a href="<?php echo base_url()?>dosen/edit_profile/<?php echo $username ?>">Edit Profil Anda</a>
+                  </div>
+            </div>
 	</div>
 </div>
 </div>

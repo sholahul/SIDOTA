@@ -80,6 +80,16 @@ class Dosen extends Login{
       	$this->load->view('dosen/footer');
 	}
 
+	public function edit_profile($username = ''){
+		$data = array(
+			'username' => $username,
+		);
+
+		$this->load->view('dosen/header',$data);
+		$this->load->view('dosen/edit_profile',$data);
+      	$this->load->view('dosen/footer');
+	}
+
 	public function DokumentasiTA($username = ''){
 		$data = array(
 			'username' => $username,
