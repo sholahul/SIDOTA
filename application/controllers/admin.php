@@ -108,17 +108,17 @@ class Admin extends CI_Controller{
       	$this->load->view('admin/footer');
 	}
 
-	public function action_updateprofile($id = '')
+	public function action_updateprofile($username='')
 	{
-		// $data = array(
-		// 	'nama' => $this->input->post('nama'),
-		// 	'status' => $this->input->post('status'),
-		// 	'jurusan' => $this->input->post('jurusan'), 
-		// );
+		$data['username'] = $this->input->post('username');
+        $data['tempat_lahir'] = $this->input->post('tempat_lahir');
+        $data['tanggal_lahir'] = $this->input->post('tanggal_lahir');
+        $data['email'] = $this->input->post('email');
+        $data['alamat'] = $this->input->post('alamat');
+        $data['nohp'] = $this->input->post('nohp');
 
-		// $this->db->where('id', $id);
-		// $this->db->update('identitas',$data);
+        echo $data;
 
-		// redirect('crud','refresh');
+
 	} 
 }

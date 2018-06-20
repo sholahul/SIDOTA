@@ -51,11 +51,11 @@
 							<div class="form-group">
 								<label class="control-label col-sm-4" >Tempat Lahir :</label>
 								<div class="col-sm-7">
-									<input type="text" maxlength="15" onkeyup="filter(this)"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tanggal_lahir"  value="<?php echo $key->tempat_lahir ?>">
+									<input type="text" maxlength="15" onkeyup="filter(this)"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tempat_lahir"  value="<?php echo $key->tempat_lahir ?>">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-4" >Tempat Lahir :</label>
+								<label class="control-label col-sm-4" >Tanggal Lahir :</label>
 								<div class="col-sm-7">
 									<input type="text"  min="1945-08-17" max="3000-12-31"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tanggal_lahir"   onfocus="(this.type='date')"  value="<?php echo $key->tanggal_lahir ?>">
 								</div>
