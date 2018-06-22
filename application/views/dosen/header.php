@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	 <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>DOSEN</title>
+        <title>Admin</title>
+        <link rel="icon" href="<?=base_url('assets/img/icon.png')?>" type="image">
         <!-- Bootstrap template 3.3.7-->
         <link href="<?=base_url('assets/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,8 +20,9 @@
         <script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-</head>
-<body id="page-top">
+    </head>
+    
+    <body id="page-top">
         <nav class="navbar navbar-inverse" id="mainnav">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -36,13 +37,11 @@
                     </button>
                     
                 </div>
-
-
                 <div class="navbar-collapse collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="" class="dropdown-toggle " data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-user"></span> 
+                                <span class="glyphicon glyphicon-user"></span>
                                 <label name="user">
                                     <?php echo $user?>
                                 </label>

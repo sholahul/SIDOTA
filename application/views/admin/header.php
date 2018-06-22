@@ -73,7 +73,7 @@
             <br>
             <ul>
                 <li>
-                    <a href="<?php echo base_url();?>admin/dashboard/<?php echo $user?>" class="w3-bar-item w3-button">
+                    <a href="<?php echo base_url();?>admin/dashboard/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <i class="fa fa-home"> </i>
                         Dashboard
                     </a>
@@ -84,7 +84,7 @@
                     Administering  <b class="caret"> </b></a>
                 </li> -->
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle w3-bar-item w3-button" data-toggle="dropdown">
+                    <a href="" class="dropdown-toggle w3-bar-item w3-button" data-toggle="dropdown" style="text-decoration:none;">
                         <i class="fa fa-users"> </i>
                         <label name="username">
                             Administering
@@ -105,12 +105,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="w3-bar-item w3-button">
+                    <a href="<?php echo base_url()?>admin/dokumen_list/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <span class="glyphicon glyphicon-th-list"></span>
                     Dokumentasi TA</a>
                 </li>
                 <li>
-                    <a href="#" class="w3-bar-item w3-button">
+                    <a href="#" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <i class="fa fa-file-pdf-o"></i>
                     View Dokumentasi TA</a>
                 </li>

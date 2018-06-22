@@ -31,7 +31,7 @@
 			<div class="w3-container">
 				<h2><i class="fa fa-cog"></i> Ubah Password</h2>
 				<hr>		
-			<!-- 	<?php echo $username."da" ?> -->
+			
 				<div class="container ubah">
 					<form onSubmit="return validate()" class="form-horizontal" method="post" action="<?php echo base_url() ?>admin/action_ubahpassword/<?php echo $user?>">
 						<div class="form-group">

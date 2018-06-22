@@ -1,34 +1,26 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-include('login.php');
+
 class Dosen extends CI_Controller{
-	public $data2 =[];
+	var $user;
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library('session');
-<<<<<<< HEAD
-	
-=======
-		
->>>>>>> 5e9fc06d09205a886a54212ede0645389a8b3cf5
-		$username = $this->session->userdata('username');
-		$password = $this->session->userdata('password');
-
-		//echo $data2['username'];
 
 		$this->load->model('m_dosen');
-		
+		$username = $this->session->userdata('username');
+				
 	}
+
 	public function index()
 	{
 
 	}
 
-	public function dashboard($username = ''){
+	public function dashboard($user = ''){
 		$data = array(
-			'username' => $username, 
+			'user' => $user, 
 		);
 		
 		$this->load->view('dosen/header',$data);
@@ -36,28 +28,47 @@ class Dosen extends CI_Controller{
       	$this->load->view('dosen/footer');
 	}
 
-		public function ubahpassword($username = ''){
+		public function ubahpassword($user = ''){
 		// echo $username;		
 		$data = array(
-			'username' => $username, 
+			'user' => $user, 
 		);
 		$this->load->view('dosen/header',$data);
         $this->load->view('dosen/ubahpassword',$data);
       	$this->load->view('dosen/footer');
 	}
-	public function action_ubahpassword($username = ''){
-		$data = array(
-			'username' => $username, 
-			'pwd1' => $this->input->post('pwd1'),
-			'pwd2' => $this->input->post('pwd2'),
-			'error' => '',
-		);
-		if($data['pwd1'] != $data['pwd2']){
-			$data['error'] = "password not match";
-			echo $data['error'];
 
-			redirect('dosen/ubahpassword','refresh');
+
+	public function action_ubahpassword($user = ''){
+		$pwd1 = $this->input->post('pwd1');
+		$pwd2 = $this->input->post('pwd2');
+
+		$data = array(
+			'user' => $user, 
+			'password' => $this->input->post('pwd1'),
+		);
+		
+		if($pwd1 != $pwd2){
+			echo '<script language="javascript">';
+			echo 'alert("password not match")';
+			echo '</script>';
+
+			$this->load->view('dosen/header',$data);
+       		$this->load->view('dosen/ubahpassword',$data);
+      		$this->load->view('dosen/footer');
+		}else{
+			if($this->m_dosen->update_pwd($data['user'],$data['password'])){
+				echo '<script language="javascript">';
+				echo 'alert("Password Berhasil diubah silahkan login terlebih dahulu")';
+				echo '</script>';
+				
+				redirect('Login','refresh');
+				exit;
+			}
+			
+			
 		}
+		// echo $data['username']."  ".$data['pwd1']."  ".$data['pwd2'];
 	}
 
 	public function verifikasi($username = ''){

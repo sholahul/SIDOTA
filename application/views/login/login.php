@@ -53,7 +53,7 @@
 							<br>
 							<label for="psw"><b>Role</b></label>
 							<br>
-							<select name="role" class="sel">
+							<select name="role" class="sel" style="width: 195px;">
 								<option value="Admin">Admin</option>
 								<option value="Dosen">Dosen</option>
 								<option value="Mahasiswa">Mahasiswa</option>

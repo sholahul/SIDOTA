@@ -23,51 +23,40 @@
 		<!-- 	<div id="" style="overflow-y:scroll; overflow-x:hidden; height:400px;"> -->
 		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2><i class="fa fa-cog"> </i> Daftar Admin </h2>
+				<h2><span class="glyphicon glyphicon-th-list"></span> Daftar TA </h2>
 				<hr>
-				<i class="fa fa-search"></i>
-				<input class="form-control" id="myInput" type="text" placeholder="Search..">
-
-  				<br><br>
 				<div class="table-responsive tbs">
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th onclick="sortTable(0)">Username</th>
-								<th onclick="sortTable(1)">Password</th>
-								<th onclick="sortTable(2)">Tempat Lahir</th>
-								<th onclick="sortTable(3)">Tanggal Lahir</th>
-								<th onclick="sortTable(4)">Email</th>
-								<th onclick="sortTable(5)">Alamat</th>
-								<th onclick="sortTable(6)">NoHP</th>
+								<th onclick="sortTable(0)">Publish Date</th>
+								<th onclick="sortTable(1)">Nim Mahasiswa</th>
+								<th onclick="sortTable(3)">NIP Pembimbing TA</th>
+								<th onclick="sortTable(4)">Angkatan</th>
+								<th onclick="sortTable(5)">Judul Tugas Akhir</th>
+								<th onclick="sortTable(6)">Abstrak</th>
+								<th onclick="sortTable(7)">verifikasi</th>
 								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody id="tblDokumen">
 							<?php foreach($content->result_array() as $key): ?>
 							<tr>
-								<td><?php echo $key['username'] ?></td>
-								<td><?php echo $key['password'] ?></td>
-								<td><?php echo $key['tempat_lahir'] ?></td>
-								<td><?php echo $key['tanggal_lahir'] ?></td>
-								<td><?php echo $key['email'] ?></td>
-								<td><?php echo $key['alamat'] ?></td>
-								<td><?php echo $key['nohp'] ?></td>
+								<td><?php echo $key['publish_date'] ?></td>
+								<td><?php echo $key['nimmhs'] ?></td>
+								<td><?php echo $key['nppa'] ?></td>
+								<td><?php echo $key['judulta'] ?></td>
+								<td><?php echo $key['angkatan'] ?></td>
+								<td><?php echo $key['abstrak'] ?></td>
+								<td><?php echo $key['verifikasi'] ?></td>
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/ubah_admin/<?php echo $key['username'] ?>" title="">
-									<i class="fa fa-edit"></i>Edit
-									</a>
-									<span> | </span>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_admin/<?php echo $key['username'] ?>" title="">
+									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_dokumen/<?php echo $key['id'] ?>" title="">
 									<i class="fa fa-trash-o"></i>Delete</a>
 								</td>
 							</tr>
 							<?php endforeach ?>
 						</tbody>
 					</table>
-					<div class="add">
-						<a style="text-decoration: none" href="<?php echo base_url()?>admin/add_admin/<?php echo $user ?>"> <i class="fa fa-user-plus"></i> Add Account</a>
-					</div>
 				</div>
 				
 			</div>

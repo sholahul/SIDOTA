@@ -25,8 +25,8 @@
 			<div class="w3-container">
 				<h2><i class="fa fa-github"> </i> Daftar Mahasiswa </h2>
 				<hr>
-				<div class="table-responsive tbs">
-					<table class="table table-bordered table-striped">
+				<div class="table-responsive tbs ea">
+					<table class="table table-bordered table-striped" >
 						<thead>
 							<tr>
 								<th onclick="sortTable(0)">NIM</th>
@@ -66,7 +66,7 @@
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/ubah_mahasiswa/<?php echo $key['nim'] ?>" title="">
 									<i class="fa fa-edit"></i>Edit
 									</a>
-									<span> | </span>
+									
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_mahasiswa/<?php echo $key['nim'] ?>" title="">
 									<i class="fa fa-trash-o"></i>Delete</a>
 								</td>
@@ -75,7 +75,7 @@
 						</tbody>
 					</table>
 					<div class="add">
-						<a style="text-decoration: none" href="<?php echo base_url()?>admin/add_dosen/<?php echo $user ?>"> <i class="fa fa-user-plus"></i> Add Account</a>
+						<a style="text-decoration: none" href="<?php echo base_url()?>admin/add_mahasiswa/<?php echo $user ?>"> <i class="fa fa-user-plus"></i> Add Account</a>
 					</div>
 				</div>
 				

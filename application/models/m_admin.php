@@ -114,9 +114,9 @@ class M_admin extends CI_Model {
     {
         $nip = $data['nip'];
 
-        //where username == username
+        //where nip = $nip
         $this->db->where('nip',$nip);
-        // select * from my table (admin)
+        // select * from my table (dosen)
         return $this->db->get('dosen');
     }
 
@@ -153,12 +153,65 @@ class M_admin extends CI_Model {
         return $this->db->get('mahasiswa');
     }
 
-    //12. DELETE DOSEN WHERE nip = post[nip]
+    //18. DELETE mahasiswa WHERE nim = post[nim]
 
     public function delete_mahasiswa($data){
         $this->db->where('nim', $data['nim']);
         $this->db->delete('mahasiswa');
     }
+
+    //19. get nppa from dosen
+    public function get_nip(){
+        // $this->db->select('nip');
+        return $this->db->get('dosen');
+    }
+
+    //20. Show selected mahasiswa
+    public function ubah_mahasiswa($data)
+    {
+        $nim = $data['nim'];
+
+        //where nim == $nim
+        $this->db->where('nim',$nim);
+        // select * from my table (mahasiswa)
+        return $this->db->get('mahasiswa');
+    }
+
+     //21. model action ubah mahasiswa from controller action_ubah_mahasiswa
+    public function action_ubah_mahasiswa($data, $nim)
+    {
+        $this->db->where('nim', $nim);
+        if($this->db->update('mahasiswa',$data)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    //22. Check nim saat menambahkan data
+    public function check_unique_nim($nim) {
+        $this->db->where_in('nim', $nim);
+        return $this->db->get('mahasiswa')->num_rows();
+    }
+
+    //23. Model Add dosen (insert) to db
+    public function add_mahasiswa($data)
+    {
+        $this->db->insert('mahasiswa',$data); //insert data
+    }
+
+    //24. Show All dokumen TA
+    public function show_dokumen()
+    {
+        return $this->db->get('dokumenta');
+    }
+
+    public function delete_dokumen($id){
+        $this->db->where('id', $id);
+        $this->db->delete('dokumenta');
+    }
+
 }
 
 /* End of file m_admin.php */

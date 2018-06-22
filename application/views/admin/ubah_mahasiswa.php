@@ -18,6 +18,7 @@
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+
 	</head>
 	<body>
 		<div class="content" id="fullpage">
@@ -27,7 +28,7 @@
 				
 				<div class="container ubah">
 					<?php foreach($content->result() as $key): ?>
-						<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_ubah_dosen/<?php echo $key->nim ?>">
+						<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_ubah_mahasiswa/<?php echo $key->nim ?>">
 
 							<div class="form-group">
 								<label class="control-label col-sm-4">NIM :</label>
@@ -39,14 +40,13 @@
 							<div class="form-group">
 								<label class="control-label col-sm-4">NPPA :</label>
 								<div class="col-sm-7">
-									<select name ="nppa" value="<?php echo $key->nppa ?>" >
-								        <option>Inderalaya</option>
-								        <option>Palembang</option>
+									<select id="opt" name ="nppa" value="<?php echo $key->nppa ?>">
+										<?php foreach ($dosen->result() as $key1): ?>
+											<option><?php echo $key1->nip ?></option>
+										<?php endforeach?>
 								     </select>
 								</div>
 							</div>
-
-
 
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="">Nama :</label>
@@ -107,7 +107,7 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-sm-4" for="">Jenis Kelamin :</label>
+								<label class="control-label col-sm-4" for="">Lokasi Kampus :</label>
 								<div class="col-sm-7">
 									<select name ="lokasi_kampus" value="<?php echo $key->lokasi_kampus ?>" >
 								        <option>Inderalaya</option>

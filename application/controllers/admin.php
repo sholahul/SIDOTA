@@ -459,7 +459,7 @@ class Admin extends CI_Controller{
  
 	}
 
-	//12. Function delete dosen
+	//18. Function delete mahasiswa
 	public function action_delete_mahasiswa($nim ='')
     {
         $data['nim'] = $nim;
@@ -477,5 +477,187 @@ class Admin extends CI_Controller{
         $this->load->view('admin/footer');
         
     }
+
+    //19. ubah mahasiswa
+
+    public function ubah_mahasiswa($nim='')
+	{
+		$data = array(
+			'nim' => $nim, 
+		);
+
+		$data['content'] = $this->m_admin->ubah_mahasiswa($data);
+		$data['dosen'] = $this->m_admin->get_nip();
+		// $query = $this->m_admin->get_nip();
+		// $hasil = $query->result();
+		// $num_rows = $query->num_rows();
+		
+		// echo $num_rows;
+
+		
+		$data['user'] = $this->user;
+
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/ubah_mahasiswa',$data);
+      	$this->load->view('admin/footer'); 	
+	} 
+
+
+	 //20. Function Action Ubah mahasiswa
+    public function action_ubah_mahasiswa($nim='')
+	{
+
+		$data = array(
+			'nppa' => $this->input->post('nppa'),
+			'nama' => $this->input->post('nama'),
+			'password' => $this->input->post('password'), 
+			'angkatan' => $this->input->post('angkatan'),
+			'tempat_lahir' => $this->input->post('tempat_lahir'), 
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+			'jenis_kelamin' => $this->input->post('jenis_kelamin'), 
+			'email' => $this->input->post('email'), 
+			'nohp' => $this->input->post('nohp'), 
+			'lokasi_kampus' => $this->input->post('lokasi_kampus'), 
+			'alamat' => $this->input->post('alamat'),
+		);
+
+		if($this->m_admin->action_ubah_mahasiswa($data,$nim)){
+			echo '<script language="javascript">';
+			echo 'alert("Data Berhasil diubah")';
+			echo '</script>';
+
+			$data['user'] = $this->user;
+			$data['content'] = $this->m_admin->show_mahasiswa($data);
+
+			$this->load->view('admin/header',$data);
+        	$this->load->view('admin/lists_mahasiswa',$data);
+      		$this->load->view('admin/footer');
+
+		}else{
+			echo '<script language="javascript">';
+			echo 'alert("Data tidak lengkap")';
+			echo '</script>';
+
+			$data['user'] = $this->user;
+			$data['content'] = $this->m_admin->show_mahasiswa($data);
+			$this->load->view('admin/header',$data);
+        	$this->load->view('admin/ubah_mahasiswa',$data);
+      		$this->load->view('admin/footer'); 
+		}	
+
+	}
+
+	//21. Function Show page insert dosen from list_dosen
+    public function add_mahasiswa($user = ''){
+		$data = array(
+			'user' => $user, 
+		);
+
+		$data['dosen'] = $this->m_admin->get_nip();
+
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/add_mahasiswa',$data);
+      	$this->load->view('admin/footer');
+
+	}
+
+	//22. Function insert to database mahasiswa 
+	public function action_add_mahasiswa($user='')
+	{
+		//get input from view add_admin
+		$data = array(
+			'nim' => $this->input->post('nim'),
+			'nppa' => $this->input->post('nppa'),
+			'nama' => $this->input->post('nama'),
+			'password' => $this->input->post('password'), 
+			'angkatan' => $this->input->post('angkatan'),
+			'tempat_lahir' => $this->input->post('tempat_lahir'), 
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+			'jenis_kelamin' => $this->input->post('jenis_kelamin'), 
+			'email' => $this->input->post('email'), 
+			'nohp' => $this->input->post('nohp'), 
+			'lokasi_kampus' => $this->input->post('lokasi_kampus'), 
+			'alamat' => $this->input->post('alamat'),
+		);
+
+		// foreach ($data as $key) {
+		// 	# code...
+		// 	echo $key;
+		// }
+
+		//cek apakah username sudah ada di db?
+
+		if($this->m_admin->check_unique_nim($data['nim'])){
+			echo '<script language="javascript">';
+			echo 'alert("NIM Tidak Unique")';
+			echo '</script>';
+
+			$data['dosen'] = $this->m_admin->get_nip();
+			$data['user'] = $user;
+			$this->load->view('admin/header',$data);
+	        $this->load->view('admin/add_mahasiswa',$data);
+	      	$this->load->view('admin/footer');
+		}else{
+			if($this->m_admin->add_mahasiswa($data)){ //return 1 jika gagal
+				echo '<script language="javascript">';
+				echo 'alert("Data tidak berhasil ditambahkan")';
+				echo '</script>';
+				$data['user'] = $user;
+				$data['dosen'] = $this->m_admin->get_nip();
+				$this->load->view('admin/header',$data);
+	        	$this->load->view('admin/add_mahasiswa',$data);
+	      		$this->load->view('admin/footer');
+			}else{ //jika return 0 berati tidak ada baris yg terubah
+				echo '<script language="javascript">';
+				echo 'alert("Data berhasil ditambahkan")';
+				echo '</script>';
+				$data['user'] = $user;
+				$data['content'] = $this->m_admin->show_mahasiswa($data);
+				$this->load->view('admin/header',$data);
+	        	$this->load->view('admin/lists_mahasiswa',$data);
+	      		$this->load->view('admin/footer');
+			}
+
+		}
+	}
+
+	public function dokumen_list($user =''){
+      	$data = array(
+			'user' => $user, 
+		);
+		
+		$data['content'] = $this->m_admin->show_dokumen();
+		
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/lists_dokumen',$data);
+      	$this->load->view('admin/footer');
+	} 
+
+
+	// $data['username'] = $usernames;
+
+ //        	$this->m_admin->delete_admin($data);
+ //            //passing value from controller login variable global session
+ //            //set username awal login bukan selected s
+ //        	$data['user'] = $this->user;
+ //            // passing value from model show_admin to variabel array data['content'] 
+
+ //            $data['content'] = $this->m_admin->show_admin($data);
+
+ //            $this->load->view('admin/header',$data);
+ //            $this->load->view('admin/lists_admin',$data);
+ //            $this->load->view('admin/footer');
+        
+
+	public function action_delete_dokumen($id=''){
+		$this->m_admin->delete_dokumen($id);
+		$data['user'] = $this->user;
+
+		$data['content'] = $this->m_admin->show_dokumen();
+		
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/lists_dokumen',$data);
+      	$this->load->view('admin/footer');		
+	}
 
 }
