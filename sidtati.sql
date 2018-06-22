@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2018 at 11:43 AM
+-- Generation Time: Jun 22, 2018 at 01:40 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -46,6 +46,7 @@ INSERT INTO `admin` (`username`, `password`, `tempat_lahir`, `tanggal_lahir`, `e
 ('awa', 'uvuwuwe', 'eaea', '1998-01-01', 'e@gmail.com', 'ea', 'ea'),
 ('bebek', 'ea', 'dimanaaja', '1998-12-12', 'ea@gmail.com', 'ea', '12121'),
 ('kirito', 'ea', 'ea', '1998-01-12', 'ea@gmail.com', 'ea', '112'),
+('miaw', 'miaw12', 'palembang', '2999-03-12', 'ea@gmail.com', 'miaw', '092121'),
 ('newnew', 'ea', 'prabumulih', '1998-01-12', 'ea@gmail.com', 'ea', '12121'),
 ('tes1', 'eaa', 'ea', '1998-05-12', 'ea@gmail.com', 'ea', '121');
 
@@ -80,6 +81,7 @@ CREATE TABLE `dosen` (
   `tanggal_lahir` date NOT NULL,
   `jabatan` varchar(20) NOT NULL,
   `jenis_kelamin` varchar(20) NOT NULL,
+  `alamat` text NOT NULL,
   `email` varchar(40) NOT NULL,
   `nohp` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -88,9 +90,10 @@ CREATE TABLE `dosen` (
 -- Dumping data for table `dosen`
 --
 
-INSERT INTO `dosen` (`nip`, `nama`, `password`, `tempat_lahir`, `tanggal_lahir`, `jabatan`, `jenis_kelamin`, `email`, `nohp`) VALUES
-('1', 'farhan', '123456', 'palembang', '2018-06-05', 'dosen pengampu', 'laki-laki', 'farhan123@gmail.com', '08127328851'),
-('2', 'agusti', 'ea', 'bangka', '1998-05-30', 'dosen pengampu', 'laki-laki', 'agusti123@gmail.com', 'ea');
+INSERT INTO `dosen` (`nip`, `nama`, `password`, `tempat_lahir`, `tanggal_lahir`, `jabatan`, `jenis_kelamin`, `alamat`, `email`, `nohp`) VALUES
+('03', 'apajadeh', '31211', 'jambi', '1999-02-02', 'Lektor Kepala', 'Laki-Laki', 'Apaajadeh', 'ea@gmail.com', '31121'),
+('1', 'farhan', '123456', 'palembang', '2018-06-05', 'dosen pengampu', 'Laki-Laki', 'Palembang', 'farhan123@gmail.com', '08127328851'),
+('2', 'agusti', 'ea', 'bangka', '1998-05-30', 'dosen pengampu', 'Laki-Laki', 'Prabumulih', 'agusti123@gmail.com', 'ea');
 
 -- --------------------------------------------------------
 

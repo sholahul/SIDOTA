@@ -27,7 +27,7 @@
 				
 				<div class="container ubah">
 					<?php foreach($content->result() as $key): ?>
-						<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_ubah_admin/<?php echo $key->nip ?>">
+						<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_ubah_dosen/<?php echo $key->nip ?>">
 
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="password">NIP :</label>
@@ -72,17 +72,29 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-sm-4" for="email">Email :</label>
+								<label class="control-label col-sm-4" for="">Jenis Kelamin :</label>
 								<div class="col-sm-7">
-									<input type="email" maxlength="40" onkeypress="return RestrictSpace()" onkeyup="femail(this)" required class="form-control" id="pwd" placeholder="Enter Email" name="email" required value="<?php echo $key->email ?>">
+									<select name ="jenis_kelamin" value="<?php echo $key->jenis_kelamin ?>" >
+								        <option>Laki-Laki</option>
+								        <option>Perempuan</option>
+								     </select>
 								</div>
 							</div>
+
 							<div class="form-group">
 								<label class="control-label col-sm-4" >Address :</label>
 								<div class="col-sm-7">
 									<textarea name="alamat" maxlength="100" onkeyup="femail(this)"><?php echo $key->alamat ?></textarea>
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="email">Email :</label>
+								<div class="col-sm-7">
+									<input type="email" maxlength="40" onkeypress="return RestrictSpace()" onkeyup="femail(this)" required class="form-control" id="pwd" placeholder="Enter Email" name="email" required value="<?php echo $key->email ?>">
+								</div>
+							</div>							
+
 							<div class="form-group">
 								<label class="control-label col-sm-4" >No HP :</label>
 								<div class="col-sm-7">

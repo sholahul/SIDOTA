@@ -33,7 +33,7 @@
                 input.value = input.value.replace(hex,"");
             }
             function fchar(input){
-                var hex = /[^a-z]/gi;
+                var hex = /[^a-z ]/gi;
                 input.value = input.value.replace(hex,"");
             }
             

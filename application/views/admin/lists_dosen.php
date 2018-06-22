@@ -23,21 +23,22 @@
 		<!-- 	<div id="" style="overflow-y:scroll; overflow-x:hidden; height:400px;"> -->
 		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2><i class="fa fa-cog"> </i> Daftar Dosen </h2>
+				<h2><i class="fa fa-user"> </i> Daftar Dosen </h2>
 				<hr>
 				<div class="table-responsive tbs">
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th onclick="sortTable(0)">nip</th>
-								<th onclick="sortTable(1)">nama</th>
-								<th onclick="sortTable(2)">password</th>
+								<th onclick="sortTable(0)">NIP</th>
+								<th onclick="sortTable(1)">Nama</th>
+								<th onclick="sortTable(2)">Password</th>
 								<th onclick="sortTable(3)">Tempat Lahir</th>
 								<th onclick="sortTable(4)">Tanggal Lahir</th>
 								<th onclick="sortTable(5)">Jabatan</th>
 								<th onclick="sortTable(6)">Jenis Kelamin</th>
-								<th onclick="sortTable(6)">Enail</th>
-								<th onclick="sortTable(6)">No HP</th>
+								<th onclick="sortTable(7)">Alamat</th>
+								<th onclick="sortTable(8)">Email</th>
+								<th onclick="sortTable(9)">No HP</th>
 
 								<th>Action</th>
 							</tr>
@@ -52,6 +53,7 @@
 								<td><?php echo $key['tanggal_lahir'] ?></td>
 								<td><?php echo $key['jabatan'] ?></td>
 								<td><?php echo $key['jenis_kelamin'] ?></td>
+								<td><?php echo $key['alamat'] ?></td>
 								<td><?php echo $key['email'] ?></td>
 								<td><?php echo $key['nohp'] ?></td>
 								<td>

@@ -39,7 +39,7 @@
 					<!-- redirect to process -->
 					<?php echo form_open('Login/process'); ?>				
 						<div class="container">
-							<h5>Selamat Datang.</h5>
+							<h5>Selamat Datang. <?php $error ?></h5>
 							<h6>Silakan Login Terlebih Dahulu. </h6>
 							<label for="uname"><b>Username/NIP/NIM</b></label>
 							<br>

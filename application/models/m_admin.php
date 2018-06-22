@@ -108,6 +108,43 @@ class M_admin extends CI_Model {
         $this->db->where('nip', $data['nip']);
         $this->db->delete('dosen');
     }
+
+    //13. Show selected dosen
+    public function ubah_dosen($data)
+    {
+        $nip = $data['nip'];
+
+        //where username == username
+        $this->db->where('nip',$nip);
+        // select * from my table (admin)
+        return $this->db->get('dosen');
+    }
+
+    //14. model action ubah dosen from controller action_ubah_admin
+
+    public function action_ubah_dosen($data, $nip)
+    {
+        $this->db->where('nip', $nip);
+        if($this->db->update('dosen',$data)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    //15. Check nip saat menambahkan data
+    public function check_unique_nip($nip) {
+        $this->db->where_in('nip', $nip);
+        return $this->db->get('dosen')->num_rows();
+    }
+
+    //16. Model Add dosen (insert) to db
+    public function add_dosen($data)
+    {
+        $this->db->insert('dosen',$data); //insert data
+    }
+
 }
 
 /* End of file m_admin.php */
