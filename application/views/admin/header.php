@@ -42,18 +42,18 @@
                         <li class="dropdown">
                             <a href="" class="dropdown-toggle " data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-user"></span>
-                                <label name="username">
-                                    <?php echo $username?>
+                                <label name="user">
+                                    <?php echo $user?>
                                 </label>
                                 
                                 
                                 <b class="caret"> </b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url()?>admin/ubahpassword/<?php echo $username?>" >
+                                <li><a href="<?php echo base_url()?>admin/ubahpassword/<?php echo $user?>" >
                                     <i class="fa fa-cog"></i>
                                 Ubah Password</a></li>
-                                <li><a href="<?php echo base_url()?>admin/profile/<?php echo $username?>">
+                                <li><a href="<?php echo base_url()?>admin/profile/<?php echo $user?>">
                                     <i class="fa fa-address-book-o"></i>
                                 Profile</a></li>
                                 <hr>
@@ -73,7 +73,7 @@
             <br>
             <ul>
                 <li>
-                    <a href="<?php echo base_url();?>admin/dashboard/<?php echo $username?>" class="w3-bar-item w3-button">
+                    <a href="<?php echo base_url();?>admin/dashboard/<?php echo $user?>" class="w3-bar-item w3-button">
                         <i class="fa fa-home"> </i>
                         Dashboard
                     </a>
@@ -92,13 +92,13 @@
                         <b class="caret"> </b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="<?php echo base_url()?>admin/admin_list/<?php echo $username?>" >
+                        <li><a href="<?php echo base_url()?>admin/admin_list/<?php echo $user?>" >
                             <i class="fa fa-cog"></i>
                         Admin</a></li>
-                        <li><a href="<?php echo base_url()?>admin/dosen_list/<?php echo $username?>"">
+                        <li><a href="<?php echo base_url()?>admin/dosen_list/<?php echo $user?>" >
                             <i class="fa fa-user"></i>
                         Dosen</a></li>
-                        <li><a href="<?php echo base_url()?>admin/mahasiswa_list/<?php echo $username?>">
+                        <li><a href="<?php echo base_url()?>admin/mahasiswa_list/<?php echo $user?>">
                             <i class="fa fa-github"></i>
                         Mahasiswa</a></li>
                         

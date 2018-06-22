@@ -41,7 +41,7 @@
 				<hr>
 				<div class="container ubah">
 					<?php foreach($content->result() as $key): ?>
-						<form onSubmit="return validate()" class="form-horizontal" method="post" action="<?php echo base_url(); ?>admin/action_updateprofile/">
+						<form onSubmit="return validate()" class="form-horizontal" method="post" action="<?php echo base_url(); ?>admin/action_updateprofile/<?php echo $user?>">
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="password">Username :</label>
 								<div class="col-sm-7">

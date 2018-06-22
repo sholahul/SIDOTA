@@ -62,7 +62,7 @@
 						</tbody>
 					</table>
 					<div class="add">
-						<a style="text-decoration: none" href="<?php echo base_url()?>admin/add_admin/<?php echo $username ?>"> <i class="fa fa-user-plus"></i> Add Account</a>
+						<a style="text-decoration: none" href="<?php echo base_url()?>admin/add_admin/<?php echo $user ?>"> <i class="fa fa-user-plus"></i> Add Account</a>
 					</div>
 				</div>
 				

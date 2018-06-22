@@ -12,17 +12,17 @@ class M_login extends CI_Model {
 	public function can_login($data){
         // Run the query
         if($data['role']=='Admin'){
-            $this->db->where('username', $data['username']);
+            $this->db->where('username', $data['user']);
             $this->db->where('password', $data['password']);
             $query = $this->db->get('admin');
         }
         else if($data['role']=='Dosen'){
-            $this->db->where('nip', $data['username']);
+            $this->db->where('nip', $data['user']);
             $this->db->where('password', $data['password']);
             $query = $this->db->get('dosen');
         }
         else if($data['role']=='Mahasiswa'){
-            $this->db->where('nim', $data['username']);
+            $this->db->where('nim', $data['user']);
             $this->db->where('password', $data['password']);
             $query = $this->db->get('mahasiswa');
         }

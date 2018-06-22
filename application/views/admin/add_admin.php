@@ -18,6 +18,7 @@
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+	
 	</head>
 	<body>
 		<div class="content" id="fullpage">
@@ -26,7 +27,7 @@
 				<hr>
 				
 				<div class="container ubah" >
-					<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_add_admin/<?php echo $username?>">
+					<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_add_admin/<?php echo $user?>">
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="password">Username :</label>
 							<div class="col-sm-7">
@@ -42,7 +43,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-4" >Tempat Lahir :</label>
 							<div class="col-sm-7">
-								<input type="text" maxlength="15" onkeyup="filter(this)"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tempat_lahir"  required>
+								<input type="text" maxlength="15" onkeyup="fchar(this)"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tempat_lahir"  required>
 							</div>
 						</div>
 						<div class="form-group">

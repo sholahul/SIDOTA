@@ -9,8 +9,10 @@ class M_admin extends CI_Model {
 	}
 
     //1. Model update password
-	public function update_pwd($data){
-		$this->db->where('username', $data['username']);
+	public function update_pwd($user,$password){
+		$this->db->where('username', $user);
+        $data['username'] = $user;
+        $data['password'] = $password;
         
         if($this->db->update('admin',$data)){
         	return true;
@@ -23,7 +25,7 @@ class M_admin extends CI_Model {
 
     //2.model show_profile
 	public function show_profile($data){
-	    $this->db->where('username',$data['username']);
+	    $this->db->where('username',$data['user']);
 	    return $this->db->get('admin');
     }    
 
@@ -42,10 +44,10 @@ class M_admin extends CI_Model {
     //4. Model show admin_list with parameter data[] 
     public function show_admin($data)
     {
-        $username = $data['username'];
+        $user = $data['user'];
 
         //where username != username
-        $this->db->where('username !=',$username);
+        $this->db->where('username !=',$user);
         // select * from my table (admin)
         return $this->db->get('admin');
     }
@@ -54,37 +56,13 @@ class M_admin extends CI_Model {
     public function delete_admin($data){
 
         $this->db->where('username', $data['username']);
-        // $this->db->delete('admin');
-        if($this->db->delete('admin')){
-            return true;
-        }
-        else{
-            return false;
-        }
-
-        // Produces:
-        // DELETE FROM mytable
-        // WHERE id = $id
+        $this->db->delete('admin');
     }
 
     //6, Model Add Admin (insert) to db
     public function add_admin($data)
     {
-        $username = $data['username'];
-        $this->db->where('username',$username);
-        // select * from my table (admin)
-        if($this->db->get('admin')){ //check jika data ada
-            return false;
-        }
-        else{
-            if($this->db->insert('admin',$data)){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        
+        $this->db->insert('admin',$data); //insert data
     }
 
     //7. Model Ubah admin where
@@ -100,19 +78,35 @@ class M_admin extends CI_Model {
 
     //8. model action ubah admin from controller action_ubah_admin
 
-    public function action_ubah_admin($data)
+    public function action_ubah_admin($data, $user)
     {
-        $username = $data['username'];
-
-        //where username == username
-        $this->db->where('username',$username);
-
+        $this->db->where('username', $user);
         if($this->db->update('admin',$data)){
             return true;
         }
         else{
             return false;
         }
+    }
+
+    //9. Check username saat menambahkan data
+    public function check_unique_username($username) {
+        $this->db->where_in('username', $username);
+        return $this->db->get('admin')->num_rows();
+    }
+
+    //11. Show dosen select *from dosen
+    public function show_dosen($data)
+    {
+        return $this->db->get('dosen');
+
+    }
+
+    //12. DELETE DOSEN WHERE nip = post[nip]
+
+    public function delete_dosen($data){
+        $this->db->where('nip', $data['nip']);
+        $this->db->delete('dosen');
     }
 }
 

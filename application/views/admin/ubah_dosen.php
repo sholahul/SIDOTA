@@ -22,24 +22,35 @@
 	<body>
 		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2><i class="fa fa-cog"> </i> Modify Admin</h2>
+				<h2><i class="fa fa-cog"> </i> Modify Dosen</h2>
 				<hr>
 				
 				<div class="container ubah">
 					<?php foreach($content->result() as $key): ?>
-						<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_ubah_admin/<?php echo $key->username ?>">
+						<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_ubah_admin/<?php echo $key->nip ?>">
+
 							<div class="form-group">
-								<label class="control-label col-sm-4" for="password">Username :</label>
+								<label class="control-label col-sm-4" for="password">NIP :</label>
 								<div class="col-sm-7">
-									<input type="text" maxlength="15" onkeyup="filter(this)" class="form-control" id="pwd" name="username" required value="<?php echo $key->username ?>" disabled>
+									<input type="text" maxlength="15" onkeyup="fnohp(this)" class="form-control" id="pwd" name="nip" required value="<?php echo $key->nip ?>" disabled>
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="">Nama :</label>
+								<div class="col-sm-7">
+									<input type="text" maxlength="15" onkeyup="fchar(this)" class="form-control" id="pwd" name="nama" placeholder="Enter Name" required value="<?php echo $key->nama ?>">
+								</div>
+							</div>
+
+
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="password">Password :</label>
 								<div class="col-sm-7">
 									<input type="text" maxlength="15" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Password" name="password" required value="<?php echo $key->password ?>">
 								</div>
 							</div>
+
 							<div class="form-group">
 								<label class="control-label col-sm-4" >Tempat Lahir :</label>
 								<div class="col-sm-7">
@@ -52,6 +63,14 @@
 									<input type="text"  min="1945-08-17" max="3000-12-31"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tanggal_lahir"   onfocus="(this.type='date')" required value="<?php echo $key->tanggal_lahir?>">
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="">Jabatan :</label>
+								<div class="col-sm-7">
+									<input type="text" maxlength="15" onkeyup="fchar(this)" class="form-control" id="pwd" name="jabatan" placeholder="Enter Jabatan" required value="<?php echo $key->jabatan ?>">
+								</div>
+							</div>
+
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="email">Email :</label>
 								<div class="col-sm-7">

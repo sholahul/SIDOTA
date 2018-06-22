@@ -4,14 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 	public $data= [];
-	public $user,$pwd;
-	public $username;
+	var $user = "";
+
 	public function __construct()
 	{
 		parent::__construct();
-		$username = $this->session->userdata('username');
+		$user = $this->session->userdata('user');
 		$password = $this->session->userdata('password');
-		$this->user = $username;
+		$this->user = $user;
 		$this->pwd = $password;
 		// echo $username.$password;
 		$this->load->library('session');
@@ -21,8 +21,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-            'title' => 'Login Page',
-            'action' => site_url('auth/login'),
+            'user' => $this->user,
 
         );
 		$this->load->view('login/login',$data);
@@ -31,7 +30,7 @@ class Login extends CI_Controller {
 
 
 	public function process(){	
-	    $data['username'] = $this->input->post('username');
+	    $data['user'] = $this->input->post('user');
         $data['password'] = $this->input->post('password');
         $data['role'] = $this->input->post('role');
         

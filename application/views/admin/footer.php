@@ -19,6 +19,30 @@
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
         <link href="<?=base_url('assets/vendor/style_input.css')?>" rel="stylesheet">
+            <script>
+            function filter(input){
+                var hex = /[^a-z0-9]/gi;
+                input.value = input.value.replace(hex,"");
+            }
+            function femail(input){
+                var hex = /[^a-z0-9@._]/gi;
+                input.value = input.value.replace(hex,"");
+            }
+            function fnohp(input){
+                var hex = /[^0-9]/gi;
+                input.value = input.value.replace(hex,"");
+            }
+            function fchar(input){
+                var hex = /[^a-z]/gi;
+                input.value = input.value.replace(hex,"");
+            }
+            
+            function RestrictSpace() {
+                if (event.keyCode == 32) {
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="footer">

@@ -42,15 +42,15 @@
                         <li class="dropdown">
                             <a href="" class="dropdown-toggle " data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-user"></span> 
-                                <label name="username">
-                                    <?php echo $username?>
+                                <label name="user">
+                                    <?php echo $user?>
                                 </label>
                                 
                                 
                                 <b class="caret"> </b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url()?>mahasiswa/ubahpassword/<?php echo $username?>" >
+                                <li><a href="<?php echo base_url()?>mahasiswa/ubahpassword/<?php echo $user?>" >
                                     <i class="fa fa-cog"></i>
                                 Ubah Password</a></li>
                                 <li><a href="#">
@@ -73,18 +73,18 @@
             <br>
             <ul>
                 <li>
-                    <a href="<?php echo base_url();?>mahasiswa/dashboard/<?php echo $username ?>" class="w3-bar-item w3-button">
+                    <a href="<?php echo base_url();?>mahasiswa/dashboard/<?php echo $user ?>" class="w3-bar-item w3-button">
                         <i class="fa fa-home"> </i>
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url(); ?>mahasiswa/upload_ta/<?php echo $username ?>" class="w3-bar-item w3-button">
+                    <a href="<?php echo base_url(); ?>mahasiswa/upload_ta/<?php echo $user ?>" class="w3-bar-item w3-button">
                         <i class="fa fa-file-pdf-o"></i>
                     Upload Dokumen TA</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url(); ?>mahasiswa/viewdokumen/<?php echo $username ?>" class="w3-bar-item w3-button">
+                    <a href="<?php echo base_url(); ?>mahasiswa/viewdokumen/<?php echo $user?>" class="w3-bar-item w3-button">
                         <i class="fa fa-file-pdf-o"></i>
                     View Dokumentasi TA</a>
                 </li>

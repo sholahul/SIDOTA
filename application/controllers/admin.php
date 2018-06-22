@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 include('login.php');
 class Admin extends CI_Controller{
 	//variable global data
-	var $username;
+	var $user;
 
 	//construct dipanggil ketika controller dijalankan
 	public function __construct()
@@ -11,7 +11,7 @@ class Admin extends CI_Controller{
 		parent::__construct();
 		//load model
 		$this->load->model('m_admin');
-		$this->username = $this->session->userdata('username');
+		$this->user = $this->session->userdata('user');
 
 		// echo "hellow ".$this->username;
 	}
@@ -22,12 +22,13 @@ class Admin extends CI_Controller{
 	}
 
 	//1. Function Dashboard with parameter
-	public function dashboard($username = ''){
+	public function dashboard($user = ''){
 		$data = array(
-			'username' => $username, 
+			'user' => $user, 
 		);
+
 		//passing value to variabel global
-		$this->username = $data['username'];
+		// $this->username = $data['username'];
 		//echo $this->username;
 
 		$this->load->view('admin/header',$data);
@@ -36,10 +37,10 @@ class Admin extends CI_Controller{
 	}
 
 	//2. Function Ubahpassword with parameter
-	public function ubahpassword($username = ''){
+	public function ubahpassword($user = ''){
 		// echo $username;		
 		$data = array(
-			'username' => $username, 
+			'user' => $user, 
 		);
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/ubahpassword',$data);
@@ -47,12 +48,12 @@ class Admin extends CI_Controller{
 	}
 
 	//3. Function Aksi dari ubahpassword  with parameter
-	public function action_ubahpassword($username = ''){
+	public function action_ubahpassword($user = ''){
 		$pwd1 = $this->input->post('pwd1');
 		$pwd2 = $this->input->post('pwd2');
 
 		$data = array(
-			'username' => $username, 
+			'user' => $user, 
 			'password' => $this->input->post('pwd1'),
 		);
 		if($pwd1 != $pwd2){
@@ -64,7 +65,7 @@ class Admin extends CI_Controller{
        		$this->load->view('admin/ubahpassword',$data);
       		$this->load->view('admin/footer');
 		}else{
-			if($this->m_admin->update_pwd($data)){
+			if($this->m_admin->update_pwd($data['user'],$data['password'])){
 				echo '<script language="javascript">';
 				echo 'alert("Password Berhasil diubah silahkan login terlebih dahulu")';
 				echo '</script>';
@@ -80,10 +81,11 @@ class Admin extends CI_Controller{
 	}
 
 	//4. Function load view profile  with parameter
-	public function profile($username = ''){
+	public function profile($user = ''){
 		$data = array(
-			'username' => $username,
+			'user' => $user,
 		);
+		// echo $user;
 
 		$data['content'] = $this->m_admin->show_profile($data);
 
@@ -93,9 +95,9 @@ class Admin extends CI_Controller{
 	}
 
 	//5. Function AKSI update profile view profile  with parameter
-	public function action_updateprofile($username='')
+	public function action_updateprofile($userv='')
 	{
-		$user = $username;
+		$user = $userv;
 
 		$data['username'] = $this->input->post('username');
         $data['tempat_lahir'] = $this->input->post('tempat_lahir');
@@ -107,11 +109,14 @@ class Admin extends CI_Controller{
         // foreach ($data as $key){
         // 	echo $key;
         // }
-        if($this->m_admin->update_pwd($data,$user)){
+        if($this->m_admin->update_profile($data,$user)){
 			echo '<script language="javascript">';
 			echo 'alert("Data Berhasil diubah")';
 			echo '</script>';
 			
+			$data['user'] = $data['username'];
+			$this->user = $data['user'];
+
 			$data['content'] = $this->m_admin->show_profile($data);
 			$this->load->view('admin/header',$data);
         	$this->load->view('admin/profil',$data);
@@ -121,16 +126,14 @@ class Admin extends CI_Controller{
     } 
 
 	//5. Function load view menampilkan daftar admin list  with parameter
-	public function admin_list($username =''){
+	public function admin_list($user =''){
       	$data = array(
-			'username' => $username, 
+			'user' => $user, 
 		);
-		
-		//passing ke variabel global username
-		$this->username = $data['username'];
 		
 		$data['content'] = $this->m_admin->show_admin($data);
 		
+
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/lists_admin',$data);
       	$this->load->view('admin/footer');
@@ -140,12 +143,12 @@ class Admin extends CI_Controller{
 	//6. Function delete selected username from view list_admin
 	public function action_delete_admin($usernames ='')
     {
-        $data['username'] = $usernames;
+        	$data['username'] = $usernames;
 
-        if($this->m_admin->delete_admin($data)){
+        	$this->m_admin->delete_admin($data);
             //passing value from controller login variable global session
-            //set username awal login bukan selected 
-        	$data['username'] = $this->username;
+            //set username awal login bukan selected s
+        	$data['user'] = $this->user;
             // passing value from model show_admin to variabel array data['content'] 
 
             $data['content'] = $this->m_admin->show_admin($data);
@@ -153,15 +156,16 @@ class Admin extends CI_Controller{
             $this->load->view('admin/header',$data);
             $this->load->view('admin/lists_admin',$data);
             $this->load->view('admin/footer');
-        }
+        
     }
+
 
     //7. Function Show page insert admin from list_admin
     public function add_admin($username = ''){
 		$data = array(
 			'username' => $username, 
 		);
-
+		$data['user'] = $this->user;
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/add_admin',$data);
       	$this->load->view('admin/footer');
@@ -169,7 +173,7 @@ class Admin extends CI_Controller{
 	}
 
 	//8. Function insert to database admin 
-	public function action_add_admin($username='')
+	public function action_add_admin($user='')
 	{
 		//get input from view add_admin
 		$data = array(
@@ -186,52 +190,66 @@ class Admin extends CI_Controller{
 		// 	# code...
 		// 	echo $key;
 		// }
-		if($this->m_admin->add_admin($data)){
+
+		//cek apakah username sudah ada di db?
+
+		if($this->m_admin->check_unique_username($data['username'])){
 			echo '<script language="javascript">';
-			echo 'alert("Data Berhasil ditambahkan")';
+			echo 'alert("Username Tidak Unique")';
 			echo '</script>';
 
-			
-			$data['username'] = $this->username;
-			$data['content'] = $this->m_admin->show_admin($data);
-			
-			$this->load->view('admin/header',$data);
-	        $this->load->view('admin/lists_admin',$data);
-	      	$this->load->view('admin/footer');
-		}else{
-			echo '<script language="javascript">';
-			echo 'alert("username telah ada")';
-			echo '</script>';
-
+			$data['user'] = $user;
 			$this->load->view('admin/header',$data);
 	        $this->load->view('admin/add_admin',$data);
 	      	$this->load->view('admin/footer');
 
+
+
+		}else{
+			if($this->m_admin->add_admin($data)){ //return 1 jika gagal
+				echo '<script language="javascript">';
+				echo 'alert("Data tidak berhasil ditambahkan")';
+				echo '</script>';
+				$data['user'] = $user;
+				$this->load->view('admin/header',$data);
+	        	$this->load->view('admin/add_admin',$data);
+	      		$this->load->view('admin/footer');
+			}else{ //jika return 0 berati tidak ada baris yg terubah
+				echo '<script language="javascript">';
+				echo 'alert("Data berhasil ditambahkan")';
+				echo '</script>';
+				$data['user'] = $user;
+				$data['content'] = $this->m_admin->show_admin($data);
+				$this->load->view('admin/header',$data);
+	        	$this->load->view('admin/lists_admin',$data);
+	      		$this->load->view('admin/footer');
+			}
+
 		}
 	}
 
-	//9.  Function Show page ubah admin from list_admin
+	// 9.  Function Show page ubah admin from list_admin selected variable username
 	public function ubah_admin($username='')
 	{
 		$data = array(
 			'username' => $username, 
+
 		);
 
 		$data['content'] = $this->m_admin->ubah_admin($data);
 
-		$data['username'] = $this->username;
+		$data['user'] = $this->user;
 
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/ubah_admin',$data);
       	$this->load->view('admin/footer'); 	
 	} 
 
-	//10. Function action ubah_admin from view ubah_admin
+	//10. Function action ubah_admin from view ubah_admin get user now,not selected
 
-	public function action_ubah_admin($username='')
+	public function action_ubah_admin($user='')
 	{
 		$data = array(
-			'username' => $this->input->post('username'), 
 			'password' => $this->input->post('password'), 
 			'tempat_lahir' => $this->input->post('tempat_lahir'), 
 			'tanggal_lahir' => $this->input->post('tanggal_lahir'), 
@@ -240,13 +258,13 @@ class Admin extends CI_Controller{
 			'nohp' => $this->input->post('nohp'), 
 		);
 
-		if($this->m_admin->action_ubah_admin($data)){
+		if($this->m_admin->action_ubah_admin($data,$user)){
 			echo '<script language="javascript">';
-			echo 'alert("update admin berhasil")';
+			echo 'alert("Data Berhasil diubah")';
 			echo '</script>';
 
+			$data['user'] = $this->user;
 			$data['content'] = $this->m_admin->show_admin($data);
-			$data['username'] = $this->username;
 
 			$this->load->view('admin/header',$data);
         	$this->load->view('admin/lists_admin',$data);
@@ -254,41 +272,51 @@ class Admin extends CI_Controller{
 
 		}else{
 			echo '<script language="javascript">';
-			echo 'alert("username telah ada")';
+			echo 'alert("Data tidak lengkap")';
 			echo '</script>';
 
+			$data['user'] = $this->user;
+			$data['content'] = $this->m_admin->show_admin($data);
 			$this->load->view('admin/header',$data);
         	$this->load->view('admin/ubah_admin',$data);
       		$this->load->view('admin/footer'); 
-		}
+		}	
 
-		
 	}
 
-
-
-
-
-
-	public function dosen_list($username =''){
-		$data = array(
-			'username' => $username, 
+	//11. Function load view menampilkan daftar DOSEN  list  with parameter
+	public function dosen_list($user =''){
+      	$data = array(
+			'user' => $user, 
 		);
 		
+		$data['content'] = $this->m_admin->show_dosen($data);
+		
+
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/lists_dosen',$data);
       	$this->load->view('admin/footer');
+ 
 	}
 
-	public function mahasiswa_list($username =''){
-		$data = array(
-			'username' => $username, 
-		);
-		
-		$this->load->view('admin/header',$data);
-        $this->load->view('admin/lists_mahasiswa',$data);
-      	$this->load->view('admin/footer');
-	}
+	//12. Function delete dosen
+	public function action_delete_dosen($nip ='')
+    {
+        $data['nip'] = $nip;
 
-	
+        $this->m_admin->delete_dosen($data);
+            //passing value from controller login variable global session
+            //set username awal login bukan selected s
+        $data['user'] = $this->user;
+           // passing value from model show_admin to variabel array data['content'] 
+
+        $data['content'] = $this->m_admin->show_dosen($data);
+
+        $this->load->view('admin/header',$data);
+        $this->load->view('admin/lists_dosen',$data);
+        $this->load->view('admin/footer');
+        
+    }
+
+
 }
