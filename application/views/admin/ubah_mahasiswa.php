@@ -22,19 +22,31 @@
 	<body>
 		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2><i class="fa fa-user"> </i> Modify Dosen</h2>
+				<h2><i class="fa fa-github"> </i> Modify Mahasiswa</h2>
 				<hr>
 				
 				<div class="container ubah">
 					<?php foreach($content->result() as $key): ?>
-						<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_ubah_dosen/<?php echo $key->nip ?>">
+						<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_ubah_dosen/<?php echo $key->nim ?>">
 
 							<div class="form-group">
-								<label class="control-label col-sm-4" for="password">NIP :</label>
+								<label class="control-label col-sm-4">NIM :</label>
 								<div class="col-sm-7">
-									<input type="text" maxlength="15" onkeyup="fnohp(this)" class="form-control" id="pwd" name="nip" required value="<?php echo $key->nip ?>" disabled>
+									<input type="text" maxlength="15" onkeyup="fnohp(this)" class="form-control" id="pwd" name="nim" required value="<?php echo $key->nim ?>" disabled>
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-4">NPPA :</label>
+								<div class="col-sm-7">
+									<select name ="nppa" value="<?php echo $key->nppa ?>" >
+								        <option>Inderalaya</option>
+								        <option>Palembang</option>
+								     </select>
+								</div>
+							</div>
+
+
 
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="">Nama :</label>
@@ -43,11 +55,16 @@
 								</div>
 							</div>
 
-
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="password">Password :</label>
 								<div class="col-sm-7">
 									<input type="text" maxlength="15" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Password" name="password" required value="<?php echo $key->password ?>">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="password">Angkatan :</label>
+								<div class="col-sm-7">
+									<input type="year" maxlength="4" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Year" name="angkatan" required value="<?php echo $key->angkatan ?>">
 								</div>
 							</div>
 
@@ -65,13 +82,6 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-sm-4" for="">Jabatan :</label>
-								<div class="col-sm-7">
-									<input type="text" maxlength="15" onkeyup="fchar(this)" class="form-control" id="pwd" name="jabatan" placeholder="Enter Jabatan" required value="<?php echo $key->jabatan ?>">
-								</div>
-							</div>
-
-							<div class="form-group">
 								<label class="control-label col-sm-4" for="">Jenis Kelamin :</label>
 								<div class="col-sm-7">
 									<select name ="jenis_kelamin" value="<?php echo $key->jenis_kelamin ?>" >
@@ -81,12 +91,6 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-								<label class="control-label col-sm-4" >Address :</label>
-								<div class="col-sm-7">
-									<textarea name="alamat" maxlength="100" onkeyup="femail(this)"><?php echo $key->alamat ?></textarea>
-								</div>
-							</div>
 
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="email">Email :</label>
@@ -101,6 +105,24 @@
 									<input type="text" maxlength="15" onkeyup="fnohp(this)"  class="form-control"  placeholder="Enter No HP" name="nohp" required value="<?php echo $key->nohp ?>">
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="">Jenis Kelamin :</label>
+								<div class="col-sm-7">
+									<select name ="lokasi_kampus" value="<?php echo $key->lokasi_kampus ?>" >
+								        <option>Inderalaya</option>
+								        <option>Palembang</option>
+								     </select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-4" >Address :</label>
+								<div class="col-sm-7">
+									<textarea name="alamat" maxlength="100" onkeyup="femail(this)"><?php echo $key->alamat ?></textarea>
+								</div>
+							</div>
+
 							<div class="form-group">
 								<div class="col-sm-offset-4 col-sm-10">
 									<button type="submit" class="btn btn-success">Submit</button>

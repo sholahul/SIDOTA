@@ -145,6 +145,20 @@ class M_admin extends CI_Model {
         $this->db->insert('dosen',$data); //insert data
     }
 
+
+
+    //17. Show dosen select *from mahasiswa
+    public function show_mahasiswa($data)
+    {
+        return $this->db->get('mahasiswa');
+    }
+
+    //12. DELETE DOSEN WHERE nip = post[nip]
+
+    public function delete_mahasiswa($data){
+        $this->db->where('nim', $data['nim']);
+        $this->db->delete('mahasiswa');
+    }
 }
 
 /* End of file m_admin.php */

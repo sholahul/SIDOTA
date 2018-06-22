@@ -29,16 +29,18 @@
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th onclick="sortTable(0)">NIP</th>
-								<th onclick="sortTable(1)">Nama</th>
-								<th onclick="sortTable(2)">Password</th>
-								<th onclick="sortTable(3)">Tempat Lahir</th>
-								<th onclick="sortTable(4)">Tanggal Lahir</th>
-								<th onclick="sortTable(5)">Jabatan</th>
-								<th onclick="sortTable(6)">Jenis Kelamin</th>
-								<th onclick="sortTable(7)">Alamat</th>
+								<th onclick="sortTable(0)">NIM</th>
+								<th onclick="sortTable(1)">NPPA</th>
+								<th onclick="sortTable(2)">Nama</th>
+								<th onclick="sortTable(3)">Password</th>
+								<th onclick="sortTable(4)">Angkatan</th>
+								<th onclick="sortTable(5)">Tempat Lahir</th>
+								<th onclick="sortTable(6)">Tanggal Lahir</th>
+								<th onclick="sortTable(7)">Jenis Kelamin</th>
 								<th onclick="sortTable(8)">Email</th>
 								<th onclick="sortTable(9)">No HP</th>
+								<th onclick="sortTable(10)">Lokasi Kampus</th>
+								<th onclick="sortTable(10)">Alamat</th>
 
 								<th>Action</th>
 							</tr>
@@ -46,22 +48,26 @@
 						<tbody id="tblDokumen">
 							<?php foreach($content->result_array() as $key): ?>
 							<tr>
-								<td><?php echo $key['nip'] ?></td>
+								<td><?php echo $key['nim'] ?></td>
+								<td><?php echo $key['nppa'] ?></td>
 								<td><?php echo $key['nama'] ?></td>
 								<td><?php echo $key['password'] ?></td>
+								<td><?php echo $key['angkatan'] ?></td>
 								<td><?php echo $key['tempat_lahir'] ?></td>
 								<td><?php echo $key['tanggal_lahir'] ?></td>
-								<td><?php echo $key['jabatan'] ?></td>
 								<td><?php echo $key['jenis_kelamin'] ?></td>
-								<td><?php echo $key['alamat'] ?></td>
 								<td><?php echo $key['email'] ?></td>
 								<td><?php echo $key['nohp'] ?></td>
+								<td><?php echo $key['lokasi_kampus'] ?></td>
+								<td><?php echo $key['alamat'] ?></td>
+								
+								
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/ubah_dosen/<?php echo $key['nip'] ?>" title="">
+									<a style="text-decoration: none" href="<?php echo base_url()?>admin/ubah_mahasiswa/<?php echo $key['nim'] ?>" title="">
 									<i class="fa fa-edit"></i>Edit
 									</a>
 									<span> | </span>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_dosen/<?php echo $key['nip'] ?>" title="">
+									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_mahasiswa/<?php echo $key['nim'] ?>" title="">
 									<i class="fa fa-trash-o"></i>Delete</a>
 								</td>
 							</tr>

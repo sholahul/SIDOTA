@@ -444,6 +444,38 @@ class Admin extends CI_Controller{
 		}
 	}
 
-	
+	//17. Function load view menampilkan daftar mahasiswa  list  with parameter
+	public function mahasiswa_list($user =''){
+      	$data = array(
+			'user' => $user, 
+		);
+		
+		$data['content'] = $this->m_admin->show_mahasiswa($data);
+		
+
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/lists_mahasiswa',$data);
+      	$this->load->view('admin/footer');
+ 
+	}
+
+	//12. Function delete dosen
+	public function action_delete_mahasiswa($nim ='')
+    {
+        $data['nim'] = $nim;
+
+        $this->m_admin->delete_mahasiswa($data);
+            //passing value from controller login variable global session
+            //set username awal login bukan selected s
+        $data['user'] = $this->user;
+           // passing value from model show_admin to variabel array data['content'] 
+
+        $data['content'] = $this->m_admin->show_mahasiswa($data);
+
+        $this->load->view('admin/header',$data);
+        $this->load->view('admin/lists_mahasiswa',$data);
+        $this->load->view('admin/footer');
+        
+    }
 
 }
