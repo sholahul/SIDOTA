@@ -37,8 +37,7 @@ class Admin extends CI_Controller{
 	}
 
 	//2. Function Ubahpassword with parameter
-	public function ubahpassword($user = ''){
-		// echo $username;		
+	public function ubahpassword($user = ''){	
 		$data = array(
 			'user' => $user, 
 		);

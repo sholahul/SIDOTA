@@ -8,9 +8,7 @@ body{
 }
 
 #fullpage{
-    overflow-y:scroll;
-    overflow-x:scroll;
-    /*overflow: auto;*/
+    overflow: auto;
     max-height: 100vh;
 }
 .navbar{
@@ -134,7 +132,7 @@ body{
     padding: 15px;
     margin-bottom: 100px;
     overflow-x:auto;
-    
+
 }
 
 #id {

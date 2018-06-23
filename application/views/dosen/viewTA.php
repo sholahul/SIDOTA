@@ -16,8 +16,8 @@
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 		<!-- Our Styles -->
-		<link href="<?=base_url('assets/vendor/own_admin.css')?>" rel="stylesheet">
-		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
+		<link href="<?=base_url('assets/vendor/stylesadmin.css')?>" rel="stylesheet">
+		<script src="<?=base_url('assets/vendor/js_admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
         <link href="<?=base_url('assets/vendor/style.css')?>" rel="stylesheet" >

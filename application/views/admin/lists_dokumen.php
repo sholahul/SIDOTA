@@ -14,17 +14,18 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<!-- Our Styles -->
-		<link href="<?=base_url('assets/vendor/own_admin.css')?>" rel="stylesheet">
+		<link href="<?=base_url('assets/vendor/styles_admin.css')?>" rel="stylesheet">
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 	</head>
 	<body>
-		<!-- 	<div id="" style="overflow-y:scroll; overflow-x:hidden; height:400px;"> -->
+
 		<div class="content" id="fullpage">
 			<div class="w3-container">
 				<h2><span class="glyphicon glyphicon-th-list"></span> Daftar TA </h2>
 				<hr>
+				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" > <br><br>
 				<div class="table-responsive tbs">
 					<table class="table table-bordered table-striped">
 						<thead>

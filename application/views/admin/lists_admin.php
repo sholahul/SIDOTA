@@ -14,10 +14,14 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<!-- Our Styles -->
-		<link href="<?=base_url('assets/vendor/own_admin.css')?>" rel="stylesheet">
+		<link href="<?=base_url('assets/vendor/styles_admin.css')?>" rel="stylesheet">
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+		<style>
+		
+		</style>
+		
 	</head>
 	<body>
 		<!-- 	<div id="" style="overflow-y:scroll; overflow-x:hidden; height:400px;"> -->
@@ -25,10 +29,8 @@
 			<div class="w3-container">
 				<h2><i class="fa fa-cog"> </i> Daftar Admin </h2>
 				<hr>
-				<i class="fa fa-search"></i>
-				<input class="form-control" id="myInput" type="text" placeholder="Search..">
-
-  				<br><br>
+				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" >
+				<br><br>
 				<div class="table-responsive tbs">
 					<table class="table table-bordered table-striped">
 						<thead>
@@ -55,7 +57,7 @@
 								<td><?php echo $key['nohp'] ?></td>
 								<td>
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/ubah_admin/<?php echo $key['username'] ?>" title="">
-									<i class="fa fa-edit"></i>Edit
+										<i class="fa fa-edit"></i>Edit
 									</a>
 									<span> | </span>
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_admin/<?php echo $key['username'] ?>" title="">
@@ -73,6 +75,5 @@
 			</div>
 			
 		</div>
-		
 	</body>
 </html>

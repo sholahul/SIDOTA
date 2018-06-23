@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<!-- Our Styles -->
-		<link href="<?=base_url('assets/vendor/own_admin.css')?>" rel="stylesheet">
+		<link href="<?=base_url('assets/vendor/styles_admin.css')?>" rel="stylesheet">
 		<link href="<?=base_url('assets/vendor/input.css')?>" rel="stylesheet">
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">

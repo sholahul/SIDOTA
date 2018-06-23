@@ -14,13 +14,8 @@ class M_dosen extends CI_Model {
  //        return $hasil;
  //    }    
 
-	//1.model show_profile
-	public function show_profile($data){
-	    $this->db->where('nip',$data['nip']);
-	    return $this->db->get('dosen');
-    }    
 
-    //2. Model update password
+    //3. Model update password
     public function update_pwd($user,$password){
 		$this->db->where('nip', $user);
         $data['nip'] = $user;
@@ -34,6 +29,12 @@ class M_dosen extends CI_Model {
         }
        
 	}
+
+	//2.model show_profile
+	public function show_profile($data){
+	    $this->db->where('nip',$data['user']);
+	    return $this->db->get('dosen');
+    }    
 
 
 }

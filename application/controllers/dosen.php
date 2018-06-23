@@ -18,6 +18,8 @@ class Dosen extends CI_Controller{
 
 	}
 
+
+	//1. Funtion go to the dashboard with parameter user login
 	public function dashboard($user = ''){
 		$data = array(
 			'user' => $user, 
@@ -28,8 +30,9 @@ class Dosen extends CI_Controller{
       	$this->load->view('dosen/footer');
 	}
 
-		public function ubahpassword($user = ''){
-		// echo $username;		
+
+	//2. Function Ubahpassword with parameter go to dosen ubahpassword view
+	public function ubahpassword($user = ''){		
 		$data = array(
 			'user' => $user, 
 		);
@@ -81,44 +84,46 @@ class Dosen extends CI_Controller{
       	$this->load->view('dosen/footer');
 	}
 
-	public function profile($username = ''){
+	public function profile($user = ''){
 		$data = array(
-			'username' => $username,
+			'user' => $user,
 		);
-		$x['data']=$this->m_dosen->show_profile();
+		$data['content']=$this->m_dosen->show_profile($data);
 
 		$this->load->view('dosen/header',$data);
-		$this->load->view('dosen/profile',$x);
+		$this->load->view('dosen/profil',$data);
       	$this->load->view('dosen/footer');
 	}
 
-	public function edit_profile($username = ''){
-		$data = array(
-			'username' => $username,
-		);
 
-		$this->load->view('dosen/header',$data);
-		$this->load->view('dosen/edit_profile',$data);
-      	$this->load->view('dosen/footer');
-	}
 
-	public function DokumentasiTA($username = ''){
-		$data = array(
-			'username' => $username,
-		);
+	// public function edit_profile($username = ''){
+	// 	$data = array(
+	// 		'username' => $username,
+	// 	);
 
-		$this->load->view('dosen/header',$data);
-		$this->load->view('dosen/DokumentasiTA',$data);
-      	$this->load->view('dosen/footer');
-	}
+	// 	$this->load->view('dosen/header',$data);
+	// 	$this->load->view('dosen/edit_profile',$data);
+ //      	$this->load->view('dosen/footer');
+	// }
 
-	public function viewTA($username = ''){
-		$data = array(
-			'username' => $username,
-		);
+	// public function DokumentasiTA($username = ''){
+	// 	$data = array(
+	// 		'username' => $username,
+	// 	);
 
-		$this->load->view('dosen/header',$data);
-		$this->load->view('dosen/viewTA',$data);
-      	$this->load->view('dosen/footer');
-	}
+	// 	$this->load->view('dosen/header',$data);
+	// 	$this->load->view('dosen/DokumentasiTA',$data);
+ //      	$this->load->view('dosen/footer');
+	// }
+
+	// public function viewTA($username = ''){
+	// 	$data = array(
+	// 		'username' => $username,
+	// 	);
+
+	// 	$this->load->view('dosen/header',$data);
+	// 	$this->load->view('dosen/viewTA',$data);
+ //      	$this->load->view('dosen/footer');
+	// }
 }
