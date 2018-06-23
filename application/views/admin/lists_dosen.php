@@ -26,7 +26,10 @@
 				<h2><i class="fa fa-user"> </i> Daftar Dosen </h2>
 				<hr>
 				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" >
-				<br><br>
+				
+				<div class="add">
+					<a style="text-decoration: none" href="<?php echo base_url()?>admin/add_dosen/<?php echo $user ?>"> <i class="fa fa-user-plus"></i> Add Account</a>
+				</div>
 				<div class="table-responsive tbs">
 					<table class="table table-bordered table-striped">
 						<thead>
@@ -59,20 +62,17 @@
 								<td><?php echo $key['email'] ?></td>
 								<td><?php echo $key['nohp'] ?></td>
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/ubah_dosen/<?php echo $key['nip'] ?>" title="">
-									<i class="fa fa-edit"></i>Edit
+									<a style="text-decoration: none"  title="Modify" href="<?php echo base_url()?>admin/ubah_dosen/<?php echo $key['nip'] ?>" title="">
+									<i class="fa fa-edit"></i>
 									</a>
 									<span> | </span>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_dosen/<?php echo $key['nip'] ?>" title="">
-									<i class="fa fa-trash-o"></i>Delete</a>
+									<a style="text-decoration: none"  title="Delete" href="<?php echo base_url()?>admin/action_delete_dosen/<?php echo $key['nip'] ?>" title="">
+									<i class="fa fa-trash-o"></i></a>
 								</td>
 							</tr>
 							<?php endforeach ?>
 						</tbody>
 					</table>
-					<div class="add">
-						<a style="text-decoration: none" href="<?php echo base_url()?>admin/add_dosen/<?php echo $user ?>"> <i class="fa fa-user-plus"></i> Add Account</a>
-					</div>
 				</div>
 				
 			</div>

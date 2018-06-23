@@ -41,9 +41,9 @@ class Dosen extends CI_Controller{
       	$this->load->view('dosen/footer');
 	}
 
-
+	//3. Action ubah password dari view ubah_password
 	public function action_ubahpassword($user = ''){
-		$pwd1 = $this->input->post('pwd1');
+		$pwd1 = $this->input->post('pwd1'); 
 		$pwd2 = $this->input->post('pwd2');
 
 		$data = array(
@@ -71,19 +71,9 @@ class Dosen extends CI_Controller{
 			
 			
 		}
-		// echo $data['username']."  ".$data['pwd1']."  ".$data['pwd2'];
 	}
 
-	public function verifikasi($username = ''){
-		$data = array(
-			'username' => $username,
-		);
-
-		$this->load->view('dosen/header',$data);
-		$this->load->view('dosen/verifikasi',$data);
-      	$this->load->view('dosen/footer');
-	}
-
+	//4. Funtion load profile
 	public function profile($user = ''){
 		$data = array(
 			'user' => $user,
@@ -95,35 +85,49 @@ class Dosen extends CI_Controller{
       	$this->load->view('dosen/footer');
 	}
 
+	//5. Function AKSI update profile dari view profile  with parameter
+	public function action_updateprofile($userv='')
+	{
+		$user = $userv;
+
+		$data['nama'] = $this->input->post('nama');
+        $data['tempat_lahir'] = $this->input->post('tempat_lahir');
+        $data['tanggal_lahir'] = $this->input->post('tanggal_lahir');
+        $data['jenis_kelamin'] = $this->input->post('jenis_kelamin');
+        $data['email'] = $this->input->post('email');
+        $data['nohp'] = $this->input->post('nohp');
+        $data['alamat'] = $this->input->post('alamat');
+        
+
+        // foreach ($data as $key){
+        // 	echo $key;
+        // }
+        if($this->m_dosen->update_profile($data,$user)){
+			echo '<script language="javascript">';
+			echo 'alert("Data Berhasil diubah")';
+			echo '</script>';
+			
+			$data['user'] = $user;
+
+			$data['content'] = $this->m_dosen->show_profile($data);
+			$this->load->view('dosen/header',$data);
+        	$this->load->view('dosen/profil',$data);
+      		$this->load->view('dosen/footer');
+			
+		}
+    } 
 
 
-	// public function edit_profile($username = ''){
+
+
+
+	// public function verifikasi($username = ''){
 	// 	$data = array(
 	// 		'username' => $username,
 	// 	);
 
 	// 	$this->load->view('dosen/header',$data);
-	// 	$this->load->view('dosen/edit_profile',$data);
- //      	$this->load->view('dosen/footer');
-	// }
-
-	// public function DokumentasiTA($username = ''){
-	// 	$data = array(
-	// 		'username' => $username,
-	// 	);
-
-	// 	$this->load->view('dosen/header',$data);
-	// 	$this->load->view('dosen/DokumentasiTA',$data);
- //      	$this->load->view('dosen/footer');
-	// }
-
-	// public function viewTA($username = ''){
-	// 	$data = array(
-	// 		'username' => $username,
-	// 	);
-
-	// 	$this->load->view('dosen/header',$data);
-	// 	$this->load->view('dosen/viewTA',$data);
+	// 	$this->load->view('dosen/verifikasi',$data);
  //      	$this->load->view('dosen/footer');
 	// }
 }

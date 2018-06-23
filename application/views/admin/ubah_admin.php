@@ -61,7 +61,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-4" >Address :</label>
 								<div class="col-sm-7">
-									<textarea name="alamat" maxlength="100" onkeyup="femail(this)"><?php echo $key->alamat ?></textarea>
+									<textarea name="alamat" maxlength="100" onkeyup="faddress(this)"><?php echo $key->alamat ?></textarea>
 								</div>
 							</div>
 							<div class="form-group">

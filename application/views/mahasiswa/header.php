@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Mahasiswa</title>
+        <title>Dosen</title>
+        <link rel="icon" href="<?=base_url('assets/img/icon.png')?>" type="image">
         <!-- Bootstrap template 3.3.7-->
         <link href="<?=base_url('assets/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -15,11 +16,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!-- Our Styles -->
-        <link href="<?=base_url('assets/vendor/styles_admin.css')?>" rel="stylesheet">
-        <script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
+        <link href="<?=base_url('assets/vendor/stylesadmin.css')?>" rel="stylesheet">
+        <script src="<?=base_url('assets/vendor/js_admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+        <link href="<?=base_url('assets/vendor/si.css')?>" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
     </head>
+    
     <body id="page-top">
         <nav class="navbar navbar-inverse" id="mainnav">
             <div class="container-fluid">
@@ -53,7 +56,7 @@
                                 <li><a href="<?php echo base_url()?>mahasiswa/ubahpassword/<?php echo $user?>" >
                                     <i class="fa fa-cog"></i>
                                 Ubah Password</a></li>
-                                <li><a href="#">
+                                <li><a href="<?php echo base_url()?>mahasiswa/profile/<?php echo $user?>">
                                     <i class="fa fa-user"></i>
                                 Profile</a></li>
                                 <hr>
@@ -73,18 +76,22 @@
             <br>
             <ul>
                 <li>
-                    <a href="<?php echo base_url();?>mahasiswa/dashboard/<?php echo $user ?>" class="w3-bar-item w3-button">
+                    <a href="<?php echo base_url();?>mahasiswa/dashboard/<?php echo $user ?>" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <i class="fa fa-home"> </i>
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url(); ?>mahasiswa/upload_ta/<?php echo $user ?>" class="w3-bar-item w3-button">
-                        <i class="fa fa-file-pdf-o"></i>
+                    <a href="<?php echo base_url(); ?>mahasiswa/upload_ta/<?php echo $user ?>" class="w3-bar-item w3-button" style="text-decoration:none;">
+                        <i class="fa fa-cloud-upload"></i>
                     Upload Dokumen TA</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url(); ?>mahasiswa/viewdokumen/<?php echo $user?>" class="w3-bar-item w3-button">
+                    <a href="<?php echo base_url(); ?>mahasiswa/upload_ta/<?php echo $user ?>" class="w3-bar-item w3-button" style="text-decoration:none;">
+                        <i class="fa fa-book"></i> Own Dokumen TA</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url(); ?>mahasiswa/viewdokumen/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <i class="fa fa-file-pdf-o"></i>
                     View Dokumentasi TA</a>
                 </li>

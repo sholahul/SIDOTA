@@ -18,7 +18,7 @@
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-	
+		
 	</head>
 	<body>
 		<div class="content" id="fullpage">
@@ -34,39 +34,34 @@
 								<input type="text" maxlength="15" onkeyup="fnohp(this)" class="form-control" id="pwd" placeholder="Enter Username" name="nim" required>
 							</div>
 						</div>
-
 						<div class="form-group">
-								<label class="control-label col-sm-4">NPPA :</label>
-								<div class="col-sm-7">
-									<select id="opt" name ="nppa">
-										<?php foreach ($dosen->result() as $key1): ?>
-											<option><?php echo $key1->nip ?></option>
-										<?php endforeach?>
-								     </select>
-								</div>
+							<label class="control-label col-sm-4">NPPA :</label>
+							<div class="col-sm-7">
+								<select id="opt" name ="nppa">
+									<?php foreach ($dosen->result() as $key1): ?>
+									<option><?php echo $key1->nip ?></option>
+									<?php endforeach?>
+								</select>
 							</div>
-
+						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="">Nama :</label>
 							<div class="col-sm-7">
-								<input type="text" maxlength="15" onkeyup="fchar(this)" class="form-control" id="pwd" name="nama" placeholder="Enter Name" required>
+								<input type="text" maxlength="40" onkeyup="fchar(this)" class="form-control" id="pwd" name="nama" placeholder="Enter Name" required>
 							</div>
 						</div>
-
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="password">Password :</label>
 							<div class="col-sm-7">
 								<input type="text" maxlength="15" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Password" name="password" required>
 							</div>
 						</div>
-
 						<div class="form-group">
-								<label class="control-label col-sm-4" for="password">Angkatan :</label>
-								<div class="col-sm-7">
-									<input type="year" maxlength="4" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Year" name="angkatan" required>
-								</div>
+							<label class="control-label col-sm-4" for="password">Angkatan :</label>
+							<div class="col-sm-7">
+								<input type="year" maxlength="4" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Year" name="angkatan" required>
 							</div>
-
+						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-4" >Tempat Lahir :</label>
 							<div class="col-sm-7">
@@ -79,42 +74,36 @@
 								<input type="text"  min="1945-08-17" max="3000-12-31"  class="form-control" id="pwd" placeholder="Enter Tanggal Lahir" name="tanggal_lahir"   onfocus="(this.type='date')" required>
 							</div>
 						</div>
-
 						<div class="form-group">
-								<label class="control-label col-sm-4" for="">Jenis Kelamin :</label>
-								<div class="col-sm-7">
-									<select name ="jenis_kelamin">
-								        <option>Laki-Laki</option>
-								        <option>Perempuan</option>
-								     </select>
-								</div>
+							<label class="control-label col-sm-4" for="">Jenis Kelamin :</label>
+							<div class="col-sm-7">
+								<select name ="jenis_kelamin">
+									<option>Laki-Laki</option>
+									<option>Perempuan</option>
+								</select>
 							</div>
-
+						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="email">Email :</label>
 							<div class="col-sm-7">
 								<input type="email" maxlength="40" onkeyup="femail(this)" required class="form-control" id="pwd" placeholder="Enter Email" name="email" required>
 							</div>
 						</div>
-
 						<div class="form-group">
 							<label class="control-label col-sm-4" >No HP :</label>
 							<div class="col-sm-7">
 								<input type="text" maxlength="15" onkeyup="fnohp(this)"  class="form-control"  placeholder="Enter No HP" name="nohp" required>
 							</div>
 						</div>
-
-
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="">Lokasi Kampus :</label>
 							<div class="col-sm-7">
 								<select name ="lokasi_kampus">
-							        <option>Inderalaya</option>
-							        <option>Palembang</option>
-							     </select>
+									<option>Inderalaya</option>
+									<option>Palembang</option>
+								</select>
 							</div>
 						</div>
-
 						<div class="form-group">
 							<label class="control-label col-sm-4" >Address :</label>
 							<div class="col-sm-7">

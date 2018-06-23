@@ -27,9 +27,6 @@ class Admin extends CI_Controller{
 			'user' => $user, 
 		);
 
-		//passing value to variabel global
-		// $this->username = $data['username'];
-		//echo $this->username;
 
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/dashboard',$data);
@@ -98,7 +95,6 @@ class Admin extends CI_Controller{
 	{
 		$user = $userv;
 
-		$data['username'] = $this->input->post('username');
         $data['tempat_lahir'] = $this->input->post('tempat_lahir');
         $data['tanggal_lahir'] = $this->input->post('tanggal_lahir');
         $data['email'] = $this->input->post('email');
@@ -113,8 +109,7 @@ class Admin extends CI_Controller{
 			echo 'alert("Data Berhasil diubah")';
 			echo '</script>';
 			
-			$data['user'] = $data['username'];
-			$this->user = $data['user'];
+			$data['user'] = $user;
 
 			$data['content'] = $this->m_admin->show_profile($data);
 			$this->load->view('admin/header',$data);
@@ -124,7 +119,7 @@ class Admin extends CI_Controller{
 		}
     } 
 
-	//5. Function load view menampilkan daftar admin list  with parameter
+	//6. Function load view menampilkan daftar admin list  with parameter
 	public function admin_list($user =''){
       	$data = array(
 			'user' => $user, 
@@ -139,7 +134,7 @@ class Admin extends CI_Controller{
  
 	}
 
-	//6. Function delete selected username from view list_admin
+	//7. Function delete selected username from view list_admin
 	public function action_delete_admin($usernames ='')
     {
         	$data['username'] = $usernames;
@@ -159,7 +154,7 @@ class Admin extends CI_Controller{
     }
 
 
-    //7. Function Show page insert admin from list_admin
+    //8. Function Show page insert admin from list_admin
     public function add_admin($user = ''){
 		$data = array(
 			'user' => $user, 
@@ -171,7 +166,7 @@ class Admin extends CI_Controller{
 
 	}
 
-	//8. Function insert to database admin 
+	//9. Function insert to database admin 
 	public function action_add_admin($user='')
 	{
 		//get input from view add_admin
@@ -227,7 +222,7 @@ class Admin extends CI_Controller{
 		}
 	}
 
-	// 9.  Function Show page ubah admin from list_admin selected variable username
+	//10.  Function Show page ubah admin from list_admin selected variable username
 	public function ubah_admin($username='')
 	{
 		$data = array(
@@ -244,7 +239,7 @@ class Admin extends CI_Controller{
       	$this->load->view('admin/footer'); 	
 	} 
 
-	//10. Function action ubah_admin from view ubah_admin get user now,not selected
+	//11. Function action ubah_admin from view ubah_admin get user now,not selected
 
 	public function action_ubah_admin($user='')
 	{
@@ -283,7 +278,7 @@ class Admin extends CI_Controller{
 
 	}
 
-	//11. Function load view menampilkan daftar DOSEN  list  with parameter
+	//12. Function load view menampilkan daftar DOSEN  list  with parameter
 	public function dosen_list($user =''){
       	$data = array(
 			'user' => $user, 
@@ -298,7 +293,7 @@ class Admin extends CI_Controller{
  
 	}
 
-	//12. Function delete dosen
+	//13. Function delete dosen
 	public function action_delete_dosen($nip ='')
     {
         $data['nip'] = $nip;
@@ -317,7 +312,7 @@ class Admin extends CI_Controller{
         
     }
 
-    //13. Function ubah dosen controller to view ubah_dosen.php
+    //14. Function ubah dosen controller to view ubah_dosen.php
     public function ubah_dosen($nip='')
 	{
 		$data = array(
@@ -333,7 +328,7 @@ class Admin extends CI_Controller{
       	$this->load->view('admin/footer'); 	
 	} 
 
-    //14. Function Action Ubah Dosen
+    //15. Function Action Ubah Dosen
     public function action_ubah_dosen($nip='')
 	{
 
@@ -375,7 +370,7 @@ class Admin extends CI_Controller{
 
 	}
 
-	//15. Function Show page insert dosen from list_dosen
+	//16. Function Show page insert dosen from list_dosen
     public function add_dosen($user = ''){
 		$data = array(
 			'user' => $user, 
@@ -387,7 +382,7 @@ class Admin extends CI_Controller{
 
 	}
 
-	//16. Function insert to database dosen 
+	//17. Function insert to database dosen 
 	public function action_add_dosen($user='')
 	{
 		//get input from view add_admin
@@ -443,7 +438,7 @@ class Admin extends CI_Controller{
 		}
 	}
 
-	//17. Function load view menampilkan daftar mahasiswa  list  with parameter
+	//18. Function load view menampilkan daftar mahasiswa  list  with parameter
 	public function mahasiswa_list($user =''){
       	$data = array(
 			'user' => $user, 
@@ -458,7 +453,7 @@ class Admin extends CI_Controller{
  
 	}
 
-	//18. Function delete mahasiswa
+	//19. Function delete mahasiswa
 	public function action_delete_mahasiswa($nim ='')
     {
         $data['nim'] = $nim;
@@ -477,7 +472,7 @@ class Admin extends CI_Controller{
         
     }
 
-    //19. ubah mahasiswa
+    //20. ubah mahasiswa
 
     public function ubah_mahasiswa($nim='')
 	{
@@ -502,7 +497,7 @@ class Admin extends CI_Controller{
 	} 
 
 
-	 //20. Function Action Ubah mahasiswa
+	 //21. Function Action Ubah mahasiswa
     public function action_ubah_mahasiswa($nim='')
 	{
 
@@ -546,7 +541,7 @@ class Admin extends CI_Controller{
 
 	}
 
-	//21. Function Show page insert dosen from list_dosen
+	//22. Function Show page insert dosen from list_dosen
     public function add_mahasiswa($user = ''){
 		$data = array(
 			'user' => $user, 
@@ -560,7 +555,7 @@ class Admin extends CI_Controller{
 
 	}
 
-	//22. Function insert to database mahasiswa 
+	//23. Function insert to database mahasiswa 
 	public function action_add_mahasiswa($user='')
 	{
 		//get input from view add_admin
@@ -620,6 +615,7 @@ class Admin extends CI_Controller{
 		}
 	}
 
+	//24. load dokumen list
 	public function dokumen_list($user =''){
       	$data = array(
 			'user' => $user, 
@@ -632,22 +628,7 @@ class Admin extends CI_Controller{
       	$this->load->view('admin/footer');
 	} 
 
-
-	// $data['username'] = $usernames;
-
- //        	$this->m_admin->delete_admin($data);
- //            //passing value from controller login variable global session
- //            //set username awal login bukan selected s
- //        	$data['user'] = $this->user;
- //            // passing value from model show_admin to variabel array data['content'] 
-
- //            $data['content'] = $this->m_admin->show_admin($data);
-
- //            $this->load->view('admin/header',$data);
- //            $this->load->view('admin/lists_admin',$data);
- //            $this->load->view('admin/footer');
-        
-
+	//25. Action delete dokuments
 	public function action_delete_dokumen($id=''){
 		$this->m_admin->delete_dokumen($id);
 		$data['user'] = $this->user;

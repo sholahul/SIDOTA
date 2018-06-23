@@ -25,19 +25,26 @@
                   <div class="w3-container">
                         <h2><i class="fa fa-address-book-o"> </i> Profile</h2>
                         <hr>
-                        <div class="container ubah">
+                        <div class="container ubah" syle="">
                               <?php foreach($content->result() as $key): ?>
-                                    <form onSubmit="return validate()" class="form-horizontal" method="post" action="<?php echo base_url(); ?>admin/action_updateprofile/<?php echo $user?>">
+                                    <form onSubmit="return validate()" class="form-horizontal" method="post" action="<?php echo base_url(); ?>dosen/action_updateprofile/<?php echo $user?>">
                                           <div class="form-group">
-                                                <label class="control-label col-sm-4" for="password">Username :</label>
+                                                <label class="control-label col-sm-4">NIP :</label>
                                                 <div class="col-sm-7">
-                                                      <input type="text" maxlength="15" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Username" name="username" value="<?php echo $key->nip ?>">
+                                                      <input type="text" maxlength="15" onkeyup="fnohp(this)" class="form-control" id="pwd" placeholder="Enter Username" name="nim" value="<?php echo $key->nip ?>" disabled>
                                                 </div>
                                           </div>
+                                           <div class="form-group">
+                                                <label class="control-label col-sm-4">Nama :</label>
+                                                <div class="col-sm-7">
+                                                      <input type="text" maxlength="40" onkeyup="fchar(this)" class="form-control" id="pwd" placeholder="Enter Username" name="nama" value="<?php echo $key->nama ?>">
+                                                </div>
+                                          </div>
+
                                           <div class="form-group">
                                                 <label class="control-label col-sm-4" >Tempat Lahir :</label>
                                                 <div class="col-sm-7">
-                                                      <input type="text" maxlength="15" onkeyup="filter(this)"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tempat_lahir"  value="<?php echo $key->tempat_lahir ?>">
+                                                      <input type="text" maxlength="15" onkeyup="fchar(this)"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tempat_lahir"  value="<?php echo $key->tempat_lahir ?>">
                                                 </div>
                                           </div>
                                           <div class="form-group">
@@ -46,17 +53,22 @@
                                                       <input type="text"  min="1945-08-17" max="3000-12-31"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tanggal_lahir"   onfocus="(this.type='date')"  value="<?php echo $key->tanggal_lahir ?>">
                                                 </div>
                                           </div>
+
+
+                                          <div class="form-group">
+                                                <label class="control-label col-sm-4" for="">Jenis Kelamin :</label>
+                                                <div class="col-sm-7">
+                                                      <select name ="jenis_kelamin" value="<?php echo $key->jenis_kelamin ?>" >
+                                                        <option>Laki-Laki</option>
+                                                        <option>Perempuan</option>
+                                                     </select>
+                                                </div>
+                                          </div>
+                                          
                                           <div class="form-group">
                                                 <label class="control-label col-sm-4" for="email">Email :</label>
                                                 <div class="col-sm-7">
                                                       <input type="email" maxlength="40" onkeyup="femail(this)" required class="form-control" id="pwd" placeholder="Enter Email" name="email" value="<?php echo $key->email ?>">
-                                                </div>
-                                          </div>
-
-                                          <div class="form-group">
-                                                <label class="control-label col-sm-4" >Address :</label>
-                                                <div class="col-sm-7">
-                                                      <textarea name="alamat" maxlength="100" onkeyup="femail(this)"><?php echo $key->alamat?></textarea>
                                                 </div>
                                           </div>
 
@@ -66,6 +78,15 @@
                                                       <input type="text" maxlength="15" onkeyup="fnohp(this)"  class="form-control"  placeholder="Enter No HP" name="nohp"  value="<?php echo $key->nohp ?>">
                                                 </div>
                                           </div>
+
+                                          <div class="form-group">
+                                                <label class="control-label col-sm-4" >Address :</label>
+                                                <div class="col-sm-7">
+                                                      <textarea name="alamat" maxlength="100" onkeyup="faddress(this)"><?php echo $key->alamat?></textarea>
+                                                </div>
+                                          </div>
+
+                                          
 
                                           <div class="form-group">
                                                 <div class="col-sm-offset-4 col-sm-10">

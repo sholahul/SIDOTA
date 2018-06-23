@@ -40,7 +40,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="password">Nama :</label>
 							<div class="col-sm-7">
-								<input type="text" maxlength="15" onkeyup="fchar(this)" class="form-control" id="pwd" placeholder="Enter Nama" name="nama" required>
+								<input type="text" maxlength="40" onkeyup="fchar(this)" class="form-control" id="pwd" placeholder="Enter Nama" name="nama" required>
 							</div>
 						</div>
 

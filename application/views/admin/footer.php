@@ -34,7 +34,15 @@
                     input.value = input.value.replace(hex,"");
                 }
                 function fchar(input){
-                    var hex = /[^a-z ]/gi;
+                    var hex = /[^a-z.A-Z ]/gi;
+                    input.value = input.value.replace(hex,"");
+                }
+                function fnama(input){
+                    var hex = /[^a-zA-Z. ]/gi;
+                    input.value = input.value.replace(hex,"");
+                }
+                function faddress(input){
+                    var hex = /[^a-z.0-9 ]/gi;
                     input.value = input.value.replace(hex,"");
                 }
                 

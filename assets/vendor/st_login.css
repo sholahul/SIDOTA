@@ -95,11 +95,20 @@ span.psw {
     }
 }
 
-.sel {
-    margin-top: 5px;
-   /*background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;*/
+.sel{
+   margin-top: 5px;
    height: 34px;
-   width: 212px;
+   width: 202px;
+   padding: 8px;
+   border-color: grey;
+   box-sizing: border-box;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   font-size: 12px;
+   background-position: 10px 10px;
+   background-repeat: no-repeat;
+   -webkit-transition: width 0.4s ease-in-out;
+   transition: width 0.4s ease-in-out;
 }
 
 

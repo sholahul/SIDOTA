@@ -51,7 +51,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="">Nama :</label>
 								<div class="col-sm-7">
-									<input type="text" maxlength="15" onkeyup="fchar(this)" class="form-control" id="pwd" name="nama" placeholder="Enter Name" required value="<?php echo $key->nama ?>">
+									<input type="text" maxlength="40" onkeyup="fchar(this)" class="form-control" id="pwd" name="nama" placeholder="Enter Name" required value="<?php echo $key->nama ?>">
 								</div>
 							</div>
 

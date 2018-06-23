@@ -31,13 +31,13 @@
 							<div class="form-group">
 								<label class="control-label col-sm-4" for="password">Username :</label>
 								<div class="col-sm-7">
-									<input type="text" maxlength="15" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Username" name="username" value="<?php echo $key->username ?>">
+									<input type="text" maxlength="15" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Username" name="username" value="<?php echo $key->username ?>" disabled>
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="control-label col-sm-4" >Tempat Lahir :</label>
 								<div class="col-sm-7">
-									<input type="text" maxlength="15" onkeyup="filter(this)"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tempat_lahir"  value="<?php echo $key->tempat_lahir ?>">
+									<input type="text" maxlength="15" onkeyup="fchar(this)"  class="form-control" id="pwd" placeholder="Enter Tempat Lahir" name="tempat_lahir"  value="<?php echo $key->tempat_lahir ?>">
 								</div>
 							</div>
 							<div class="form-group">
@@ -56,7 +56,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-4" >Address :</label>
 								<div class="col-sm-7">
-									<textarea name="alamat" maxlength="100" onkeyup="femail(this)"><?php echo $key->alamat?></textarea>
+									<textarea name="alamat" maxlength="100" onkeyup="faddress(this)"><?php echo $key->alamat?></textarea>
 								</div>
 							</div>
 

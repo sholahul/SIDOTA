@@ -15,7 +15,7 @@ class M_dosen extends CI_Model {
  //    }    
 
 
-    //3. Model update password
+    //1. Model update password
     public function update_pwd($user,$password){
 		$this->db->where('nip', $user);
         $data['nip'] = $user;
@@ -30,11 +30,21 @@ class M_dosen extends CI_Model {
        
 	}
 
-	//2.model show_profile
+	//2.model show_profile dosen selected
 	public function show_profile($data){
 	    $this->db->where('nip',$data['user']);
 	    return $this->db->get('dosen');
     }    
 
-
+    //3. Model update profile dosen
+    public function update_profile($data , $user){
+        //where username != user
+    	$this->db->where('nip', $user);
+    	if($this->db->update('dosen',$data)){
+        	return true;
+        }
+        else{
+        	return false;
+        }
+    }
 }

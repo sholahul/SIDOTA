@@ -26,7 +26,9 @@
 				<h2><i class="fa fa-github"> </i> Daftar Mahasiswa </h2>
 				<hr>
 				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" >
-				<br><br>
+				<div class="add">
+						<a style="text-decoration: none" href="<?php echo base_url()?>admin/add_mahasiswa/<?php echo $user ?>"> <i class="fa fa-user-plus"></i> Add Account</a>
+					</div>
 				<div class="table-responsive tbs">
 					<table class="table table-bordered table-striped" >
 						<thead>
@@ -65,20 +67,18 @@
 								
 								
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/ubah_mahasiswa/<?php echo $key['nim'] ?>" title="">
-									<i class="fa fa-edit"></i>Edit
+									<a style="text-decoration: none"  title="Modify" href="<?php echo base_url()?>admin/ubah_mahasiswa/<?php echo $key['nim'] ?>" title="">
+									<i class="fa fa-edit"></i>
 									</a>
-									
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_mahasiswa/<?php echo $key['nim'] ?>" title="">
-									<i class="fa fa-trash-o"></i>Delete</a>
+									<span> | </span>
+									<a style="text-decoration: none"  title="Delete" href="<?php echo base_url()?>admin/action_delete_mahasiswa/<?php echo $key['nim'] ?>" title="">
+									<i class="fa fa-trash-o"></i></a>
 								</td>
 							</tr>
 							<?php endforeach ?>
 						</tbody>
 					</table>
-					<div class="add">
-						<a style="text-decoration: none" href="<?php echo base_url()?>admin/add_mahasiswa/<?php echo $user ?>"> <i class="fa fa-user-plus"></i> Add Account</a>
-					</div>
+					
 				</div>
 				
 			</div>

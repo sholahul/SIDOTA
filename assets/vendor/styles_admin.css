@@ -121,17 +121,17 @@ body{
     background: #efefef;
     width: 500px;
     padding: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 25%;
 }
 
 
 .tbs{
     background: #efefef;
     width: 100%;
-    height: 70vh;
-    padding: 15px;
-    margin-bottom: 100px;
-    overflow-x:auto;
+    height: 100%;
+    padding: 15px; 
+    margin-bottom: 28%;
+    overflow:auto;
 
 }
 
@@ -144,7 +144,8 @@ body{
 }
 
 table{
-    width: 100%;
+    width: 80%;
+
 }
 
 a{
@@ -153,5 +154,9 @@ a{
 
 .add{
     padding : 8px;
+    text-align: right;
 }
 
+label{
+    text-align: left;
+}

@@ -52,7 +52,7 @@
 								<td><?php echo $key['verifikasi'] ?></td>
 								<td>
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_dokumen/<?php echo $key['id'] ?>" title="">
-									<i class="fa fa-trash-o"></i>Delete</a>
+									<i class="fa fa-trash-o"  title="Delete"></i></a>
 								</td>
 							</tr>
 							<?php endforeach ?>

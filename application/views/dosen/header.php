@@ -19,6 +19,7 @@
         <link href="<?=base_url('assets/vendor/stylesadmin.css')?>" rel="stylesheet">
         <script src="<?=base_url('assets/vendor/js_admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+        <link href="<?=base_url('assets/vendor/si.css')?>" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
     </head>
     
@@ -73,25 +74,22 @@
             <br>
             <ul>
                 <li>
-                    <a href="<?php echo base_url();?>dosen/dashboard/<?php echo $user?>" class="w3-bar-item w3-button">
+                    <a href="<?php echo base_url();?>dosen/dashboard/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <i class="fa fa-home"> </i>
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>dosen/verifikasi/<?php echo $user?>" class="w3-bar-item w3-button">
-                        <i class="fa fa-users"> </i>
-                    Verifikasi DokumenTA </a>
+                    <a href="<?php echo base_url();?>dosen/verifikasi/<?php echo $user?>" class="w3-bar-item w3-button"style="text-decoration:none;">
+                        <i class="fa fa-users"> </i> Verifikasi DokumenTA </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>dosen/DokumentasiTA/<?php echo $user?>" class="w3-bar-item w3-button">
-                        <span class="glyphicon glyphicon-th-list"></span>
-                    Dokumentasi TA</a>
+                    <a href="<?php echo base_url();?>dosen/verifikasi/<?php echo $user?>" class="w3-bar-item w3-button"style="text-decoration:none;">
+                        <i class="fa fa-graduation-cap"> </i> TA Mahasiswa</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>dosen/viewTA/<?php echo $user?>" class="w3-bar-item w3-button">
-                        <i class="fa fa-file-pdf-o"></i>
-                    View Dokumentasi TA</a>
+                    <a href="<?php echo base_url();?>dosen/viewTA/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
+                        <i class="fa fa-file-pdf-o"></i> View Dokumentasi TA</a>
                 </li>
             </ul>
         </div>
