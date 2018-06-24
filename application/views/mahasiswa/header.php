@@ -81,17 +81,15 @@
                         Dashboard
                     </a>
                 </li>
+
                 <li>
                     <a href="<?php echo base_url(); ?>mahasiswa/upload_ta/<?php echo $user ?>" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <i class="fa fa-cloud-upload"></i>
                     Upload Dokumen TA</a>
                 </li>
+                
                 <li>
-                    <a href="<?php echo base_url(); ?>mahasiswa/upload_ta/<?php echo $user ?>" class="w3-bar-item w3-button" style="text-decoration:none;">
-                        <i class="fa fa-book"></i> Own Dokumen TA</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url(); ?>mahasiswa/viewdokumen/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
+                    <a href="<?php echo base_url(); ?>mahasiswa/show_dokumen/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <i class="fa fa-file-pdf-o"></i>
                     View Dokumentasi TA</a>
                 </li>

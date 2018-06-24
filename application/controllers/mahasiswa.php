@@ -10,7 +10,9 @@ class Mahasiswa extends CI_Controller{
 		parent::__construct();
 		//load model
 		$this->load->model('m_mahasiswa');
+		$this->load->model('m_dokumen');
 		$this->load->model('m_admin');
+
 		$this->user = $this->session->userdata('user');
 
 		//echo $data2['username'];
@@ -122,6 +124,21 @@ class Mahasiswa extends CI_Controller{
 		}
     } 
 
+     //6. Function show_all dokumen
+    public function show_dokumen($user='')
+	{
+		$data = array(
+			'user' => $user, 
+		);
+		
+		$data['content'] = $this->m_dokumen->show_dokumen_verified();
+		
+		$this->load->view('mahasiswa/header',$data);
+        $this->load->view('mahasiswa/doc',$data);
+      	$this->load->view('mahasiswa/footer');
+	}
+
+	//
     public function upload_ta($user = '') {
 		$data = array(
 			'user' => $user,
@@ -136,26 +153,7 @@ class Mahasiswa extends CI_Controller{
 
 
 
-	// public function viewdokumen($username = '') {
-	// 	$data = array(
-	// 		'username' => $username,
-	// 	);
-	// 	$this->load->view('mahasiswa/header',$data);
- //        $this->load->view('mahasiswa/viewdokumen',$data);
- //      	$this->load->view('mahasiswa/footer');
-	// }
-
 	
-
-	// public function detail_ta($username = '') {
-	// 	$data = array(
-	// 		'username' => $username,
-	// 	);
-
-	// 	$this->load->view('mahasiswa/header',$data);
- //        $this->load->view('mahasiswa/detail_ta',$data);
- //      	$this->load->view('mahasiswa/footer');
-	// }
 }
 
 /* End of file mhs.php */
