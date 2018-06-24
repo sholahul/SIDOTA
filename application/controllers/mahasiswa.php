@@ -206,7 +206,7 @@ class Mahasiswa extends CI_Controller{
 
 	public function detail_ta($filename = '')
 	{
-<<<<<<< HEAD
+
 		$data['publish_data'] = date('Y-m-d');
 		$data['nimmhs'] = $this->input->post('nim');
 		$data['nppa'] = $this->input->post('nppa');
@@ -237,12 +237,12 @@ class Mahasiswa extends CI_Controller{
 		else{
 			$data = array('upload_data' => $this->upload->data() );
 		}
-=======
+
 		$data['content'] = $this->m_dokumen->get_detail_ta($filename);
 		$this->load->view('mahasiswa/header', $data);
 		$this->load->view('mahasiswa/detail_ta', $data);
 		$this->load->view('mahasiswa/footer');	
->>>>>>> a53155d2c681798979a583b006f0ac65e81170f8
+
 	}
 	
 }

@@ -12,7 +12,10 @@ class M_dokumen extends CI_Model {
 	//1. Show All dokumen TA
     public function show_dokumen()
     {
-        return $this->db->get('dokumenta');
+        $this->db->select('*');
+        $this->db->from('dokumenta');
+        $this->db->join('mahasiswa', 'mahasiswa.nppa = dokumenta.nppa');
+        return $this->db->get();
     }
 
     //2. Action delete dokumen ta
@@ -24,10 +27,21 @@ class M_dokumen extends CI_Model {
     //3. show dokumen ta verified
     public function show_dokumen_verified()
     {
-        $this->db->select('publish_date, judulta, nama, nimmhs, path');
+        $this->db->select('*');
         $this->db->from('dokumenta');
         $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs'); 
         $this->db->where('verifikasi', '1');
+        return $this->db->get();
+    }
+
+    public function show_dokumen_verified_mhs($user)
+    {
+        $this->db->select('*');
+        $this->db->from('dokumenta');
+        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs'); 
+        $this->db->where('verifikasi', '1');
+        $this->db->where('dokumenta.nppa', $user);
+
         return $this->db->get();
     }
 

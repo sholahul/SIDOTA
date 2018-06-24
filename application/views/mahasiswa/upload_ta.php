@@ -26,7 +26,7 @@
 				<hr>
 				<!-- 	<?php echo $username."da" ?> -->
 				<div class="container">
-					<form class="form-horizontal" method="post" action="<?php echo base_url() ?>mahasiswa/action_upload/<?php echo $user?>" enctype="multipart/form-data">
+					<form class="form-horizontal" method="post" action="<?php echo base_url() ?>mahasiswa/action_upload/" enctype="multipart/form-data">
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="nim">NIM :</label>
 							<div class="col-sm-8">
@@ -55,32 +55,24 @@
 								<input type="text" class="form-control" name="judulta" placeholder="Enter Judul TA">
 							</div>
 						</div>
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="password">Angkatan :</label>
-							<div class="col-sm-2">
-								<input type="year" maxlength="4" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Year" name="angkatan" required disabled>
-							</div>
-						</div>
-						
+												
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="abstrak">Abstrak :</label>
 							<div class="col-sm-8">
 								<textarea class="form-control" name="abstrak" id="abstrak" cols="120" rows="6" placeholder="Abstrak"></textarea>
 							</div>
-<<<<<<< HEAD
+
 						</div>
-						<div class="form-group">
+		<!-- 				<div class="form-group">
 							<label class="control-label col-sm-2" for="uploadTA">Upload TA (.pdf) :</label>
 							<div class="col-sm-8">
 								<input type="file" name="userFile" accept="application/pdf" required>
-=======
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
-							<label class="control-label col-sm-2" for="file_ta" accept="application/pdf">Upload TA :</label>
+							<label class="control-label col-sm-2" for="file_ta">Upload TA :</label>
 							<div class="col-sm-8">
-								<input type="file" name="file_ta">
->>>>>>> a53155d2c681798979a583b006f0ac65e81170f8
+								<input type="file" name="file_ta " accept="application/pdf">
 							</div>
 						</div>
 						<div class="form-group">

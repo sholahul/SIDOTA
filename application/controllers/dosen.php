@@ -10,7 +10,7 @@ class Dosen extends CI_Controller{
 
 		$this->load->model('m_dosen');
 		$this->load->model('m_dokumen');
-		$username = $this->session->userdata('username');
+		$username = $this->session->userdata('user');
 				
 	}
 
@@ -132,6 +132,17 @@ class Dosen extends CI_Controller{
       	$this->load->view('dosen/footer');
 	}
 
+	public function show_list($user=''){
+		$data = array(
+			'user' => $user, 
+		);
+
+		$data['content'] = $this->m_dokumen->show_dokumen_verified_mhs($user);
+		$this->load->view('dosen/header',$data);
+        $this->load->view('dosen/lists_dokumen',$data);
+      	$this->load->view('dosen/footer');	
+	}
+
 
 	//7. verifikasi dokumentasi mahasiswa
 	public function verifikasi($user = ''){
@@ -175,7 +186,6 @@ class Dosen extends CI_Controller{
 		
 		$this->m_dokumen->delete_dokumen($id);
 		$data['join'] = $this->m_dokumen->join_mhs_dosen($data);
-
 
 		$this->load->view('dosen/header',$data);
 		$this->load->view('dosen/verifikasi',$data);
