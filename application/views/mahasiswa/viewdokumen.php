@@ -36,49 +36,21 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th onclick="sortTable(0)">Tahun</th>
+                            <th onclick="sortTable(0)">Tanggal Terbit</th>
                             <th onclick="sortTable(1)">Judul</th>
                             <th onclick="sortTable(2)">Penulis</th>
                             <th onclick="sortTable(3)">NIM</th>
                         </tr>
                         </thead>
                         <tbody id="tblDokumen">
-                        <tr>
-                            <td>2014</td>
-                            <td><a href="<?php echo base_url() ?>mahasiswa/detail_ta/09021334244442">Securing Visual Cryptographic Shares using Public Key Encryption</a></td>
-                            <td>Kulvinder Kaur</td>
-                            <td>09021334244442</td>
-                        </tr>
-                        <tr>
-                            <td>2018</td>
-                            <td><a href="#">Rancang Bangun Aplikasi Augemented Reality Masked Base Tracking Pencarian Lokasi Rumah Sakit Terdekat untuk Korban Kecelakaan Lalu Lintas Berbasis Android</a></td>
-                            <td>Agusti Kurniawan</td>
-                            <td>09021281520117</td>
-                        </tr>
-                        <tr>
-                            <td>2013</td>
-                            <td><a href="#">Evaluasi Kinerja Kelola Menggunakan Framework COBIT 5.0 Terhadap Penerapan Sistem e-KTP</a></td>
-                            <td>Sholahul Fajri</td>
-                            <td>09090902213452</td>
-                        </tr>
-                        <tr>
-                            <td>2014</td>
-                            <td><a href="#">Penerapan Location Based Service (LBS) Pemanggil Darurat Pada Situasi Kebakaran Berbasis Android</a></td>
-                            <td>Desta Riskiandi</td>
-                            <td>09021321442332</td>
-                        </tr>
-                        <tr>
-                            <td>2015</td>
-                            <td><a href="#">Rancang Bangun Sistem Informasi Pengelolaan Administrasi Tugas Akhir dan Kerja Praktek Berbasis XMLHTTP</a></td>
-                            <td>M. Farhan Evrizal</td>
-                            <td>09202142321321</td>
-                        </tr>
-                        <tr>
-                            <td>2013</td>
-                            <td><a href="#">Analisis Penerapan Interaksi Manusia dan Komputer pada Website Unit Pelaksana Teknis Latihan Kerja (UPT-LK) Menggunakan Metode User Center Design (UCD)</a></td>
-                            <td>Juanda Fahrizal</td>
-                            <td>09031192141231</td>
-                        </tr>
+                        <?php foreach ($content->result() as $key) : ?>
+                            <tr>
+                                <td><?=$key->publish_date?></td>
+                                <td><a href="<?= base_url() ?>mahasiswa/detail_ta/<?= $key->path ?>"><?=$key->judulta?></a></td>
+                                <td><?=$key->nama?></td>
+                                <td><?=$key->nimmhs?></td>
+                            </tr>
+                        <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>

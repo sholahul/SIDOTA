@@ -25,14 +25,13 @@
 				<hr>		
 			<!-- 	<?php echo $username."da" ?> -->
 				<div class="container">
-					<form class="form-horizontal" method="post" action="<?php echo base_url() ?>mahasiswa/action_upload/<?php echo $user?>">
+					<form class="form-horizontal" method="post" action="<?php echo base_url() ?>mahasiswa/action_upload/<?php echo $user?>" enctype="multipart/form-data">
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="nim">NIM :</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="nim" value=" <?php echo $user ?>" disabled>
+								<input type="text" class="form-control" id="nim" name="nim" value="<?php echo $user ?>" readonly>
 							</div>
 						</div>
-						
 						<div class="form-group">
 							<label class="control-label col-sm-2">Nip Pembimbing TA :</label>
 							<div class="col-sm-7">
@@ -66,9 +65,9 @@
                         </div>
 
                         <div class="form-group">
-							<label class="control-label col-sm-2" for="uploadTA" accept="application/pdf">Upload TA :</label>
+							<label class="control-label col-sm-2" for="file_ta" accept="application/pdf">Upload TA :</label>
 							<div class="col-sm-8">
-								<input type="file" name="uploadTA">
+								<input type="file" name="file_ta">
 							</div>
 						</div>
 

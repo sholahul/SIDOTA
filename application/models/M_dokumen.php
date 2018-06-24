@@ -24,8 +24,11 @@ class M_dokumen extends CI_Model {
     //3. show dokumen ta verified
     public function show_dokumen_verified()
     {
+        $this->db->select('publish_date, judulta, nama, nimmhs, path');
+        $this->db->from('dokumenta');
+        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs'); 
         $this->db->where('verifikasi', '1');
-        return $this->db->get('dokumenta');
+        return $this->db->get();
     }
 
     //4. download pdf file from sql
@@ -75,7 +78,28 @@ class M_dokumen extends CI_Model {
         return $this->db->get('dokumenta');
     }
 
+    public function upload_ta($dokumen)
+    {
+        $this->db->set('publish_date', 'NOW()', FALSE);
+        $this->db->set('nimmhs', $dokumen['nim']);
+        $this->db->set('nppa', $dokumen['nppa']);
+        $this->db->set('judulta', $dokumen['judulta']);
+        $this->db->set('abstrak', $dokumen['abstrak']);
+        $this->db->set('path', $dokumen['file_ta']);
+        $this->db->set('verifikasi', 0);
+        $this->db->insert('dokumenta');  
+    }
 
+    public function get_detail_ta($filename)
+    {
+        $this->db->select('mahasiswa.nama, nimmhs, dosen.nama, judulta, publish_date, abstrak, path');
+        $this->db->from('dokumenta');
+        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs');
+        $this->db->join('dosen', 'dosen.nip = dokumenta.nppa');
+        $this->db->where('path', $filename);
+        return $this->db->get();
+        ;
+    }
 }
 
 /* End of file m_dokumen.php */
