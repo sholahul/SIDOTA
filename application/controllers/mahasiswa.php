@@ -138,6 +138,19 @@ class Mahasiswa extends CI_Controller{
       	$this->load->view('mahasiswa/footer');
 	}
 
+	//7. own ta
+	public function own_ta($user=''){
+		$data = array(
+			'user' => $user, 
+		);
+
+		$data['content'] = $this->m_dokumen->own_ta($user);
+		$this->load->view('mahasiswa/header',$data);
+        $this->load->view('mahasiswa/own_dokumen',$data);
+      	$this->load->view('mahasiswa/footer');
+
+	}
+
 	//
     public function upload_ta($user = '') {
 		$data = array(

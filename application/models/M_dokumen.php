@@ -69,6 +69,12 @@ class M_dokumen extends CI_Model {
         }
     }
 
+    //8. show own dokumen ta mahasiswa
+    public  function own_ta($user){    
+        $this->db->where('nimmhs', $user);
+        return $this->db->get('dokumenta');
+    }
+
 
 }
 
