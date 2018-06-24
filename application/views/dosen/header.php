@@ -84,11 +84,11 @@
                         <i class="fa fa-users"> </i> Verifikasi DokumenTA </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>dosen/verifikasi/<?php echo $user?>" class="w3-bar-item w3-button"style="text-decoration:none;">
+                    <a href="<?php echo base_url();?>dosen/show_list/<?php echo $user?>" class="w3-bar-item w3-button"style="text-decoration:none;">
                         <i class="fa fa-graduation-cap"> </i> TA Mahasiswa</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>dosen/viewTA/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
+                    <a href="<?php echo base_url();?>dosen/show_dokumen/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <i class="fa fa-file-pdf-o"></i> View Dokumentasi TA</a>
                 </li>
             </ul>

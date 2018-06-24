@@ -201,31 +201,6 @@ class M_admin extends CI_Model {
         $this->db->insert('mahasiswa',$data); //insert data
     }
 
-    //24. Show All dokumen TA
-    public function show_dokumen()
-    {
-        return $this->db->get('dokumenta');
-    }
-
-    //25. Action delete dokumen ta
-    public function delete_dokumen($id){
-        $this->db->where('id', $id);
-        $this->db->delete('dokumenta');
-    }
-
-    //26. show dokumen ta verified
-    public function show_dokumen_verified()
-    {
-        $this->db->where('verifikasi', '1');
-        return $this->db->get('dokumenta');
-    }
-
-    //27. download pdf file from sql
-    public function download($id){
-        $this->db->where('id', $id);
-        return $this->db->get('dokumenta');  
-
-    }
 }
 /* End of file m_admin.php */
 /* Location: ./application/models/m_admin.php */

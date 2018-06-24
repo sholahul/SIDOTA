@@ -47,4 +47,7 @@ class M_dosen extends CI_Model {
         	return false;
         }
     }
+
+    //
+    
 }

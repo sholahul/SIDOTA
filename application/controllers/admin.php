@@ -11,6 +11,7 @@ class Admin extends CI_Controller{
 		parent::__construct();
 		//load model
 		$this->load->model('m_admin');
+		$this->load->model('m_dokumen');
 		$this->user = $this->session->userdata('user');
 
 		// echo "hellow ".$this->username;
@@ -621,7 +622,7 @@ class Admin extends CI_Controller{
 			'user' => $user, 
 		);
 		
-		$data['content'] = $this->m_admin->show_dokumen();
+		$data['content'] = $this->m_dokumen->show_dokumen();
 		
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/lists_dokumen',$data);
@@ -630,10 +631,10 @@ class Admin extends CI_Controller{
 
 	//25. Action delete dokuments
 	public function action_delete_dokumen($id=''){
-		$this->m_admin->delete_dokumen($id);
+		$this->m_dokumen->delete_dokumen($id);
 		$data['user'] = $this->user;
 
-		$data['content'] = $this->m_admin->show_dokumen();
+		$data['content'] = $this->m_dokumen->show_dokumen();
 		
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/lists_dokumen',$data);
@@ -646,7 +647,7 @@ class Admin extends CI_Controller{
 			'user' => $user, 
 		);
 		
-		$data['content'] = $this->m_admin->show_dokumen_verified();
+		$data['content'] = $this->m_dokumen->show_dokumen_verified();
 		
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/doc',$data);
@@ -655,12 +656,10 @@ class Admin extends CI_Controller{
 
 	public function download($id='')
 	{
-		$data['content'] = $this->m_admin->download($id);
+		$data['content'] = $this->m_dokumen->download($id);
 
 		$this->load->view('admin/blank',$data);
  	}
-
-
 
 
 

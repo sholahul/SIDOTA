@@ -9,6 +9,7 @@ class Dosen extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('m_dosen');
+		$this->load->model('m_dokumen');
 		$username = $this->session->userdata('username');
 				
 	}
@@ -117,17 +118,53 @@ class Dosen extends CI_Controller{
 		}
     } 
 
+    //6. Function show_all dokumen
+    public function show_dokumen($user='')
+	{
+		$data = array(
+			'user' => $user, 
+		);
+		
+		$data['content'] = $this->m_dokumen->show_dokumen_verified();
+		
+		$this->load->view('dosen/header',$data);
+        $this->load->view('dosen/doc',$data);
+      	$this->load->view('dosen/footer');
+	}
 
 
+	//7. verifikasi dokumentasi mahasiswa
+	public function verifikasi($user = ''){
+		$data = array(
+			'user' => $user,
+			'status' => 0
+		);
+		
+		// $data['content'] = $this->m_dokumen->show_dokumen_dosen_verified($data);
+		$data['join'] = $this->m_dokumen->join_mhs_dosen($data);
+
+		$this->load->view('dosen/header',$data);
+		$this->load->view('dosen/verifikasi',$data);
+      	$this->load->view('dosen/footer');
+	}
+
+	//8. Action accept dokumen(
+	public function action_acc_dokumen($user='')
+	{
+		$this->m_dokumen->action_acc($user);
 
 
-	// public function verifikasi($username = ''){
-	// 	$data = array(
-	// 		'username' => $username,
-	// 	);
+		$data = array(
+			'user' => $user,
+			'status' => 0
+		);
+		
 
-	// 	$this->load->view('dosen/header',$data);
-	// 	$this->load->view('dosen/verifikasi',$data);
- //      	$this->load->view('dosen/footer');
-	// }
+		$data['join'] = $this->m_dokumen->join_mhs_dosen($data);
+
+		$this->load->view('dosen/header',$data);
+		$this->load->view('dosen/verifikasi',$data);
+      	$this->load->view('dosen/footer');
+	}
+
 }
