@@ -63,7 +63,7 @@
 
 									<span> | </span>
 
-									<a style="text-decoration: none" href="<?php echo base_url()?>dosen/action_acc_dokumen/<?php echo $key['id'] ?>" title="">
+									<a style="text-decoration: none" href="<?php echo base_url()?>dosen/action_acc_dokumen/<?php echo $user ?>" title="">
 									<i class="fa fa-check-square-o"  title="Accept"></i>
 									</a>
 

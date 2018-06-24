@@ -152,19 +152,35 @@ class Dosen extends CI_Controller{
 	public function action_acc_dokumen($user='')
 	{
 		$this->m_dokumen->action_acc($user);
-
-
 		$data = array(
 			'user' => $user,
 			'status' => 0
-		);
-		
+		);	
 
 		$data['join'] = $this->m_dokumen->join_mhs_dosen($data);
+
 
 		$this->load->view('dosen/header',$data);
 		$this->load->view('dosen/verifikasi',$data);
       	$this->load->view('dosen/footer');
+	}
+
+	//9. Action delete dokumen
+	public function action_delete_dokumen($id="")
+	{
+		$data = array(
+			'user' => $this->user,
+			'status' => 0
+		);
+		
+		$this->m_dokumen->delete_dokumen($id);
+		$data['join'] = $this->m_dokumen->join_mhs_dosen($data);
+
+
+		$this->load->view('dosen/header',$data);
+		$this->load->view('dosen/verifikasi',$data);
+      	$this->load->view('dosen/footer');
+
 	}
 
 }

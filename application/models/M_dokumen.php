@@ -37,6 +37,7 @@ class M_dokumen extends CI_Model {
 
     //5. show dokumen mahasiswa untuk dosen verifikasi
     public  function show_dokumen_dosen_verified($data){
+        
         $this->db->where('nppa', $data['user']);
         $this->db->where('verifikasi',$data['status']);
         return $this->db->get('dokumenta');

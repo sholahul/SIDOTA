@@ -31,8 +31,8 @@
 						<thead>
 							<tr>
 								<th style="width: 200px;" onclick="sortTable(0)">Publish Date</th>
-								<th style="width: 400px;" onclick="sortTable(5)">Judul Tugas Akhir</th>
-								<th style="width: 500px;" onclick="sortTable(6)">Abstrak</th>
+								<th style="width: 300px;" onclick="sortTable(5)">Judul Tugas Akhir</th>
+								<th style="width: 300px;" onclick="sortTable(6)">Abstrak</th>
 								<th style="width: 100px;" onclick="sortTable(7)">Verifikasi</th>
 								<th style="width: 300px;">Action</th>
 							</tr>
@@ -52,13 +52,11 @@
 								?></td>
 								<td>
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/view_detail/<?php echo $key['id'] ?>" title="">
-									<i class="fa fa-file-pdf-o"  title="Delete"></i>
-									View Detail
+									<i class="fa fa-file-pdf-o"  title="view"></i>
 									</a><br><br>
 									<!-- <span>  |  </span> -->
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/download/<?php echo $key['id'] ?>" title="">
-									<i class="fa fa-download"  title="Delete"></i>
-									Download
+									<i class="fa fa-download"  title="download"></i>
 									</a>
 								</td>								
 							</tr>

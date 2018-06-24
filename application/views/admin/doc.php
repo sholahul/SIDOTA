@@ -52,13 +52,11 @@
 								?></td>
 								<td>
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/view_detail/<?php echo $key['id'] ?>" title="">
-									<i class="fa fa-file-pdf-o"  title="Delete"></i>
-									View Detail
+									<i class="fa fa-file-pdf-o"  title="View"></i>
 									</a><br><br>
 									<!-- <span>  |  </span> -->
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/download/<?php echo $key['id'] ?>" title="">
 									<i class="fa fa-download"  title="Delete"></i>
-									Download
 									</a>
 								</td>								
 							</tr>
