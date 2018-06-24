@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Dosen</title>
+        <title>Mahasiswa</title>
         <link rel="icon" href="<?=base_url('assets/img/icon.png')?>" type="image">
         <!-- Bootstrap template 3.3.7-->
         <link href="<?=base_url('assets/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">

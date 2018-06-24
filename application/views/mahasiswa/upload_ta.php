@@ -25,7 +25,7 @@
 				<hr>		
 			<!-- 	<?php echo $username."da" ?> -->
 				<div class="container">
-					<form class="form-horizontal" method="post" action="">
+					<form class="form-horizontal" method="post" action="<?php echo base_url() ?>mahasiswa/action_upload/<?php echo $user?>">
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="nim">NIM :</label>
 							<div class="col-sm-8">
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="form-group">
-							<label class="control-label col-sm-2" for="uploadTA">Upload TA :</label>
+							<label class="control-label col-sm-2" for="uploadTA" accept="application/pdf">Upload TA :</label>
 							<div class="col-sm-8">
 								<input type="file" name="uploadTA">
 							</div>

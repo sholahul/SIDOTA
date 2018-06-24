@@ -164,8 +164,11 @@ class Mahasiswa extends CI_Controller{
       	$this->load->view('mahasiswa/footer');
 	}
 
-
-
+	public function action_upload($id = '')
+	{
+		echo "hello world";
+		# code...
+	}
 	
 }
 
