@@ -29,49 +29,36 @@
                 
                 <div class="container">
                     <table class="table table-responsive table-condensed">
+                    <?php foreach($content->result() as $key): ?>
                         <tr>
                             <th class="col-xs-2">Nama</th>
                             <td>:</td>
-                            <td>Kulvinder Kaur</td>
+                            <td><?=$key->mahasiswa.nama?></td>
                         </tr>
                         <tr>
                             <th>NIM</th>
                             <td>:</td>
-                            <td>09021334244442</td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <th>Pembimbing 1</th>
+                            <th>Pembimbing Akademik</th>
                             <td>:</td>
-                            <td>Fajri</td>
-                        </tr>
-                        <tr>
-                            <th>Pembimbing 2</th>
-                            <td>:</td>
-                            <td>Rizqi</td>
+                            <td><?=$key->dosen.nama?></td>
                         </tr>
                         <tr>
                             <th >Judul</th>
                             <td>:</td>
-                            <td>Securing Visual Cryptographic Shares using Public Key Encryption</td>
+                            <td><?=$key->judulta?></td>
+                        </tr>
+                        <tr>
+                            <th >Tahun Terbit</th>
+                            <td>:</td>
+                            <td><?=$key->publish_date?></td>
                         </tr>
                         <tr>
                             <th >Abstrak</th>
                             <td>:</td>
-                            <td>The Visual Cryptography Scheme is a secure method
-that encrypts a secret document or image by breaking it into
-shares. A distinctive property of Visual Cryptography Scheme is
-that one can visually decode the secret image by superimposing
-shares without computation. By taking the advantage of this
-property, third person can easily retrieve the secret image if shares
-are passing in sequence over the network. The project presents an
-approach for encrypting visual cryptographically generated image
-shares using Public Key Encryption. RSA algorithm is used for
-providing the double security of secret document. Thus secret share
-are not available in their actual form for any alteration by the
-adversaries who try to create fake shares. The scheme provides
-more secure secret shares that are robust against a number of
-attacks & the system provides a strong security for the handwritten
-text, images and printed documents over the public network.</td>
+                            <td><?=$key->abstrak?></td>
                         </tr> 
                         <tr>
                             <th>Download TA</th>

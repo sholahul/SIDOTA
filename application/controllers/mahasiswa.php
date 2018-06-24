@@ -13,6 +13,8 @@ class Mahasiswa extends CI_Controller{
 		$this->load->model('m_dokumen');
 		$this->load->model('m_admin');
 
+		$this->load->helper('url');
+		
 		$this->user = $this->session->userdata('user');
 
 		//echo $data2['username'];
@@ -63,9 +65,9 @@ class Mahasiswa extends CI_Controller{
 			echo 'alert("password not match")';
 			echo '</script>';
 
-			$this->load->view('dosen/header',$data);
-       		$this->load->view('dosen/ubahpassword',$data);
-      		$this->load->view('dosen/footer');
+			$this->load->view('mahasiswa/header',$data);
+       		$this->load->view('mahasiswa/ubahpassword',$data);
+      		$this->load->view('mahasiswa/footer');
 		}else{
 			if($this->m_mahasiswa->update_pwd($data['user'],$data['password'])){
 				echo '<script language="javascript">';
@@ -74,12 +76,9 @@ class Mahasiswa extends CI_Controller{
 				
 				redirect('Login','refresh');
 				exit;
-			}
-			
-			
+			}	
 		}
 	}
-
 
 	//4. Funtion load profile
 	public function profile($user = ''){
@@ -134,7 +133,7 @@ class Mahasiswa extends CI_Controller{
 		$data['content'] = $this->m_dokumen->show_dokumen_verified();
 		
 		$this->load->view('mahasiswa/header',$data);
-        $this->load->view('mahasiswa/doc',$data);
+        $this->load->view('mahasiswa/viewdokumen',$data);
       	$this->load->view('mahasiswa/footer');
 	}
 
@@ -164,8 +163,50 @@ class Mahasiswa extends CI_Controller{
       	$this->load->view('mahasiswa/footer');
 	}
 
-	public function action_upload($id = '')
+	public function action_upload()
 	{
+		$data['nim'] = $this->input->post('nim');
+        $data['angkatan'] = $this->input->post('angkatan');
+        $data['nppa'] = $this->input->post('nppa');
+        $data['judulta'] = $this->input->post('judulTA');
+        $data['abstrak'] = $this->input->post('abstrak');
+
+        $config['upload_path'] = 'assets/dokumenta/';
+        $config['allowed_types'] = 'pdf';
+        $config['max_size']  = '0';
+
+		$this->load->library('upload');
+		$this->upload->initialize($config);
+        
+        if ( ! $this->upload->do_upload('file_ta')){
+			// $data = array (
+			// 	'error' => $this->upload->display_errors());
+			// 	'page_data' => 'mahasiswa/upload_ta';
+			// );
+            $error = array('error' => $this->upload->display_errors());
+            echo '<script language="javascript">';
+			echo $error['error'];
+			echo '</script>';
+        }
+        else{
+            $upload_data = $this->upload->data();
+            $data['file_ta'] = $upload_data['file_name'];
+
+            $this->m_dokumen->upload_ta($data);
+            
+            echo '<script language="javascript">';
+			echo 'alert("Dokumen TA berhasil di simpan.")';
+			echo '</script>';
+			
+			redirect('mahasiswa/show_dokumen/','refresh');
+			
+
+        }  
+	}
+
+	public function detail_ta($filename = '')
+	{
+<<<<<<< HEAD
 		$data['publish_data'] = date('Y-m-d');
 		$data['nimmhs'] = $this->input->post('nim');
 		$data['nppa'] = $this->input->post('nppa');
@@ -196,6 +237,12 @@ class Mahasiswa extends CI_Controller{
 		else{
 			$data = array('upload_data' => $this->upload->data() );
 		}
+=======
+		$data['content'] = $this->m_dokumen->get_detail_ta($filename);
+		$this->load->view('mahasiswa/header', $data);
+		$this->load->view('mahasiswa/detail_ta', $data);
+		$this->load->view('mahasiswa/footer');	
+>>>>>>> a53155d2c681798979a583b006f0ac65e81170f8
 	}
 	
 }

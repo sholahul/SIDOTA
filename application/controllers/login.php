@@ -45,8 +45,7 @@ class Login extends CI_Controller {
     			// $this->load->view('admin/index',$data);	      
            	}
            	else{
-           	    redirect('Login');
-				exit;  
+				redirect('Login?msg=1');
            	}			
 		}
 
@@ -57,8 +56,7 @@ class Login extends CI_Controller {
 				$this->load->view('dosen/footer', $data);	      
            	}
            	else{
-				redirect('Login');
-				exit;  
+				redirect('Login?msg=1');
            	}		
 		}
 		else if($data['role'] == 'Mahasiswa'){
@@ -71,8 +69,7 @@ class Login extends CI_Controller {
 				
            	}
            	else{
-				redirect('Login');
-				exit;  
+				redirect('Login?msg=1');
            	}		
 		}		
 

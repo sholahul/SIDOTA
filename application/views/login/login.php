@@ -67,5 +67,10 @@
 				
 			</div>
 		</div>	
+		<script>
+			<?php if(!empty($this->input->get('msg')) && $this->input->get('msg') == 1) { ?>
+				alert("Username and password do not match !!!")
+			<?php } ?>
+		</script>
 </body>
 </html>

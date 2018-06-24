@@ -30,10 +30,9 @@
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="nim">NIM :</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="nim" value=" <?php echo $user ?>" disabled>
+								<input type="text" class="form-control" id="nim" name="nim" value="<?php echo $user ?>" readonly>
 							</div>
 						</div>
-						
 						<div class="form-group">
 							<label class="control-label col-sm-2">Nip Pembimbing TA :</label>
 							<div class="col-sm-8">
@@ -68,11 +67,20 @@
 							<div class="col-sm-8">
 								<textarea class="form-control" name="abstrak" id="abstrak" cols="120" rows="6" placeholder="Abstrak"></textarea>
 							</div>
+<<<<<<< HEAD
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="uploadTA">Upload TA (.pdf) :</label>
 							<div class="col-sm-8">
 								<input type="file" name="userFile" accept="application/pdf" required>
+=======
+                        </div>
+
+                        <div class="form-group">
+							<label class="control-label col-sm-2" for="file_ta" accept="application/pdf">Upload TA :</label>
+							<div class="col-sm-8">
+								<input type="file" name="file_ta">
+>>>>>>> a53155d2c681798979a583b006f0ac65e81170f8
 							</div>
 						</div>
 						<div class="form-group">
