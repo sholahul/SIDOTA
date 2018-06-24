@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2018 at 02:33 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.8
+-- Generation Time: Jun 24, 2018 at 07:43 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -65,7 +67,6 @@ CREATE TABLE `dokumenta` (
   `nimmhs` varchar(20) DEFAULT NULL,
   `nppa` varchar(20) DEFAULT NULL,
   `judulta` varchar(50) NOT NULL,
-  `angkatan` year(4) NOT NULL,
   `abstrak` text,
   `path` varchar(20) NOT NULL,
   `verifikasi` tinyint(1) NOT NULL
@@ -75,9 +76,14 @@ CREATE TABLE `dokumenta` (
 -- Dumping data for table `dokumenta`
 --
 
-INSERT INTO `dokumenta` (`id`, `publish_date`, `nimmhs`, `nppa`, `judulta`, `angkatan`, `abstrak`, `path`, `verifikasi`) VALUES
-(1, '2018-06-24', '1221', '2', 'Aku dan dia saling suka', 2015, 'Perancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis Mikrokontroler', '', 0),
-(2, '2018-06-24', '12111', '2', 'Tapi sayangnya dia juga suka orang lain', 2015, 'apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,', '\r\n', 1);
+INSERT INTO `dokumenta` (`id`, `publish_date`, `nimmhs`, `nppa`, `judulta`, `abstrak`, `path`, `verifikasi`) VALUES
+(1, '2018-06-24', '1221', '2', 'Aku dan dia saling suka', 'Perancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis Mikrokontroler', '', 0),
+(2, '2018-06-24', '12111', '2', 'Tapi sayangnya dia juga suka orang lain', 'apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,', '\r\n', 1),
+(9, '2018-06-24', '12111', '03', 'kaur', 'kaur', 'kaur2013.pdf', 0),
+(10, '2018-06-24', '12111', '03', 'sadasd', 'ssssssssssssss', '10088_Petunjuk_TA_20', 0),
+(11, '2018-06-24', '12111', '3', 'sssssssss', 'ssssssssssssss', 'P15370_11_ROL_Model_', 0),
+(12, '2018-06-24', '12111', '12', 'eesssss', 'asdasdas', 'IJCSI-8-3-1-543-549.', 0),
+(13, '2018-06-24', '12111', '12', 'eesssss', 'asdasdas', '9783319096438-c2.pdf', 0);
 
 -- --------------------------------------------------------
 
@@ -179,7 +185,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `dokumenta`
 --
 ALTER TABLE `dokumenta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Constraints for dumped tables
 --
@@ -196,6 +202,7 @@ ALTER TABLE `dokumenta`
 --
 ALTER TABLE `mahasiswa`
   ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`nppa`) REFERENCES `dosen` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
