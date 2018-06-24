@@ -1,3 +1,8 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body{
     background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
     background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */

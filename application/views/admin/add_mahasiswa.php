@@ -26,7 +26,7 @@
 				<h2><i class="fa fa-github"></i> Add Mahasiswa</h2>
 				<hr>
 				
-				<div class="container ubah" >
+				<div class="container tbs" >
 					<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_add_mahasiswa/<?php echo $user?>">
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="password">NIM :</label>
@@ -34,16 +34,19 @@
 								<input type="text" maxlength="15" onkeyup="fnohp(this)" class="form-control" id="pwd" placeholder="Enter Username" name="nim" required>
 							</div>
 						</div>
+
 						<div class="form-group">
 							<label class="control-label col-sm-4">NPPA :</label>
 							<div class="col-sm-7">
-								<select id="opt" name ="nppa">
+								<select  name ="nppa">
 									<?php foreach ($dosen->result() as $key1): ?>
 									<option><?php echo $key1->nip ?></option>
 									<?php endforeach?>
 								</select>
 							</div>
 						</div>
+						
+
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="">Nama :</label>
 							<div class="col-sm-7">

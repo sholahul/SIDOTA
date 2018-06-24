@@ -20,23 +20,21 @@
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 	</head>
 	<body>
-		<div class="content"">
+
+		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2><span class="glyphicon glyphicon-th-list"></span> Daftar TA </h2>
+				<h2><span class="glyphicon glyphicon-th-list"></span> Daftar TA Verified </h2>
 				<hr>
 				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" > <br><br>
-				<div class="">
-					<table class="table table-bordered ">
+				<div class="table-responsive tbs">
+					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th style="width: 100px" onclick="sortTable(0)">Publish Date</th>
-								<th style="width: 600px" onclick="sortTable(1)">Judul Tugas Akhir</th>
-								<th style="width: 200px" onclick="sortTable(2)">Nim Mahasiswa</th>
-								<th style="width: 200px" onclick="sortTable(3)">NIP Pembimbing TA</th>
-								<th onclick="sortTable(4)">Angkatan</th>
-								
-								<th onclick="sortTable(5)">Verifikasi</th>
-								<th>Action</th>
+								<th style="width: 200px;" onclick="sortTable(0)">Publish Date</th>
+								<th style="width: 400px;" onclick="sortTable(5)">Judul Tugas Akhir</th>
+								<th style="width: 500px;" onclick="sortTable(6)">Abstrak</th>
+								<th style="width: 100px;" onclick="sortTable(7)">Verifikasi</th>
+								<th style="width: 300px;">Action</th>
 							</tr>
 						</thead>
 						<tbody id="tblDokumen">
@@ -44,21 +42,25 @@
 							<tr>
 								<td><?php echo $key['publish_date'] ?></td>
 								<td><?php echo $key['judulta'] ?></td>
-								<td><?php echo $key['nimmhs'] ?></td>
-								<td><?php echo $key['nppa'] ?></td>
-								<td><?php echo $key['angkatan'] ?></td>
-								<td><?php if($key['verifikasi']==1){
-										echo "Diterima";
-									}else{
-										echo "Menunggu";
-									}
-									?>
-									
-								</td>
+								<td><?php echo $key['abstrak'] ?></td>
+								<td><?php if($key['verifikasi'] ==1){
+									echo "Diterima";
+								}else{
+									echo "Menunggu";
+								}
+
+								?></td>
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_dokumen/<?php echo $key['id'] ?>" title="">
-									<i class="fa fa-trash-o"  title="Delete"></i></a>
-								</td>
+									<a style="text-decoration: none" href="<?php echo base_url()?>admin/view_detail/<?php echo $key['id'] ?>" title="">
+									<i class="fa fa-file-pdf-o"  title="Delete"></i>
+									View Detail
+									</a><br><br>
+									<!-- <span>  |  </span> -->
+									<a style="text-decoration: none" href="<?php echo base_url()?>admin/download/<?php echo $key['id'] ?>" title="">
+									<i class="fa fa-download"  title="Delete"></i>
+									Download
+									</a>
+								</td>								
 							</tr>
 							<?php endforeach ?>
 						</tbody>

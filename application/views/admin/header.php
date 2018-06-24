@@ -110,7 +110,7 @@
                     Dokumentasi TA</a>
                 </li>
                 <li>
-                    <a href="#" class="w3-bar-item w3-button" style="text-decoration:none;">
+                    <a href="<?php echo base_url()?>admin/show_dokumen/<?php echo $user?>" class="w3-bar-item w3-button" style="text-decoration:none;">
                         <i class="fa fa-file-pdf-o"></i>
                     View Dokumentasi TA</a>
                 </li>

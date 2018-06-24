@@ -15,7 +15,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 		
 		<!-- Our Styles -->
-		<link href="<?=base_url('assets/vendor/st_login.css')?>" rel="stylesheet">
+		<link href="<?=base_url('assets/vendor/ownl.css')?>" rel="stylesheet">
 		<script>
 			function filter(input){
 				var hex = /[^a-z0-9]/gi;
@@ -25,7 +25,6 @@
 	</head>
 	<body>
 		<div class="container middlepage">
-			
 			<div class="img1">
 				<img src="<?=base_url('assets/img/e.png')?>" alt="">
 			</div>

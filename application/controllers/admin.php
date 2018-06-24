@@ -640,4 +640,30 @@ class Admin extends CI_Controller{
       	$this->load->view('admin/footer');		
 	}
 
+	public function show_dokumen($user='')
+	{
+		$data = array(
+			'user' => $user, 
+		);
+		
+		$data['content'] = $this->m_admin->show_dokumen_verified();
+		
+		$this->load->view('admin/header',$data);
+        $this->load->view('admin/doc',$data);
+      	$this->load->view('admin/footer');
+	}
+
+	public function download($id='')
+	{
+		$data['content'] = $this->m_admin->download($id);
+
+		$this->load->view('admin/blank',$data);
+ 	}
+
+
+
+
+
 }
+
+

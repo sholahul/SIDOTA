@@ -29,40 +29,49 @@
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="nim">NIM :</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="nim" value=" <?php echo $username ?>" disabled>
+								<input type="text" class="form-control" id="nim" value=" <?php echo $user ?>" disabled>
 							</div>
 						</div>
+						
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="nippa1">NIP Pembimbing 1 :</label>
+							<label class="control-label col-sm-2">Nip Pembimbing TA :</label>
+							<div class="col-sm-7">
+								<select id="opt" name ="nppa">
+									<?php foreach ($c_dosen->result() as $key1): ?>
+									<option><?php echo $key1->nip ?></option>
+									<?php endforeach?>
+								</select>
+							</div>
+						</div>
+
+	<!-- 					<div class="form-group">
+							<label class="control-label col-sm-2" for="nippa1">NIP Pembimbing :</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" name="nippa1" placeholder="Enter NIP Pembimbing 1">
 							</div>
-                        </div>
-                        <div class="form-group">
-							<label class="control-label col-sm-2" for="nippa1">NIP Pembimbing 2 :</label>
-							<div class="col-sm-8">
-								<input type="text" class="form-control" name="nippa2" placeholder="Enter NIP Pembimbing 2">
-							</div>
-						</div>
-						<hr>
+                        </div> -->
+
                         <div class="form-group">
 							<label class="control-label col-sm-2" for="judulTA">Judul :</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" name="judulTA" placeholder="Enter Judul TA">
 							</div>
 						</div>
+                        
                         <div class="form-group">
 							<label class="control-label col-sm-2" for="abstrak">Abstrak :</label>
 							<div class="col-sm-8">
 								<textarea class="form-control" name="abstrak" id="abstrak" cols="120" rows="6" placeholder="Abstrak"></textarea>
 							</div>
                         </div>
+
                         <div class="form-group">
 							<label class="control-label col-sm-2" for="uploadTA">Upload TA :</label>
 							<div class="col-sm-8">
 								<input type="file" name="uploadTA">
 							</div>
 						</div>
+
 						<div class="form-group">
 							<div class="col-sm-offset-5 col-sm-8">
 								<button type="submit" class="btn btn-default">Submit</button>
