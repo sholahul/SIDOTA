@@ -31,11 +31,11 @@
 							<tr>
 								<th style="width: 100px" onclick="sortTable(0)">Publish Date</th>
 								<th style="width: 600px" onclick="sortTable(1)">Judul Tugas Akhir</th>
-								<th style="width: 200px" onclick="sortTable(2)">Nim Mahasiswa</th>
-								<th style="width: 200px" onclick="sortTable(3)">NIP Pembimbing TA</th>
-								<th onclick="sortTable(4)">Angkatan</th>
+								<th style="width: 200px" onclick="sortTable(2)">NIP Pembimbing TA</th>
+								<th style="width: 200px" onclick="sortTable(2)">Nama Pembimbing TA</th>
+								<th onclick="sortTable(3)">Angkatan</th>
 								
-								<th onclick="sortTable(5)">Verifikasi</th>
+								<th onclick="sortTable(4)">Verifikasi</th>
 								<th> Action</th>							
 							</tr>
 						</thead>
@@ -44,8 +44,8 @@
 							<tr>
 								<td><?php echo $key['publish_date'] ?></td>
 								<td><?php echo $key['judulta'] ?></td>
-								<td><?php echo $key['nimmhs'] ?></td>
 								<td><?php echo $key['nppa'] ?></td>
+								<td><?php echo $key['nama'] ?></td>
 								<td><?php echo $key['angkatan'] ?></td>
 								<td><?php if($key['verifikasi']==1){
 										echo "Diterima";
