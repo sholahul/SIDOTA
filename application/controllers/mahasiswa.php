@@ -140,7 +140,7 @@ class Mahasiswa extends CI_Controller{
 	//7. own ta
 	public function own_ta($user=''){
 		$data = array(
-			'user' => $user, 
+			'user' => $this->user, 
 		);
 
 		$data['content'] = $this->m_dokumen->own_ta($user);
@@ -153,7 +153,7 @@ class Mahasiswa extends CI_Controller{
 	//
     public function upload_ta($user = '') {
 		$data = array(
-			'user' => $user,
+			'user' => $this->user,
 		);
 	
 		$data['c_dosen'] = $this->m_admin->show_dosen($data);
@@ -168,12 +168,13 @@ class Mahasiswa extends CI_Controller{
 		$data['nim'] = $this->input->post('nim');
         $data['angkatan'] = $this->input->post('angkatan');
         $data['nppa'] = $this->input->post('nppa');
-        $data['judulta'] = $this->input->post('judulTA');
+        $data['judulta'] = $this->input->post('judulta');
         $data['abstrak'] = $this->input->post('abstrak');
 
         $config['upload_path'] = 'assets/dokumenta/';
         $config['allowed_types'] = 'pdf';
-        $config['max_size']  = '0';
+		$config['max_size']  = '0';
+		$config['file_name'] = $this->user;
 
 		$this->load->library('upload');
 		$this->upload->initialize($config);
@@ -183,10 +184,8 @@ class Mahasiswa extends CI_Controller{
 			// 	'error' => $this->upload->display_errors());
 			// 	'page_data' => 'mahasiswa/upload_ta';
 			// );
-            $error = array('error' => $this->upload->display_errors());
-            echo '<script language="javascript">';
+			$error = array('error' => $this->upload->display_errors());
 			echo $error['error'];
-			echo '</script>';
         }
         else{
             $upload_data = $this->upload->data();
@@ -198,45 +197,43 @@ class Mahasiswa extends CI_Controller{
 			echo 'alert("Dokumen TA berhasil di simpan.")';
 			echo '</script>';
 			
-			redirect('mahasiswa/show_dokumen/','refresh');
-			
-
+			redirect('mahasiswa/show_dokumen/'.$this->user,'refresh');
         }  
 	}
 
 	public function detail_ta($filename = '')
 	{
 
-		$data['publish_data'] = date('Y-m-d');
-		$data['nimmhs'] = $this->input->post('nim');
-		$data['nppa'] = $this->input->post('nppa');
-		$data['judulta'] = $this->input->post('judulta');
-		$data['abstrak'] = $this->input->post('abstrak');
+		// $data['publish_data'] = date('Y-m-d');
+		// $data['nimmhs'] = $this->input->post('nim');
+		// $data['nppa'] = $this->input->post('nppa');
+		// $data['judulta'] = $this->input->post('judulta');
+		// $data['abstrak'] = $this->input->post('abstrak');
 		
 
-		echo $data['publish_data'];
+		// echo $data['publish_data'];
 
-        // $data['tempat_lahir'] = $this->input->post('tempat_lahir');
-        // $data['tanggal_lahir'] = $this->input->post('tanggal_lahir');
-        // $data['jenis_kelamin'] = $this->input->post('jenis_kelamin');
-        // $data['email'] = $this->input->post('email');
-        // $data['nohp'] = $this->input->post('nohp');
-        // $data['alamat'] = $this->input->post('alamat');
+        // // $data['tempat_lahir'] = $this->input->post('tempat_lahir');
+        // // $data['tanggal_lahir'] = $this->input->post('tanggal_lahir');
+        // // $data['jenis_kelamin'] = $this->input->post('jenis_kelamin');
+        // // $data['email'] = $this->input->post('email');
+        // // $data['nohp'] = $this->input->post('nohp');
+        // // $data['alamat'] = $this->input->post('alamat');
 
 
 
-		$config['upload_path'] = './assets/dokumenta';
-		$config['allowed_types'] = 'pdf';
-		$config['max_size'] = "2048";
+		// $config['upload_path'] = './assets/dokumenta';
+		// $config['allowed_types'] = 'pdf';
+		// $config['max_size'] = "2048";
 		
-		$this->load->library('upload', $config);
+		// $this->load->library('upload', $config);
 
-		if(!$this->upload->do_upload('userFile') ){
-			$error = array('error' =>$this->upload->display_errors());
-		}
-		else{
-			$data = array('upload_data' => $this->upload->data() );
-		}
+		// if(!$this->upload->do_upload('userFile') ){
+		// 	$error = array('error' =>$this->upload->display_errors());
+		// }
+		// else{
+		// 	$data = array('upload_data' => $this->upload->data() );
+		// }
 
 		$data['content'] = $this->m_dokumen->get_detail_ta($filename);
 		$this->load->view('mahasiswa/header', $data);

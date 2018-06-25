@@ -50,7 +50,7 @@
 								</div>
 						</div> -->
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="judulTA">Judul :</label>
+							<label class="control-label col-sm-2" for="judulta">Judul :</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" name="judulta" placeholder="Enter Judul TA">
 							</div>
@@ -72,7 +72,7 @@
                         <div class="form-group">
 							<label class="control-label col-sm-2" for="file_ta">Upload TA :</label>
 							<div class="col-sm-8">
-								<input type="file" name="file_ta " accept="application/pdf">
+								<input type="file" name="file_ta" accept="application/pdf">
 							</div>
 						</div>
 						<div class="form-group">
