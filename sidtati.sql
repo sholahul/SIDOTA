@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2018 at 07:43 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: Jun 25, 2018 at 06:33 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -43,17 +41,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`username`, `password`, `tempat_lahir`, `tanggal_lahir`, `email`, `alamat`, `nohp`) VALUES
-('admin', 'ea', 'eaaa', '1998-02-12', 'ea@gmail.com', 'eaeaea', '1234121'),
-('admino', 'ea', 'pbmesa', '1998-05-30', 'sholahul30051998@gmail.com', 'eaaa', '1231'),
-('awa', 'uvuwuwe', 'eaea', '1998-01-01', 'e@gmail.com', 'ea', 'ea'),
-('awww', 'easss', 'eaj', '1998-02-12', 'ea@gmail.com', 'ea', '121'),
-('bebek', 'ea', 'dimanaaja', '1998-12-12', 'ea@gmail.com', 'ea', '12121'),
-('ipu', 'ea', 'ea', '1998-05-20', 'ea@gmail.com', 'ea', '121212'),
-('kirito', 'ea', 'ea', '1998-01-12', 'ea@gmail.com', 'ea', '112'),
-('miaw', 'miaw12', 'palembang', '2999-03-12', 'ea@gmail.com', 'miaw', '092121'),
-('newnew', 'ea', 'prabumulih', '1998-01-12', 'ea@gmail.com', 'ea', '12121'),
-('njay', 'ea', 'eaa', '1998-12-12', 'ea@gmail.com', 'eea', '422'),
-('tes1', 'eaa', 'ea', '1998-05-12', 'ea@gmail.com', 'ea', '121');
+('admin', 'ea', 'Prabumulih', '1998-05-30', 'sholahul30051998@gmail.com', 'Prabumulih', '082281036974'),
+('admin2', 'ea', 'palembang', '1998-01-01', 'farhan123@gmail.com', 'Palembang', '08127328851');
 
 -- --------------------------------------------------------
 
@@ -77,13 +66,8 @@ CREATE TABLE `dokumenta` (
 --
 
 INSERT INTO `dokumenta` (`id`, `publish_date`, `nimmhs`, `nppa`, `judulta`, `abstrak`, `path`, `verifikasi`) VALUES
-(1, '2018-06-24', '1221', '2', 'Aku dan dia saling suka', 'Perancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis MikrokontrolerPerancangan Alat Lampu Lalu Lintas Berbasis Mikrokontroler', '', 0),
-(2, '2018-06-24', '12111', '2', 'Tapi sayangnya dia juga suka orang lain', 'apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,apalah arti aku menunggu bila kamu tak cinta lagi,', '\r\n', 1),
-(9, '2018-06-24', '12111', '03', 'kaur', 'kaur', 'kaur2013.pdf', 0),
-(10, '2018-06-24', '12111', '03', 'sadasd', 'ssssssssssssss', '10088_Petunjuk_TA_20', 0),
-(11, '2018-06-24', '12111', '3', 'sssssssss', 'ssssssssssssss', 'P15370_11_ROL_Model_', 0),
-(12, '2018-06-24', '12111', '12', 'eesssss', 'asdasdas', 'IJCSI-8-3-1-543-549.', 0),
-(13, '2018-06-24', '12111', '12', 'eesssss', 'asdasdas', '9783319096438-c2.pdf', 0);
+(15, '2018-06-25', '09021181520125', '1671140201820005', 'Kombinasi Teknik Steganografi Discret Cosine Trans', 'There are many problems to be solved in the framework of the information protection. A special place among them is the task of the hidden data, called steganography task. Secure communication can be accomplished in various ways. The common feature of these methods is that the information is embedded in some object, called a container. As the information currently in most cases is transmitted digitally, one of the most rapidly developing areas of steganography is digital steganography. In this direction, as the object for embedding used a computer file. Most of the steganography methods are used images as containers. Overall, the goal of steganography, which is, the problem of hidden data transmission, and opposite it the task of steganalysis, that is, the detecting hidden information transfer task, are one of the main problems in information security, so their solution is relevant in our days.', '09021181520125.pdf', 0),
+(16, '2018-06-25', '09021281419050', '196602202006041001', 'Pengaruh Singular Value Decomposition Terhadap Met', 'Dokumen yang mengandung banyak atribut atau dimensi dapat menjadi\r\nhambatan dalam proses clustering. Kebanyakan algoritma clustering baik dalam\r\nmenangani data berdimensi rendah, sehingga untuk menemukan cluster dari objek\r\ndata berdimensi tinggi adalah sebuah tantangan karena data berdimensi tinggi\r\ncenderung memiliki noise, sparse, dan bersifat skew. Dalam data mining, reduksi\r\ndimensi dapat dilakukan untuk meningkatkan akurasi hasil clustering data\r\nberdimensi tinggi. Untuk itu, Penelitian ini mengkombinasikan Singular Value\r\nDecomposition (SVD) untuk mereduksi dimensi dan melihat pengaruhnya\r\nterhadap akurasi hasil clustering metode k-means, k-medoids, dan fuzzy c-means.\r\nPenelitian menunjukkan bahwa kombinasi SVD dan k-means dan k-meodids\r\nmeningkatkan hasil akurasi sebesar 10-11 % dibandingkan dengan clustering\r\ntanpa reduksi dimensi. Waktu komputasi proses clustering menjadi lebih cepat.\r\nNamun, sebaliknya kombinasi SVD dan fuzzy c-means menunjukkan hasil\r\nakurasi clustering yang lebih buruk dibandingkan dengan clustering tanpa reduksi\r\ndimensi.', '09021281419050.pdf', 0);
 
 -- --------------------------------------------------------
 
@@ -92,7 +76,7 @@ INSERT INTO `dokumenta` (`id`, `publish_date`, `nimmhs`, `nppa`, `judulta`, `abs
 --
 
 CREATE TABLE `dosen` (
-  `nip` varchar(20) NOT NULL,
+  `nip` varchar(30) NOT NULL,
   `nama` varchar(40) NOT NULL,
   `password` varchar(20) NOT NULL,
   `tempat_lahir` varchar(20) NOT NULL,
@@ -109,10 +93,11 @@ CREATE TABLE `dosen` (
 --
 
 INSERT INTO `dosen` (`nip`, `nama`, `password`, `tempat_lahir`, `tanggal_lahir`, `jabatan`, `jenis_kelamin`, `alamat`, `email`, `nohp`) VALUES
-('03', 'apajadeh', '31211', 'jambi', '1999-02-02', 'Lektor Kepala', 'Laki-Laki', 'Apaajadeh', 'ea@gmail.com', '31121'),
-('12', 'farhan', '2', 'palembang', '2018-06-05', 'dosen pengampu', 'Laki-Laki', 'Shemale ea', 'farhan123@gmail.com', '08127328851'),
-('2', 'agusti kurniawan', 'ea', 'bangka', '1998-05-30', 'dosen pengampu', 'Laki-Laki', 'Prabumulih', 'agusti123@gmail.com', '08127328551'),
-('3', 'sf', '1', 'ea', '1998-05-30', 'ea', 'Laki-Laki', 'ea', 'ea@gmail.com', '121');
+('1671140201820005', 'Rusdi Efendi,M.Kom', '123456', 'palembang', '1998-01-01', 'Tenaga Pengajar', 'laki-laki', 'Palembang', 'rusdiefendi8@gmail.com', '0'),
+('196602202006041001', 'Drs. Megah Mulya, M.T.', '123456', 'palembang', '1968-02-01', 'Lektor', 'laki-laki', 'Palembang', 'megahmulya@yahoo.cm', '081274080838'),
+('197706012009121004	', 'Rifkie Primartha, S.T., M.T.', '123456', 'palembang', '1998-01-01', 'Asisten Ahli', 'laki-laki', 'Palembang', 'rikie_p@yahoo.com', '08127374611'),
+('198505102015041002', 'Danny Matthew Saputra,S.T., M.Sc.', '123456', 'palembang', '1968-02-01', 'Tenaga Pengajar', 'laki-laki', 'Palembang', 'dany.saputra@gmail.com', '082307000175'),
+('198908062015042002', 'Anggina Primanita,S.Kom.,M.IT', '123456', 'palembang', '1968-02-01', 'Tenaga Pengajar', 'Perempuan', 'Palembang', 'angginaprimanita@gmail.com', '08156970755');
 
 -- --------------------------------------------------------
 
@@ -140,10 +125,11 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nppa`, `nama`, `password`, `angkatan`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `email`, `nohp`, `lokasi_kampus`, `alamat`) VALUES
-('09021181520125', '12', 'sholahul fajri', '30mei1998', 2001, 'palembang', '1998-05-30', 'Laki-Laki', 'sholahul30051998@gmail.com', '08127328851', 'Inderalaya', 'JL. M. Yamin No. 282\r\n'),
-('1', '2', 'Kirito ', '2', 2015, 'palembang', '1998-05-30', 'Laki-Laki', 'sholahul30051998@gmail.com', '082281036974', 'inderalaya', 'ea'),
-('12111', '03', 'kirito', 'bebek', 1999, 'angsa', '1998-01-12', 'Laki-Laki', 'sholahulfajri30@gmail.com', '1211', 'Inderalaya', ''),
-('1221', '03', 'fajri', '31121', 2001, 'prabumulih', '1998-02-21', 'Perempuan', 'ea@gmail.com', '1211', 'Inderalaya', 'dada');
+('09021181520015	', '1671140201820005', 'Muhammad Farhan Evirzal', '123456', 2015, 'palembang', '1998-05-30', 'laki-laki', 'farhanevirzal15@gmail.com', '081379318078', 'inderalaya', 'Palembang\r\n'),
+('09021181520125', '196602202006041001', 'Sholahul Fajri', '123456', 2015, 'Prabumulih', '1998-05-30', 'laki-laki', 'sholahul30051998@gmail.com', '082281036974', 'inderalaya', 'Prabumulih'),
+('09021281419041', '198908062015042002', 'Indri Dwi Ayu', '123', 2014, 'palembang', '1998-05-30', 'Perempuan', 'indriayu23@gmail.com', '08222222222', 'inderalaya', 'Palembang\r\n'),
+('09021281419050', '196602202006041001', 'M Ryan Fadholi', '123456', 2014, 'palembang', '1998-05-30', 'laki-laki', 'Ryanfadholi22@gmail.com', '0822222222', 'inderalaya', 'Palembang'),
+('09021281520117', '198908062015042002', 'Agusti Kurniawan', '123456', 2015, 'Bangka Belitung', '1998-05-30', 'laki-laki', 'agusti123@gmail.com', '081278900533', 'inderalaya', 'Bangka Belitung ');
 
 --
 -- Indexes for dumped tables
@@ -185,7 +171,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `dokumenta`
 --
 ALTER TABLE `dokumenta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- Constraints for dumped tables
 --
@@ -202,7 +188,6 @@ ALTER TABLE `dokumenta`
 --
 ALTER TABLE `mahasiswa`
   ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`nppa`) REFERENCES `dosen` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
