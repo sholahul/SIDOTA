@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2018 at 06:33 AM
+-- Generation Time: Jun 25, 2018 at 07:25 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -66,8 +66,9 @@ CREATE TABLE `dokumenta` (
 --
 
 INSERT INTO `dokumenta` (`id`, `publish_date`, `nimmhs`, `nppa`, `judulta`, `abstrak`, `path`, `verifikasi`) VALUES
-(15, '2018-06-25', '09021181520125', '1671140201820005', 'Kombinasi Teknik Steganografi Discret Cosine Trans', 'There are many problems to be solved in the framework of the information protection. A special place among them is the task of the hidden data, called steganography task. Secure communication can be accomplished in various ways. The common feature of these methods is that the information is embedded in some object, called a container. As the information currently in most cases is transmitted digitally, one of the most rapidly developing areas of steganography is digital steganography. In this direction, as the object for embedding used a computer file. Most of the steganography methods are used images as containers. Overall, the goal of steganography, which is, the problem of hidden data transmission, and opposite it the task of steganalysis, that is, the detecting hidden information transfer task, are one of the main problems in information security, so their solution is relevant in our days.', '09021181520125.pdf', 0),
-(16, '2018-06-25', '09021281419050', '196602202006041001', 'Pengaruh Singular Value Decomposition Terhadap Met', 'Dokumen yang mengandung banyak atribut atau dimensi dapat menjadi\r\nhambatan dalam proses clustering. Kebanyakan algoritma clustering baik dalam\r\nmenangani data berdimensi rendah, sehingga untuk menemukan cluster dari objek\r\ndata berdimensi tinggi adalah sebuah tantangan karena data berdimensi tinggi\r\ncenderung memiliki noise, sparse, dan bersifat skew. Dalam data mining, reduksi\r\ndimensi dapat dilakukan untuk meningkatkan akurasi hasil clustering data\r\nberdimensi tinggi. Untuk itu, Penelitian ini mengkombinasikan Singular Value\r\nDecomposition (SVD) untuk mereduksi dimensi dan melihat pengaruhnya\r\nterhadap akurasi hasil clustering metode k-means, k-medoids, dan fuzzy c-means.\r\nPenelitian menunjukkan bahwa kombinasi SVD dan k-means dan k-meodids\r\nmeningkatkan hasil akurasi sebesar 10-11 % dibandingkan dengan clustering\r\ntanpa reduksi dimensi. Waktu komputasi proses clustering menjadi lebih cepat.\r\nNamun, sebaliknya kombinasi SVD dan fuzzy c-means menunjukkan hasil\r\nakurasi clustering yang lebih buruk dibandingkan dengan clustering tanpa reduksi\r\ndimensi.', '09021281419050.pdf', 0);
+(15, '2018-06-25', '09021181520125', '1671140201820005', 'Kombinasi Teknik Steganografi Discret Cosine Trans', 'There are many problems to be solved in the framework of the information protection. A special place among them is the task of the hidden data, called steganography task. Secure communication can be accomplished in various ways. The common feature of these methods is that the information is embedded in some object, called a container. As the information currently in most cases is transmitted digitally, one of the most rapidly developing areas of steganography is digital steganography. In this direction, as the object for embedding used a computer file. Most of the steganography methods are used images as containers. Overall, the goal of steganography, which is, the problem of hidden data transmission, and opposite it the task of steganalysis, that is, the detecting hidden information transfer task, are one of the main problems in information security, so their solution is relevant in our days.', '09021181520125.pdf', 1),
+(16, '2018-06-25', '09021281419050', '196602202006041001', 'Pengaruh Singular Value Decomposition Terhadap Met', 'Dokumen yang mengandung banyak atribut atau dimensi dapat menjadi\r\nhambatan dalam proses clustering. Kebanyakan algoritma clustering baik dalam\r\nmenangani data berdimensi rendah, sehingga untuk menemukan cluster dari objek\r\ndata berdimensi tinggi adalah sebuah tantangan karena data berdimensi tinggi\r\ncenderung memiliki noise, sparse, dan bersifat skew. Dalam data mining, reduksi\r\ndimensi dapat dilakukan untuk meningkatkan akurasi hasil clustering data\r\nberdimensi tinggi. Untuk itu, Penelitian ini mengkombinasikan Singular Value\r\nDecomposition (SVD) untuk mereduksi dimensi dan melihat pengaruhnya\r\nterhadap akurasi hasil clustering metode k-means, k-medoids, dan fuzzy c-means.\r\nPenelitian menunjukkan bahwa kombinasi SVD dan k-means dan k-meodids\r\nmeningkatkan hasil akurasi sebesar 10-11 % dibandingkan dengan clustering\r\ntanpa reduksi dimensi. Waktu komputasi proses clustering menjadi lebih cepat.\r\nNamun, sebaliknya kombinasi SVD dan fuzzy c-means menunjukkan hasil\r\nakurasi clustering yang lebih buruk dibandingkan dengan clustering tanpa reduksi\r\ndimensi.', '09021281419050.pdf', 1),
+(17, '2018-06-25', '09021281520117', '1671140201820005', 'Pengaruh Singular Value Decomposition Terhadap Met', 'ea', '09021281520117.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,7 @@ CREATE TABLE `mahasiswa` (
 INSERT INTO `mahasiswa` (`nim`, `nppa`, `nama`, `password`, `angkatan`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `email`, `nohp`, `lokasi_kampus`, `alamat`) VALUES
 ('09021181520015	', '1671140201820005', 'Muhammad Farhan Evirzal', '123456', 2015, 'palembang', '1998-05-30', 'laki-laki', 'farhanevirzal15@gmail.com', '081379318078', 'inderalaya', 'Palembang\r\n'),
 ('09021181520125', '196602202006041001', 'Sholahul Fajri', '123456', 2015, 'Prabumulih', '1998-05-30', 'laki-laki', 'sholahul30051998@gmail.com', '082281036974', 'inderalaya', 'Prabumulih'),
-('09021281419041', '198908062015042002', 'Indri Dwi Ayu', '123', 2014, 'palembang', '1998-05-30', 'Perempuan', 'indriayu23@gmail.com', '08222222222', 'inderalaya', 'Palembang\r\n'),
+('09021281419041', '198908062015042002', 'Indri Dwi Ayu', '123456', 2014, 'palembang', '1998-05-30', 'Perempuan', 'indriayu23@gmail.com', '08222222222', 'inderalaya', 'Palembang\r\n'),
 ('09021281419050', '196602202006041001', 'M Ryan Fadholi', '123456', 2014, 'palembang', '1998-05-30', 'laki-laki', 'Ryanfadholi22@gmail.com', '0822222222', 'inderalaya', 'Palembang'),
 ('09021281520117', '198908062015042002', 'Agusti Kurniawan', '123456', 2015, 'Bangka Belitung', '1998-05-30', 'laki-laki', 'agusti123@gmail.com', '081278900533', 'inderalaya', 'Bangka Belitung ');
 
@@ -171,7 +172,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `dokumenta`
 --
 ALTER TABLE `dokumenta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- Constraints for dumped tables
 --
