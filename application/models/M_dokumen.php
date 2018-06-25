@@ -27,9 +27,10 @@ class M_dokumen extends CI_Model {
     //3. show dokumen ta verified
     public function show_dokumen_verified()
     {
-        $this->db->select('*');
+         $this->db->select('id,mahasiswa.nama AS `nama_mhs`, nimmhs, dokumenta.nppa as nppa_dosen,dosen.nama as `nama_dosen`, judulta, publish_date, abstrak, path');
         $this->db->from('dokumenta');
-        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs'); 
+        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs');
+        $this->db->join('dosen', 'dosen.nip = dokumenta.nppa');  
         $this->db->where('verifikasi', '1');
         return $this->db->get();
     }
@@ -38,7 +39,7 @@ class M_dokumen extends CI_Model {
     {
         $this->db->select('*');
         $this->db->from('dokumenta');
-        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs'); 
+        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs');
         $this->db->where('verifikasi', '1');
         $this->db->where('dokumenta.nppa', $user);
 

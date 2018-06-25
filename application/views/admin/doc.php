@@ -32,8 +32,11 @@
 							<tr>
 								<th style="width: 200px;" onclick="sortTable(0)">Publish Date</th>
 								<th style="width: 400px;" onclick="sortTable(5)">Judul Tugas Akhir</th>
-								<th style="width: 500px;" onclick="sortTable(6)">Abstrak</th>
-								<th style="width: 100px;" onclick="sortTable(7)">Verifikasi</th>
+								<th style="width: 300px;" onclick="sortTable(6)">Nim</th>
+								<th style="width: 300px;" onclick="sortTable(6)">Nama Mahasiswa</th>
+								<th style="width: 300px;" onclick="sortTable(6)">NPPA</th>
+								<th style="width: 300px;" onclick="sortTable(6)">Nama Pembimbing</th>
+								
 								<th style="width: 300px;">Action</th>
 							</tr>
 						</thead>
@@ -42,21 +45,18 @@
 							<tr>
 								<td><?php echo $key['publish_date'] ?></td>
 								<td><?php echo $key['judulta'] ?></td>
-								<td><?php echo $key['abstrak'] ?></td>
-								<td><?php if($key['verifikasi'] ==1){
-									echo "Diterima";
-								}else{
-									echo "Menunggu";
-								}
+								<td><?php echo $key['nimmhs'] ?></td>
+								<td><?php echo $key['nama_mhs'] ?></td>
+								<td><?php echo $key['nppa_dosen'] ?></td>
+								<td><?php echo $key['nama_dosen'] ?></td>
+								
 
 								?></td>
 								<td>
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/view_detail/<?php echo $key['id'] ?>" title="">
 									<i class="fa fa-file-pdf-o"  title="View"></i>
 									</a><br><br>
-									<!-- <span>  |  </span> -->
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/download/<?php echo $key['id'] ?>" title="">
-									<i class="fa fa-download"  title="Delete"></i>
+									
 									</a>
 								</td>								
 							</tr>
