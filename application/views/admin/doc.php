@@ -43,15 +43,26 @@
 						<tbody id="tblDokumen">
 							<?php foreach($content->result_array() as $key): ?>
 							<tr>
-								<td><?php echo $key['publish_date'] ?></td>
-								<td><?php echo $key['judulta'] ?></td>
-								<td><?php echo $key['nimmhs'] ?></td>
-								<td><?php echo $key['nama_mhs'] ?></td>
-								<td><?php echo $key['nppa_dosen'] ?></td>
-								<td><?php echo $key['nama_dosen'] ?></td>
+								<td>
+									<?php echo $key['publish_date']?>
+								</td>
+								<td>
+									<?php echo $key['judulta'] ?>
+								</td>
+								<td>
+									<?php echo $key['nimmhs'] ?>
+								</td>
 								
-
-								?></td>
+								<td>
+									<?php echo $key['nama_mhs'] ?>
+								</td>
+								<td>
+									<?php echo $key['nppa_dosen'] ?>
+								</td>
+								<td>
+									<?php echo $key['nama_dosen'] ?>
+								</td>
+								
 								<td>
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/view_detail/<?php echo $key['id'] ?>" title="">
 									<i class="fa fa-file-pdf-o"  title="View"></i>
