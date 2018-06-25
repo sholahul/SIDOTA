@@ -56,7 +56,7 @@
 									
 								</td>
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_show_dokumen/<?php echo $key['id'] ?>" title="">
+									<a style="text-decoration: none" href="<?php echo base_url()?>dosen/action_show_dokumen/<?php echo $key['id'] ?>" title="">
 									<i class="fa fa-file-pdf-o"  title="Open Document"></i></a>
 								</td>
 							</tr>

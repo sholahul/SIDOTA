@@ -3,15 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dosen extends CI_Controller{
 	var $user;
-
+	
 	public function __construct()
 	{
 		parent::__construct();
 
 		$this->load->model('m_dosen');
 		$this->load->model('m_dokumen');
-		$username = $this->session->userdata('user');
-				
+		$this->user = $this->session->userdata('user');
+			
 	}
 
 	public function index()
@@ -25,7 +25,7 @@ class Dosen extends CI_Controller{
 		$data = array(
 			'user' => $user, 
 		);
-		
+
 		$this->load->view('dosen/header',$data);
         $this->load->view('dosen/dashboard',$data);
       	$this->load->view('dosen/footer');
@@ -124,7 +124,8 @@ class Dosen extends CI_Controller{
 		$data = array(
 			'user' => $user, 
 		);
-		
+		$this->user = $user;
+
 		$data['content'] = $this->m_dokumen->show_dokumen_verified();
 		
 		$this->load->view('dosen/header',$data);
@@ -136,6 +137,7 @@ class Dosen extends CI_Controller{
 		$data = array(
 			'user' => $user, 
 		);
+		$this->user = $user;
 
 		$data['content'] = $this->m_dokumen->show_dokumen_verified_mhs($user);
 		$this->load->view('dosen/header',$data);
@@ -196,6 +198,8 @@ class Dosen extends CI_Controller{
 	public function detail_ta($path = '')
 	{
 		$data['user'] = $this->user;
+
+		
 		$data['content'] = $this->m_dokumen->get_detail_ta($path);
 		$this->load->view('dosen/header', $data);
 		$this->load->view('dosen/detail_ta', $data);
