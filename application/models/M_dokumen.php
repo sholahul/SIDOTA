@@ -110,7 +110,7 @@ class M_dokumen extends CI_Model {
 
     public function get_detail_ta($filename)
     {
-        $this->db->select('mahasiswa.nama, nimmhs, dosen.nama, judulta, publish_date, abstrak, path');
+        $this->db->select('mahasiswa.nama AS `nama_mhs`, nimmhs, dosen.nama as `nama_dosen`, judulta, publish_date, abstrak, path');
         $this->db->from('dokumenta');
         $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs');
         $this->db->join('dosen', 'dosen.nip = dokumenta.nppa');

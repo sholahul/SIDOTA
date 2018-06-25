@@ -33,17 +33,17 @@
                         <tr>
                             <th class="col-xs-2">Nama</th>
                             <td>:</td>
-                            <td><?=$key->mahasiswa.nama?></td>
+                            <td><?=$key->nama_mhs?></td>
                         </tr>
                         <tr>
                             <th>NIM</th>
                             <td>:</td>
-                            <td></td>
+                            <td><?=$key->nimmhs?></td>
                         </tr>
                         <tr>
                             <th>Pembimbing Akademik</th>
                             <td>:</td>
-                            <td><?=$key->dosen.nama?></td>
+                            <td><?=$key->nama_dosen?></td>
                         </tr>
                         <tr>
                             <th >Judul</th>
@@ -65,8 +65,8 @@
                             <td>:</td>
                             <td><button class="btn"><i class="fa fa-download"></i> Download</button></td>
                         </tr>
+                        <?php endforeach ?>
                     </table>
-
                 </div>
 			</div>
 		</div>
