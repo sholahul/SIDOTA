@@ -133,7 +133,7 @@ class Mahasiswa extends CI_Controller{
 		$data['content'] = $this->m_dokumen->show_dokumen_verified();
 		
 		$this->load->view('mahasiswa/header',$data);
-        $this->load->view('mahasiswa/viewdokumen',$data);
+        $this->load->view('mahasiswa/doc',$data);
       	$this->load->view('mahasiswa/footer');
 	}
 

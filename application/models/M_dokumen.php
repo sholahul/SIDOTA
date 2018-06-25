@@ -9,17 +9,6 @@ class M_dokumen extends CI_Model {
 		
 	}
 
-    public function check_mhs_dok($user='')
-    {
-        $this->db->select('*');
-        $this->db->from('dokumenta');
-        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs'); 
-        $this->db->where('verifikasi', '1');
-        $this->db->where('dokumenta.nimmhs', $user);
-
-        return $this->db->get();
-    }
-
 	//1. Show All dokumen TA
     public function show_dokumen()
     {
