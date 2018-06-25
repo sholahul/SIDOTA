@@ -9,10 +9,15 @@ class M_dokumen extends CI_Model {
 		
 	}
 
-    public function check_mhs_dok($nim = '')
+    public function check_mhs_dok($user='')
     {
-        $this->db->where('nimmhs',$nim);
-        return $this->db->get('dokumenta');
+        $this->db->select('*');
+        $this->db->from('dokumenta');
+        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs'); 
+        $this->db->where('verifikasi', '1');
+        $this->db->where('dokumenta.nimmhs', $user);
+
+        return $this->db->get();
     }
 
 	//1. Show All dokumen TA
@@ -21,7 +26,7 @@ class M_dokumen extends CI_Model {
         $this->db->select('*');
         $this->db->from('dokumenta');
         $this->db->join('mahasiswa', 'mahasiswa.nppa = dokumenta.nppa');
-        return $this->db->get();
+        return $this->db->get()->result();
     }
 
     //2. Action delete dokumen ta
