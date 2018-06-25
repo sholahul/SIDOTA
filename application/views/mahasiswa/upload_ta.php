@@ -70,7 +70,7 @@
                         </div> -->
 
                         <div class="form-group">
-							<label class="control-label col-sm-2" for="file_ta">Upload TA :</label>
+							<label class="control-label col-sm-2" for="file_ta">Upload TA (.pdf) :</label>
 							<div class="col-sm-8">
 								<input type="file" name="file_ta" accept="application/pdf">
 							</div>

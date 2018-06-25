@@ -96,6 +96,12 @@ class M_dokumen extends CI_Model {
         return $this->db->get();
     }
 
+    public function check_ta_mahasiswa($user){
+       
+        $this->db->where('nimmhs',$user);
+        return $this->db->get('dokumenta');
+    }
+
     public function upload_ta($dokumen)
     {
         $this->db->set('publish_date', 'NOW()', FALSE);
