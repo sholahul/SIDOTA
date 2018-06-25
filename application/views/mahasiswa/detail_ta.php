@@ -20,6 +20,8 @@
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
         <link href="<?=base_url('assets/vendor/style.css')?>" rel="stylesheet" >
+        <script src="<?=base_url('assets/vendor/build/pdf.js')?>" type="text/javascript"></script>
+        <script src="<?=base_url('assets/vendor/build/pdf.worker.js')?>" type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="content" id="fullpage">
@@ -67,6 +69,7 @@
                         </tr>
                         <?php endforeach ?>
                     </table>
+                    <!-- <iframe width="800" height="800" src="<?=base_url()?>assets/vendor/web/viewer.html?file=09021181520125.pdf"></iframe> -->
                 </div>
 			</div>
 		</div>
