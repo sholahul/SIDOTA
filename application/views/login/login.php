@@ -42,12 +42,12 @@
 							<h6>Silakan Login Terlebih Dahulu. </h6>
 							<label for="uname"><b>Username/NIP/NIM</b></label>
 							<br>
-							<input type="text" maxlength="15" onkeyup="filter(this)" placeholder="Enter Username/NIP/NIM" name="user" required>
+							<input type="text" maxlength="40" onkeyup="filter(this)" placeholder="Enter Username/NIP/NIM" name="user" required>
 							<br>
 							<label for="psw"><b>Password</b></label>
 							<br>
 
-							<input type="password" maxlength="15" onkeyup="filter(this)" value=
+							<input type="password" maxlength="20" onkeyup="filter(this)" value=
 							"" placeholder="Enter Password" name="password" required>
 							<br>
 							<label for="psw"><b>Role</b></label>
