@@ -14,8 +14,8 @@ class M_dokumen extends CI_Model {
     {
         $this->db->select('*');
         $this->db->from('dokumenta');
-        $this->db->join('mahasiswa', 'mahasiswa.nppa = dokumenta.nppa');
-        return $this->db->get()->result();
+        $this->db->join('mahasiswa', 'mahasiswa.nim = dokumenta.nimmhs'); 
+        return $this->db->get();
     }
 
     //2. Action delete dokumen ta

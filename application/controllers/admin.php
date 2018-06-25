@@ -618,7 +618,7 @@ class Admin extends CI_Controller{
 
 	//24. load dokumen list
 	public function dokumen_list($user =''){
-      	$data = array(
+		$data = array(
 			'user' => $user, 
 		);
 		
