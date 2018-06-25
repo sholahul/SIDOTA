@@ -155,12 +155,18 @@ class Mahasiswa extends CI_Controller{
 		$data = array(
 			'user' => $user,
 		);
+		if($this->m_mahasiswa->check_mhs_dok($user)){
+			echo '<script language="javascript">';
+			echo 'Anda telah mengupload TA';
+			echo '</script>';
+		}else{
+			$data['c_dosen'] = $this->m_admin->show_dosen($data);
 
-		$data['c_dosen'] = $this->m_admin->show_dosen($data);
-
-		$this->load->view('mahasiswa/header',$data);
-        $this->load->view('mahasiswa/upload_ta',$data);
-      	$this->load->view('mahasiswa/footer');
+			$this->load->view('mahasiswa/header',$data);
+	        $this->load->view('mahasiswa/upload_ta',$data);
+	      	$this->load->view('mahasiswa/footer');
+		}
+		
 	}
 
 	public function action_upload()
