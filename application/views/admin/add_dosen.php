@@ -23,7 +23,7 @@
 	<body>
 		<div class="content" id="fullpage">
 			<div class="w3-container">
-				<h2><i class="fa fa-cog"> </i> Add Admin</h2>
+				<h2><i class="fa fa-user"> </i> Add Dosen</h2>
 				<hr>
 				
 				<div class="container ubah" >
