@@ -159,9 +159,9 @@ class Mahasiswa extends CI_Controller{
 			echo '<script language="javascript">';
 			echo 'alert("Dokumen TA Anda Ada")';
 			echo '</script>';
-
+			$data['content'] = $this->m_dokumen->own_ta($user);
 			$this->load->view('mahasiswa/header',$data);
-       		 $this->load->view('mahasiswa/dashboard',$data);
+       		 $this->load->view('mahasiswa/own_dokumen',$data);
       		$this->load->view('mahasiswa/footer');
 			// redirect('mahasiswa/dashboard/','refresh');
 		}
