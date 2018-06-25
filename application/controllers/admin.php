@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-include('login.php');
+
 class Admin extends CI_Controller{
 	//variable global data
 	var $user;
