@@ -64,7 +64,7 @@
 								</td>
 								
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/view_detail/<?php echo $key['id'] ?>" title="">
+									<a style="text-decoration: none" href="<?php echo base_url()?>mahasiswa/detail_ta/<?php echo $key['path'] ?>" title="">
 									<i class="fa fa-file-pdf-o"  title="View"></i>
 									</a><br><br>
 									

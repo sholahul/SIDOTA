@@ -193,4 +193,13 @@ class Dosen extends CI_Controller{
 
 	}
 
+	public function detail_ta($path = '')
+	{
+		$data['user'] = $this->user;
+		$data['content'] = $this->m_dokumen->get_detail_ta($path);
+		$this->load->view('dosen/header', $data);
+		$this->load->view('dosen/detail_ta', $data);
+		$this->load->view('dosen/footer');	
+
+	}
 }
