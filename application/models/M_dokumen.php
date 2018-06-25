@@ -12,13 +12,7 @@ class M_dokumen extends CI_Model {
     public function check_mhs_dok($nim = '')
     {
         $this->db->where('nimmhs',$nim);
-        if($this->db->get()){
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        return $this->db->get('dokumenta');
     }
 
 	//1. Show All dokumen TA
