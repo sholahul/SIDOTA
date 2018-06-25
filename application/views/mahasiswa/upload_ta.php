@@ -52,7 +52,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="judulta">Judul :</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="judulta" placeholder="Enter Judul TA">
+								<input type="text" class="form-control" name="judulta" placeholder="Enter Judul TA" maxlength="50" title="max length 50">
 							</div>
 						</div>
 												
