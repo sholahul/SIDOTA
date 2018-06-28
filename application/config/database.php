@@ -75,12 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '114.125.245.137',
-	'port'	=> '1443',
-	'username' => 'sidota',
-	'password' => '30mei1998',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
 	'database' => 'sidtati',
-	'dbdriver' => 'sqlsrv',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
