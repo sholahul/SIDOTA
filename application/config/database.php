@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '114.125.245.137',
+	'hostname' => 'tcp:sidota.database.windows.net,1433',
 	'username' => 'sidota',
 	'password' => '30mei1998',
 	'database' => 'sidtati',
