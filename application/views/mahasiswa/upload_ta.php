@@ -21,7 +21,6 @@
         <link href="<?=base_url('assets/vendor/Admin_STY.css')?>" rel="stylesheet">
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script> 
-
 	</head>
 	<body>
 		<div class="content">

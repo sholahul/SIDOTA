@@ -643,6 +643,10 @@ class Admin extends CI_Controller{
 
 		$data['content'] = $this->m_dokumen->show_dokumen();
 		
+		echo '<script language="javascript">';
+			echo 'alert("Data Berhasil Dihapus")';
+			echo '</script>';
+			
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/lists_dokumen',$data);
       	$this->load->view('admin/footer');		

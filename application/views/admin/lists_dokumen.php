@@ -59,8 +59,9 @@
 									
 								</td>
 								<td style="text-align: center">
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_dokumen/<?php echo $key['id'] ?>" title="">
-									<i style="color: darkblue" class="fa fa-trash-o"  title="Delete"></i></a>
+									<a  href="<?php echo base_url()?>admin/action_delete_dokumen/<?php echo $key['id'] ?>" title="">
+										<button class="btn-danger">Hapus</button>
+									</a>
 								</td>
 							</tr>
 							<?php endforeach ?>
