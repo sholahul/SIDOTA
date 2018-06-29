@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Admin</title>
+        <link rel="icon" href="<?=base_url('assets/img/icon.png')?>" type="image">
         <!-- Bootstrap template 3.3.7-->
         <link href="<?=base_url('assets/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -12,15 +14,13 @@
         <!-- fonts googlelapis online -->
         <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+       <!--  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+        <link href="<?=base_url('assets/w3/w3.css')?>" rel="stylesheet">
+
         <!-- Our Styles -->
-        <link href="<?=base_url('assets/vendor/styles_admin.css')?>" rel="stylesheet">
-        <script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
+        <link href="<?=base_url('assets/vendor/Admin_STY.css')?>" rel="stylesheet">
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-        <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-        <link href="<?=base_url('assets/vendor/style.css')?>" rel="stylesheet" >
-        <script src="<?=base_url('assets/vendor/build/pdf.js')?>" type="text/javascript"></script>
-        <script src="<?=base_url('assets/vendor/build/pdf.worker.js')?>" type="text/javascript"></script>
+        <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>        
     </head>
     <body>
         <div class="content" id="fullpage">

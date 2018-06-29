@@ -19,7 +19,6 @@
 
         <!-- Our Styles -->
         <link href="<?=base_url('assets/vendor/Admin_STY.css')?>" rel="stylesheet">
-        <script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script> 
     </head>

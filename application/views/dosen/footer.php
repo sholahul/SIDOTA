@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <meta charset="utf-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap template 3.3.7-->
         <link href="<?=base_url('assets/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
@@ -16,7 +16,6 @@
          <link href="<?=base_url('assets/w3/w3.css')?>" rel="stylesheet">
         <!-- Our Styles -->
         <link href="<?=base_url('assets/vendor/Admin_STY.css')?>" rel="stylesheet">
-        <script src="<?=base_url('assets/vendor/js_admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
         <link href="<?=base_url('assets/vendor/si.css')?>" rel="stylesheet">

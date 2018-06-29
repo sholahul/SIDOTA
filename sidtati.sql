@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2018 at 07:25 AM
+-- Generation Time: Jun 29, 2018 at 02:35 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -42,7 +42,8 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`username`, `password`, `tempat_lahir`, `tanggal_lahir`, `email`, `alamat`, `nohp`) VALUES
 ('admin', 'ea', 'Prabumulih', '1998-05-30', 'sholahul30051998@gmail.com', 'Prabumulih', '082281036974'),
-('admin2', 'ea', 'palembang', '1998-01-01', 'farhan123@gmail.com', 'Palembang', '08127328851');
+('Kiritokun', '30mei1998', 'prabumulih', '1998-12-12', 'ea@gmail.com', 'EA', '0921'),
+('Sholahul', '30mei1998', 'Cilacap', '1998-05-30', 'sholahulfajri30@gmail.com', 'JL. M. Yamin. No. 282 RT.013 RW.03 Kel.Muntang Tapus Kec. Prabumulih Barat Kota Prabumulih', '082281036974');
 
 -- --------------------------------------------------------
 
@@ -55,7 +56,7 @@ CREATE TABLE `dokumenta` (
   `publish_date` date NOT NULL,
   `nimmhs` varchar(20) DEFAULT NULL,
   `nppa` varchar(20) DEFAULT NULL,
-  `judulta` varchar(50) NOT NULL,
+  `judulta` varchar(140) NOT NULL,
   `abstrak` text,
   `path` varchar(20) NOT NULL,
   `verifikasi` tinyint(1) NOT NULL
@@ -66,9 +67,10 @@ CREATE TABLE `dokumenta` (
 --
 
 INSERT INTO `dokumenta` (`id`, `publish_date`, `nimmhs`, `nppa`, `judulta`, `abstrak`, `path`, `verifikasi`) VALUES
-(15, '2018-06-25', '09021181520125', '1671140201820005', 'Kombinasi Teknik Steganografi Discret Cosine Trans', 'There are many problems to be solved in the framework of the information protection. A special place among them is the task of the hidden data, called steganography task. Secure communication can be accomplished in various ways. The common feature of these methods is that the information is embedded in some object, called a container. As the information currently in most cases is transmitted digitally, one of the most rapidly developing areas of steganography is digital steganography. In this direction, as the object for embedding used a computer file. Most of the steganography methods are used images as containers. Overall, the goal of steganography, which is, the problem of hidden data transmission, and opposite it the task of steganalysis, that is, the detecting hidden information transfer task, are one of the main problems in information security, so their solution is relevant in our days.', '09021181520125.pdf', 1),
-(16, '2018-06-25', '09021281419050', '196602202006041001', 'Pengaruh Singular Value Decomposition Terhadap Met', 'Dokumen yang mengandung banyak atribut atau dimensi dapat menjadi\r\nhambatan dalam proses clustering. Kebanyakan algoritma clustering baik dalam\r\nmenangani data berdimensi rendah, sehingga untuk menemukan cluster dari objek\r\ndata berdimensi tinggi adalah sebuah tantangan karena data berdimensi tinggi\r\ncenderung memiliki noise, sparse, dan bersifat skew. Dalam data mining, reduksi\r\ndimensi dapat dilakukan untuk meningkatkan akurasi hasil clustering data\r\nberdimensi tinggi. Untuk itu, Penelitian ini mengkombinasikan Singular Value\r\nDecomposition (SVD) untuk mereduksi dimensi dan melihat pengaruhnya\r\nterhadap akurasi hasil clustering metode k-means, k-medoids, dan fuzzy c-means.\r\nPenelitian menunjukkan bahwa kombinasi SVD dan k-means dan k-meodids\r\nmeningkatkan hasil akurasi sebesar 10-11 % dibandingkan dengan clustering\r\ntanpa reduksi dimensi. Waktu komputasi proses clustering menjadi lebih cepat.\r\nNamun, sebaliknya kombinasi SVD dan fuzzy c-means menunjukkan hasil\r\nakurasi clustering yang lebih buruk dibandingkan dengan clustering tanpa reduksi\r\ndimensi.', '09021281419050.pdf', 1),
-(17, '2018-06-25', '09021281520117', '1671140201820005', 'Pengaruh Singular Value Decomposition Terhadap Met', 'ea', '09021281520117.pdf', 1);
+(15, '2018-06-25', '09021181520125', '1671140201820005', 'Kombinasi Teknik Steganografi Discret Cosine Transform(DCT),Least Significant Bit(LSB) &  Teknik Kriptografi One Time Pad(OTP)', 'There are many problems to be solved in the framework of the information protection. A special place among them is the task of the hidden data, called steganography task. Secure communication can be accomplished in various ways. The common feature of these methods is that the information is embedded in some object, called a container. As the information currently in most cases is transmitted digitally, one of the most rapidly developing areas of steganography is digital steganography. In this direction, as the object for embedding used a computer file. Most of the steganography methods are used images as containers. Overall, the goal of steganography, which is, the problem of hidden data transmission, and opposite it the task of steganalysis, that is, the detecting hidden information transfer task, are one of the main problems in information security, so their solution is relevant in our days.', '09021181520125.pdf', 1),
+(16, '2018-06-25', '09021281419050', '196602202006041001', 'Pengaruh Singular Value Decomposition Terhadap Metode-Metode\r\nClustering dalam Pengelompokkan Dokumen Berdimensi Tinggi', 'Dokumen yang mengandung banyak atribut atau dimensi dapat menjadi\r\nhambatan dalam proses clustering. Kebanyakan algoritma clustering baik dalam\r\nmenangani data berdimensi rendah, sehingga untuk menemukan cluster dari objek\r\ndata berdimensi tinggi adalah sebuah tantangan karena data berdimensi tinggi\r\ncenderung memiliki noise, sparse, dan bersifat skew. Dalam data mining, reduksi\r\ndimensi dapat dilakukan untuk meningkatkan akurasi hasil clustering data\r\nberdimensi tinggi. Untuk itu, Penelitian ini mengkombinasikan Singular Value\r\nDecomposition (SVD) untuk mereduksi dimensi dan melihat pengaruhnya\r\nterhadap akurasi hasil clustering metode k-means, k-medoids, dan fuzzy c-means.\r\nPenelitian menunjukkan bahwa kombinasi SVD dan k-means dan k-meodids\r\nmeningkatkan hasil akurasi sebesar 10-11 % dibandingkan dengan clustering\r\ntanpa reduksi dimensi. Waktu komputasi proses clustering menjadi lebih cepat.\r\nNamun, sebaliknya kombinasi SVD dan fuzzy c-means menunjukkan hasil\r\nakurasi clustering yang lebih buruk dibandingkan dengan clustering tanpa reduksi\r\ndimensi.', '09021281419050.pdf', 1),
+(17, '2018-06-25', '09021281520117', '1671140201820005', 'Pengaruh Singular Value Decomposition Terhadap Metode-Metode\r\nClustering dalam Pengelompokkan Dokumen Berdimensi Tinggi', 'ea', '09021281520117.pdf', 1),
+(18, '2018-06-29', '09021281419041', '1671140201820005', 'Kombinasi Teknik Steganografi Discret Cosine Transform(DCT),Least Significant Bit(LSB) &  Teknik Kriptografi One Time Pad(OTP)', 'Proposed software model of the hidden data\r\ntransmission using a combined LSB&DCT algorithm. In this\r\npaper, it will be shown how combination of steganographic\r\ntransformation algorithms such as the least significant bits\r\nalgorithm and the discrete cosine transform algorithm allows\r\nobtaining a new quality of hidden data transmission stability\r\nagainst most types of interference in the transmission channels.', '09021281419041.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -94,7 +96,7 @@ CREATE TABLE `dosen` (
 --
 
 INSERT INTO `dosen` (`nip`, `nama`, `password`, `tempat_lahir`, `tanggal_lahir`, `jabatan`, `jenis_kelamin`, `alamat`, `email`, `nohp`) VALUES
-('1671140201820005', 'Rusdi Efendi,M.Kom', '123456', 'palembang', '1998-01-01', 'Tenaga Pengajar', 'laki-laki', 'Palembang', 'rusdiefendi8@gmail.com', '0'),
+('1671140201820005', 'Rusdi Efendi,M.Kom', '123456', 'palembang', '1998-01-01', 'Tenaga Pengajar', 'Laki-Laki', 'Palembang', 'rusdiefendi8@gmail.com', '082281036974'),
 ('196602202006041001', 'Drs. Megah Mulya, M.T.', '123456', 'palembang', '1968-02-01', 'Lektor', 'laki-laki', 'Palembang', 'megahmulya@yahoo.cm', '081274080838'),
 ('197706012009121004	', 'Rifkie Primartha, S.T., M.T.', '123456', 'palembang', '1998-01-01', 'Asisten Ahli', 'laki-laki', 'Palembang', 'rikie_p@yahoo.com', '08127374611'),
 ('198505102015041002', 'Danny Matthew Saputra,S.T., M.Sc.', '123456', 'palembang', '1968-02-01', 'Tenaga Pengajar', 'laki-laki', 'Palembang', 'dany.saputra@gmail.com', '082307000175'),
@@ -126,9 +128,8 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nppa`, `nama`, `password`, `angkatan`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `email`, `nohp`, `lokasi_kampus`, `alamat`) VALUES
-('09021181520015	', '1671140201820005', 'Muhammad Farhan Evirzal', '123456', 2015, 'palembang', '1998-05-30', 'laki-laki', 'farhanevirzal15@gmail.com', '081379318078', 'inderalaya', 'Palembang\r\n'),
 ('09021181520125', '196602202006041001', 'Sholahul Fajri', '123456', 2015, 'Prabumulih', '1998-05-30', 'laki-laki', 'sholahul30051998@gmail.com', '082281036974', 'inderalaya', 'Prabumulih'),
-('09021281419041', '198908062015042002', 'Indri Dwi Ayu', '123456', 2014, 'palembang', '1998-05-30', 'Perempuan', 'indriayu23@gmail.com', '08222222222', 'inderalaya', 'Palembang\r\n'),
+('09021281419041', '196602202006041001', 'Indri Dwi Ayu', '123456', 2014, 'palembang', '1998-05-30', 'Perempuan', 'indriayu23@gmail.com', '08222222', 'inderalaya', 'Palembang\r\n'),
 ('09021281419050', '196602202006041001', 'M Ryan Fadholi', '123456', 2014, 'palembang', '1998-05-30', 'laki-laki', 'Ryanfadholi22@gmail.com', '0822222222', 'inderalaya', 'Palembang'),
 ('09021281520117', '198908062015042002', 'Agusti Kurniawan', '123456', 2015, 'Bangka Belitung', '1998-05-30', 'laki-laki', 'agusti123@gmail.com', '081278900533', 'inderalaya', 'Bangka Belitung ');
 
@@ -172,7 +173,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `dokumenta`
 --
 ALTER TABLE `dokumenta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- Constraints for dumped tables
 --
