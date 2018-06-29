@@ -96,19 +96,21 @@ body{
     height: 666px;
     background-color: #1A8DA9;
     border: 3px;
+    font-size: smaller;
+    font-size: larger;
+
 }
 .content{
     background-color: white;
     height: 100vh;
     position: fixed;
-    margin-left: 190px;
+    margin-left: 14%;
     padding-top: 20px;
 }
 
 .footer {
     position: fixed;
-    left: 70px;
-    position: absolute;
+    left: 14%;
     right: 0;
     bottom: 0;
     padding: 1rem;

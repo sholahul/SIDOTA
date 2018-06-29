@@ -1,6 +1,7 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+
 }
 
 body{
@@ -76,7 +77,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 212px;
+    width: 200px;
 }
 
 button:hover {

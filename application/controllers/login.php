@@ -51,6 +51,8 @@ class Login extends CI_Controller {
 
 		else if($data['role'] == 'Dosen'){
 			if($this->m_login->can_login($data)){
+			    $this->session->set_userdata($data);
+			    
     			$this->load->view('dosen/header',$data);
     			$this->load->view('dosen/dashboard', $data);
 				$this->load->view('dosen/footer', $data);	      
@@ -75,6 +77,7 @@ class Login extends CI_Controller {
 
 	}
 	public function logout(){
+	    $this->session->sess_destroy();
 		redirect(base_url());
 		exit;
 	}

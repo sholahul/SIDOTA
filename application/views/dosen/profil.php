@@ -22,7 +22,7 @@
       
       <body>
             <div class="content" id="fullpage">
-                  <div class="w3-container">
+                  <div class="container-fluid">
                         <h2><i class="fa fa-address-book-o"> </i> Profile</h2>
                         <hr>
                         <div class="container ubah" syle="">
@@ -90,7 +90,7 @@
 
                                           <div class="form-group">
                                                 <div class="col-sm-offset-4 col-sm-10">
-                                                      <button type="submit" class="btn btn-success">Submit</button>
+                                                      <button type="submit" class="btn btn-primary">Submit</button>
                                                 </div>
                                           </div>
 

@@ -15,24 +15,25 @@
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<!-- Our Styles -->
 		<link href="<?=base_url('assets/vendor/styles_admin.css')?>" rel="stylesheet">
+		<link href="<?=base_url('assets/vendor/style.css')?>" rel="stylesheet">
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 	</head>
 	<body>
-		<div class="content"">
-			<div class="w3-container">
+		<div class="content" id="fullpage">
+			<div class="container-fluid">
 				<h2><span class="glyphicon glyphicon-th-list"></span> Daftar TA </h2>
 				<hr>
 				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" > <br><br>
-				<div class="">
-					<table class="table table-bordered ">
+				<div class="table-responsive tbs">
+					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th style="width: 100px" onclick="sortTable(0)">Publish Date</th>
-								<th style="width: 600px" onclick="sortTable(1)">Judul Tugas Akhir</th>
-								<th style="width: 200px" onclick="sortTable(2)">Nim Mahasiswa</th>
-								<th style="width: 200px" onclick="sortTable(3)">NIP Pembimbing TA</th>
+								<th style="width: 500px" onclick="sortTable(1)">Judul Tugas Akhir</th>
+								<th style="width: 150px" onclick="sortTable(2)">Nim Mahasiswa</th>
+								<th style="width: 150px" onclick="sortTable(3)">NIP Pembimbing TA</th>
 								<th onclick="sortTable(4)">Angkatan</th>
 								
 								<th onclick="sortTable(5)">Verifikasi</th>
@@ -55,9 +56,9 @@
 									?>
 									
 								</td>
-								<td>
+								<td style="text-align: center">
 									<a style="text-decoration: none" href="<?php echo base_url()?>admin/action_delete_dokumen/<?php echo $key['id'] ?>" title="">
-									<i class="fa fa-trash-o"  title="Delete"></i></a>
+									<i style="color: darkblue" class="fa fa-trash-o"  title="Delete"></i></a>
 								</td>
 							</tr>
 							<?php endforeach ?>

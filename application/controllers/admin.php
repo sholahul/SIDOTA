@@ -145,8 +145,11 @@ class Admin extends CI_Controller{
             //set username awal login bukan selected s
         	$data['user'] = $this->user;
             // passing value from model show_admin to variabel array data['content'] 
-
             $data['content'] = $this->m_admin->show_admin($data);
+
+            echo '<script language="javascript">';
+			echo 'alert("Data Berhasil Dihapus")';
+			echo '</script>';
 
             $this->load->view('admin/header',$data);
             $this->load->view('admin/lists_admin',$data);
@@ -306,7 +309,11 @@ class Admin extends CI_Controller{
            // passing value from model show_admin to variabel array data['content'] 
 
         $data['content'] = $this->m_admin->show_dosen($data);
-
+        
+        echo '<script language="javascript">';
+		echo 'alert("Data Berhasil Dihapus")';
+		echo '</script>';
+        
         $this->load->view('admin/header',$data);
         $this->load->view('admin/lists_dosen',$data);
         $this->load->view('admin/footer');
@@ -467,6 +474,10 @@ class Admin extends CI_Controller{
 
         $data['content'] = $this->m_admin->show_mahasiswa($data);
 
+        echo '<script language="javascript">';
+		echo 'alert("Data Berhasil Dihapus")';
+		echo '</script>';
+
         $this->load->view('admin/header',$data);
         $this->load->view('admin/lists_mahasiswa',$data);
         $this->load->view('admin/footer');
@@ -624,6 +635,7 @@ class Admin extends CI_Controller{
 		
 		$data['content'] = $this->m_dokumen->show_dokumen();
 		
+		
 		$this->load->view('admin/header',$data);
         $this->load->view('admin/lists_dokumen',$data);
       	$this->load->view('admin/footer');
@@ -665,8 +677,9 @@ class Admin extends CI_Controller{
 	public function detail_ta($path = '')
 	{
 		$data['user'] = $this->user;
-		echo $data['user'];
+
 		$data['content'] = $this->m_dokumen->get_detail_ta($path);
+		
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/detail_ta', $data);
 		$this->load->view('admin/footer');	

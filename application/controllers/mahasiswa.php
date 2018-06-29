@@ -175,7 +175,7 @@ class Mahasiswa extends CI_Controller{
 			$data['c_dosen'] = $this->m_admin->show_dosen($data);
 
 			$this->load->view('mahasiswa/header',$data);
-		    $this->load->view('mahasiswa/upload_ta',$data);
+		    $this->load->view('mahasiswa/own_dokumen',$data);
 		    $this->load->view('mahasiswa/footer');			
 		}
 	
@@ -211,11 +211,12 @@ class Mahasiswa extends CI_Controller{
 
             $this->m_dokumen->upload_ta($data);
             
+            ob_start();
             echo '<script language="javascript">';
 			echo 'alert("Dokumen TA berhasil di simpan.")';
 			echo '</script>';
-			
 			redirect('mahasiswa/show_dokumen/'.$this->user,'refresh');
+			ob_end_flush();
         }  
 	}
 

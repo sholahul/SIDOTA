@@ -28,7 +28,7 @@
 	</head>
 	<body>
 		<div class="content">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-cog"></i> Ubah Password</h2>
 				<hr>
 				
@@ -49,7 +49,7 @@
 						
 						<div class="form-group">
 							<div class="col-sm-offset-4 col-sm-10">
-								<button type="submit" class="btn btn-default">Submit</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</div>
 					</form>

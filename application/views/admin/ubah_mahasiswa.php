@@ -22,7 +22,7 @@
 	</head>
 	<body>
 		<div class="content" id="fullpage">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-github"> </i> Modify Mahasiswa</h2>
 				<hr>
 				

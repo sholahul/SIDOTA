@@ -20,13 +20,13 @@
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 	</head>
 	<body>
-		<div class="content"">
-			<div class="w3-container">
+		<div class="content" id="fullpage">
+			<div class="container-fluid">
 				<h2><i class="fa fa-book"></i> Own TA </h2>
 				<hr>
 	
-				<div class="">
-					<table class="table table-bordered ">
+				<div class="table-responsive tbs">
+					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th style="width: 100px" onclick="sortTable(0)">Publish Date</th>
@@ -56,7 +56,7 @@
 									
 								</td>
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>admin/view_detail/<?php echo $key['id'] ?>" title="">
+									<a style="text-decoration: none" href="<?php echo base_url()?>mahasiswa/detail_ta/<?php echo $key['path'] ?>" title="">
 									<i class="fa fa-file-pdf-o"  title="View"></i>
 									</a>
 								</td>

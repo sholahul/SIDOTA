@@ -22,7 +22,7 @@
 	<body>
 
 		<div class="content" id="fullpage">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-github"> </i> Daftar Mahasiswa </h2>
 				<hr>
 				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" >

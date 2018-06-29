@@ -21,7 +21,7 @@
 	</head>
 	<body>
 		<div class="content">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-cog"></i> Upload Dokumen TA</h2>
 				<hr>
 				<!-- 	<?php echo $username."da" ?> -->
@@ -34,7 +34,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2">Nip Pembimbing TA :</label>
+							<label class="control-label col-sm-2">NIP Pembimbing TA :</label>
 							<div class="col-sm-8">
 								<select id="opt" name ="nppa">
 									<?php foreach ($c_dosen->result() as $key1): ?>
@@ -52,7 +52,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="judulta">Judul :</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="judulta" placeholder="Enter Judul TA" maxlength="50" title="max length 50">
+								<input type="text" class="form-control" name="judulta" placeholder="Enter Judul TA" maxlength="140" title="max length 140">
 							</div>
 						</div>
 												
@@ -77,7 +77,7 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-5 col-sm-8">
-								<button type="submit" class="btn btn-default" onClick="TestFileType(this.form.uploadfile.value, ['pdf']);">Submit</button>
+								<button type="submit" class="btn btn-primary" onClick="TestFileType(this.form.uploadfile.value, ['pdf']);">Submit</button>
 							</div>
 						</div>
 					</form>

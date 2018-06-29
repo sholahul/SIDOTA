@@ -15,17 +15,22 @@
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 		<!-- Our Styles -->
-		<link href="<?=base_url('assets/vendor/styles_admin.css')?>" rel="stylesheet">
+		<!-- <link href="<?=base_url('assets/vendor/styless_admin.css')?>" rel="stylesheet"> -->
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 	</head>
 	<body>
 		<div class="content" id="fullpage">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-home"> </i> Dashboard</h2>
 				<hr>
-				
+				<div class="ack">
+				    <center><h4>Selamat Datang di SIDTA (Sistem Dokumentasi Tugas Akhir) Teknik Informatika Universitas Sriwijaya</h4></center>
+				    <hr>
+				    <center><h4>Tentang Website Ini</h4></center>
+				    <center><p>Website ini dikembangkan dengan tujuan sebagai sarana untuk memudahkan Mahasiswa maupun Dosen dalam aktivitas Mencari, Menyimpan, dan Memverifikasi file dokumentasi Tugas Akhir Mahasiswa Teknik Informatika Universitas Sriwijaya.</p></center>
+				</div>
 			</div>
 		</div>
 	</body>

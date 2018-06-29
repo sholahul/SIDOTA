@@ -25,6 +25,7 @@ class Dosen extends CI_Controller{
 		$data = array(
 			'user' => $user, 
 		);
+		$this->user = $user;
 
 		$this->load->view('dosen/header',$data);
         $this->load->view('dosen/dashboard',$data);
@@ -48,7 +49,7 @@ class Dosen extends CI_Controller{
 		$pwd2 = $this->input->post('pwd2');
 
 		$data = array(
-			'user' => $user, 
+			'user' => $this->user, 
 			'password' => $this->input->post('pwd1'),
 		);
 		
@@ -122,9 +123,9 @@ class Dosen extends CI_Controller{
     public function show_dokumen($user='')
 	{
 		$data = array(
-			'user' => $user, 
+			'user' => $user,
 		);
-		$this->user = $user;
+// 		$this->user = $user;
 
 		$data['content'] = $this->m_dokumen->show_dokumen_verified();
 		
@@ -135,9 +136,9 @@ class Dosen extends CI_Controller{
 
 	public function show_list($user=''){
 		$data = array(
-			'user' => $user, 
+			'user' => $user,
 		);
-		$this->user = $user;
+// 		$this->user = $user;
 
 		$data['content'] = $this->m_dokumen->show_dokumen_verified_mhs($user);
 		$this->load->view('dosen/header',$data);
@@ -166,7 +167,7 @@ class Dosen extends CI_Controller{
 	{
 		$this->m_dokumen->action_acc($user);
 		$data = array(
-			'user' => $user,
+			'user' => $this->user,
 			'status' => 0
 		);	
 

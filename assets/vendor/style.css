@@ -47,3 +47,17 @@ th {
 .btn:hover {
     background-color: royalblue;
 }
+
+.btn_view {
+    background-color: #ea1612;   
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.btn_view:hover {
+    background-color: #b20a07;
+}

@@ -12,9 +12,10 @@
         <!-- fonts googlelapis online -->
         <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+         <link href="<?=base_url('assets/w3/w3.css')?>" rel="stylesheet">
         <!-- Our Styles -->
-        <link href="<?=base_url('assets/vendor/styles_admin.css')?>" rel="stylesheet">
+        <link href="<?=base_url('assets/vendor/Admin_STY.css')?>" rel="stylesheet">
         <script src="<?=base_url('assets/vendor/js_admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
@@ -115,18 +116,22 @@
             <div class="footer-inner">
                 <div class="footer-content">
                     <span>
-                        Dazzle &copy; 2018
+                         SIDTA - Group 4 &copy; 2018
                     </span>
                     &nbsp; &nbsp;
                     <span class="action-buttons">
-                        <a href="#">
-                            <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-                        </a>
-                        <a href="#">
+                       <br> Contact us : 
+                        <a href="https://web.facebook.com/sholahul" style="text-decoration:none;">
                             <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+                            Sholahul Fajri
                         </a>
-                        <a href="#">
-                            <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+                        <a href="https://web.facebook.com/agusti.kurniawan" style="text-decoration:none;">
+                            <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+                            Agusti Kurniawan
+                        </a>
+                        <a href="https://web.facebook.com/frhnevrzl" style="text-decoration:none;">
+                            <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+                            M. Farhan Evirzal
                         </a>
                     </span>
                 </div>

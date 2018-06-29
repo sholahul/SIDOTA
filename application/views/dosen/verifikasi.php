@@ -21,13 +21,13 @@
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 </head>
 <body>
-			<div class="content">
-			<div class="w3-container">
+			<div class="content" id="fullpage">
+			<div class="container-fluid">
 				<h2><i class="fa fa-cog"></i> Verifikasi Dokumen TA</h2>
 				<hr>
 				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" > <br><br>
-				<div class="">
-					<table class="table table-bordered ">
+				<div class="table-responsive tbs">
+					<table class="table table-bordered  ">
 						<thead>
 							<tr>
 								<th style="width: 200px" onclick="sortTable(0)">Publish Date</th>
@@ -57,7 +57,7 @@
 									
 								</td>
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>dosen/action_view_dokumen/<?php echo $key['id'] ?>" title="">
+									<a style="text-decoration: none" href="<?php echo base_url()?>dosen/detail_ta/<?php echo $key['path'] ?>" title="">
 									<i class="fa fa-file-pdf-o"  title="View"></i>
 									</a>
 

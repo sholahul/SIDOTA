@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+       <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dosen</title>
         <link rel="icon" href="<?=base_url('assets/img/icon.png')?>" type="image">
@@ -14,13 +14,14 @@
         <!-- fonts googlelapis online -->
         <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+       <!--  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+        <link href="<?=base_url('assets/w3/w3.css')?>" rel="stylesheet">
+
         <!-- Our Styles -->
-        <link href="<?=base_url('assets/vendor/stylesadmin.css')?>" rel="stylesheet">
-        <script src="<?=base_url('assets/vendor/js_admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
+        <link href="<?=base_url('assets/vendor/Admin_STY.css')?>" rel="stylesheet">
+        <script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-        <link href="<?=base_url('assets/vendor/si.css')?>" rel="stylesheet">
-        <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+        <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>     
     </head>
     
     <body id="page-top">
@@ -70,7 +71,7 @@
         </nav>
         
         <!-- Sidebar -->
-        <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:190px">
+        <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:14%" id="mySidebar">
             <br>
             <ul>
                 <li>

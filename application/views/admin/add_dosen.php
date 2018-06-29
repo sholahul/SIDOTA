@@ -22,7 +22,7 @@
 	</head>
 	<body>
 		<div class="content" id="fullpage">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-cog"> </i> Add Admin</h2>
 				<hr>
 				
@@ -85,7 +85,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-4" >Address :</label>
 							<div class="col-sm-7">
-								<textarea name="alamat" maxlength="100" onkeyup="femail(this)" placeholder="Enter Address" required=""></textarea>
+								<textarea name="alamat" maxlength="100" onkeyup="faddress(this)" placeholder="Enter Address" required=""></textarea>
 							</div>
 						</div>
 
@@ -105,7 +105,7 @@
 
 						<div class="form-group">
 							<div class="col-sm-offset-4 col-sm-10">
-								<button type="submit" class="btn btn-success">Submit</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</div>
 					</form>

@@ -32,7 +32,7 @@
 			
 			<div class="row">
 				<div class="column left">
-					<img src="<?=base_url('assets/img/fasilkom.png')?>" alt="">
+					<img src="<?=base_url('assets/img/111.jpg')?>" alt="">
 				</div>
 				<div class="column right">
 					<!-- redirect to process -->
@@ -58,9 +58,9 @@
 								<option value="Mahasiswa">Mahasiswa</option>
 							</select>
 							<br><br>
-							<small><a href="#" onclick="alert('Please contact the administrator to reset your password!')">Forgot Password?</a></small>
+							<small><a href="#" onclick="alert('Please contact the administrator to reset your password! \nEmail : sholahulfajri30@gmail.com')">Forgot Password?</a></small>
 							<br>
-							<button type="submit">Login</button>
+							<button type="submit" class="btn-primary">Login</button>
 						</div>
 					<?php echo form_close(); ?>
 				</div>

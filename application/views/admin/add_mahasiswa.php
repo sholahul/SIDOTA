@@ -22,16 +22,16 @@
 	</head>
 	<body>
 		<div class="content" id="fullpage">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-github"></i> Add Mahasiswa</h2>
 				<hr>
 				
-				<div class="container tbs" >
+				<div class="container ubah" >
 					<form class="form-horizontal" onSubmit="return validate()" method="post" action="<?php echo base_url() ?>admin/action_add_mahasiswa/<?php echo $user?>">
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="password">NIM :</label>
 							<div class="col-sm-7">
-								<input type="text" maxlength="15" onkeyup="fnohp(this)" class="form-control" id="pwd" placeholder="Enter Username" name="nim" required>
+								<input type="text" maxlength="15" onkeyup="fnohp(this)" class="form-control" id="pwd" placeholder="Enter Nim" name="nim" required>
 							</div>
 						</div>
 
@@ -62,7 +62,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="password">Angkatan :</label>
 							<div class="col-sm-7">
-								<input type="year" maxlength="4" onkeyup="filter(this)" class="form-control" id="pwd" placeholder="Enter Year" name="angkatan" required>
+								<input type="year" maxlength="4" onkeyup="fnohp(this)" class="form-control" id="pwd" placeholder="Enter Year" name="angkatan" required>
 							</div>
 						</div>
 						<div class="form-group">
@@ -116,7 +116,7 @@
 						
 						<div class="form-group">
 							<div class="col-sm-offset-4 col-sm-10">
-								<button type="submit" class="btn btn-success">Submit</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</div>
 					</form>

@@ -23,10 +23,15 @@
 	</head>
 	<body>
 		<div class="content" id="fullpage">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-home"> </i> Dashboard</h2>
 				<hr>
-				
+				<div class="ack">
+				    <center><h4>Selamat Datang di SIDTA (Sistem Dokumentasi Tugas Akhir) Teknik Informatika Universitas Sriwijaya</h4></center>
+				    <hr>
+				    <center><h4>Tentang Website Ini</h4></center>
+				    <center><p>Website ini dikembangkan dengan tujuan sebagai sarana untuk memudahkan Mahasiswa maupun Dosen dalam aktivitas Mencari, Menyimpan, dan Memverifikasi file dokumentasi Tugas Akhir Mahasiswa Teknik Informatika Universitas Sriwijaya.</p></center>
+				</div>
 			</div>
 		</div>
 	</body>

@@ -29,7 +29,7 @@
 				<h2><i class="fa fa-home"> </i> Detail TA</h2>
 				<hr>
                 
-                <div class="container">
+                <div class="container-fluid">
                     <table class="table table-responsive table-condensed">
                     <?php foreach($content->result() as $key): ?>
                         <tr>
@@ -65,7 +65,10 @@
                         <tr>
                             <th>Download TA</th>
                             <td>:</td>
-                            <td><button class="btn"><i class="fa fa-download"></i> Download</button></td>
+                            <td>
+                                <a href="<?=base_url()?>assets/dokumenta/<?=$key->path?>" Download><button class="btn"><i class="fa fa-download"></i> Download</button></a>
+                                <a href="<?=base_url()?>assets/vendor/web/viewer.html?file=<?=base_url()?>assets/dokumenta/<?=$key->path?>" target="_blank"><button class="btn btn_view"><i class="fa fa-file-pdf-o"></i> View</button></a>
+                            </td>
                         </tr>
                         <?php endforeach ?>
                     </table>

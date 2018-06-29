@@ -21,7 +21,7 @@
 	</head>
 	<body>
 		<div class="content" id="fullpage">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-user"> </i> Modify Dosen</h2>
 				<hr>
 				

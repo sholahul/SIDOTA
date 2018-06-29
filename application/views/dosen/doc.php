@@ -18,14 +18,15 @@
 		<script src="<?=base_url('assets/vendor/admin.js')?>" type="text/javascript" charset="utf-8" async defer></script>
 		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 		<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+		<link href="<?=base_url('assets/vendor/style.css')?>" rel="stylesheet">
 	</head>
 	<body>
 
 		<div class="content" id="fullpage">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><span class="glyphicon glyphicon-th-list"></span> Daftar TA Verified </h2>
 				<hr>
-				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" > <br><br>
+				<input type="text" name="search" placeholder="Search..." class="searchs form-control"  onkeyup="myFunction()" id="searchInput" > <br><br>
 				<div class="table-responsive tbs">
 					<table class="table table-bordered table-striped">
 						<thead>
@@ -64,10 +65,10 @@
 								</td>
 								
 								<td>
-									<a style="text-decoration: none" href="<?php echo base_url()?>dosen/detail_ta/<?php echo $key['path'] ?>" title="">
-									<i class="fa fa-file-pdf-o"  title="View"></i>
-									</a><br><br>
-									
+									<a href="<?php echo base_url()?>dosen/detail_ta/<?php echo $key['path'] ?>" title="">
+									<center><button class="btn btn-view">View Details</button></center>
+									</a>
+									<br><br>
 									</a>
 								</td>								
 							</tr>

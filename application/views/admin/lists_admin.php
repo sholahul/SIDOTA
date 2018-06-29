@@ -26,7 +26,7 @@
 	<body>
 		<!-- 	<div id="" style="overflow-y:scroll; overflow-x:hidden; height:400px;"> -->
 		<div class="content" id="fullpage">
-			<div class="w3-container">
+			<div class="container-fluid">
 				<h2><i class="fa fa-cog"> </i> Daftar Admin </h2>
 				<hr>
 				<input type="text" name="search" placeholder="&#xF002; Search.." class="searchs"  onkeyup="myFunction()" id="searchInput" >
@@ -40,8 +40,8 @@
 							<tr>
 								<th onclick="sortTable(0)">Username</th>
 								<th onclick="sortTable(1)">Password</th>
-								<th onclick="sortTable(2)">Tempat Lahir</th>
-								<th onclick="sortTable(3)">Tanggal Lahir</th>
+								<th style="width:100px;" onclick="sortTable(2)">Tempat Lahir</th>
+								<th style="width:100px;" onclick="sortTable(3)">Tanggal Lahir</th>
 								<th onclick="sortTable(4)">Email</th>
 								<th onclick="sortTable(5)">Alamat</th>
 								<th onclick="sortTable(6)">NoHP</th>
