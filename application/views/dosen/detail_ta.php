@@ -67,6 +67,7 @@
                             <td>:</td>
                             <td>
                                 <a href="<?=base_url()?>assets/dokumenta/<?=$key->path?>" Download><button class="btn"><i class="fa fa-download"></i> Download</button></a>
+                                
                                 <a href="<?=base_url()?>assets/vendor/web/viewer.html?file=<?=base_url()?>assets/dokumenta/<?=$key->path?>" target="_blank"><button class="btn btn_view"><i class="fa fa-file-pdf-o"></i> View</button></a>
                             </td>
                         </tr>

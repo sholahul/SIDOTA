@@ -32,14 +32,14 @@
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th style="width: 100px" onclick="sortTable(0)">Publish Date</th>
-								<th style="width: 600px" onclick="sortTable(1)">Judul Tugas Akhir</th>
-								<th style="width: 200px" onclick="sortTable(2)">NIM</th>
-								<th style="width: 200px" onclick="sortTable(2)">nama</th>
-								<th onclick="sortTable(3)">Angkatan</th>
+								<th style="width: 150px;text-align: center" onclick="sortTable(0)">Publish Date</th>
+								<th style="width: 600px;text-align: center" onclick="sortTable(1)">Judul Tugas Akhir</th>
+								<th style="width: 150px;text-align: center" onclick="sortTable(2)">NIM</th>
+								<th style="width: 200px;text-align: center" onclick="sortTable(2)">nama</th>
+								<th style="text-align: center" onclick="sortTable(3)">Angkatan</th>
 								
 								<th onclick="sortTable(4)">Verifikasi</th>
-								<th>Action</th>
+								<th style="text-align: center">Action</th>
 							</tr>
 						</thead>
 						<tbody id="tblDokumen">
@@ -60,7 +60,8 @@
 								</td>
 								<td>
 									<a style="text-decoration: none" href="<?php echo base_url()?>dosen/detail_ta/<?php echo $key['path'] ?>" title="">
-									<i class="fa fa-file-pdf-o"  title="Open Document"></i></a>
+										<button class="btn" style="color:blue">View</button>
+									</a>
 								</td>
 							</tr>
 							<?php endforeach ?>

@@ -31,14 +31,14 @@
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th style="width: 200px;" onclick="sortTable(0)">Publish Date</th>
-								<th style="width: 400px;" onclick="sortTable(5)">Judul Tugas Akhir</th>
-								<th style="width: 300px;" onclick="sortTable(6)">Nim</th>
-								<th style="width: 300px;" onclick="sortTable(6)">Nama Mahasiswa</th>
-								<th style="width: 300px;" onclick="sortTable(6)">NPPA</th>
-								<th style="width: 300px;" onclick="sortTable(6)">Nama Pembimbing</th>
+								<th style="width: 200px; text-align: center" onclick="sortTable(0)">Publish Date</th>
+								<th style="width: 500px; text-align: center" onclick="sortTable(5)">Judul Tugas Akhir</th>
+								<th style="width: 200px; text-align: center" onclick="sortTable(6)">Nim</th>
+								<th style="width: 300px; text-align: center" onclick="sortTable(6)">Nama Mahasiswa</th>
+								<th style="width: 200px; text-align: center" onclick="sortTable(6)">NPPA</th>
+								<th style="width: 300px; text-align: center" onclick="sortTable(6)">Nama Pembimbing</th>
 								
-								<th style="width: 300px;">Action</th>
+								<th style="width: 200px; text-align: center">Action</th>
 							</tr>
 						</thead>
 						<tbody id="tblDokumen">
@@ -64,9 +64,9 @@
 									<?php echo $key['nama_dosen'] ?>
 								</td>
 								
-								<td>
+								<td style="text-align: center">
 									<a href="<?php echo base_url()?>dosen/detail_ta/<?php echo $key['path'] ?>" title="">
-									<center><button class="btn btn-view">View Details</button></center>
+									<button class="btn">View Details</button>
 									</a>
 									<br><br>
 									</a>

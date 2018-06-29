@@ -20,7 +20,12 @@
         <!-- Our Styles -->
         <link href="<?=base_url('assets/vendor/Admin_STY.css')?>" rel="stylesheet">
         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-        <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>        
+        <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+        <style>
+        	th,thead{
+        		text-align: center;
+        	}        	
+        </style>        
 	</head>
 	<body>
 		<div class="content" id="fullpage">
@@ -32,14 +37,14 @@
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th style="width: 100px" onclick="sortTable(0)">Publish Date</th>
-								<th style="width: 500px" onclick="sortTable(1)">Judul Tugas Akhir</th>
-								<th style="width: 150px" onclick="sortTable(2)">Nim Mahasiswa</th>
-								<th style="width: 150px" onclick="sortTable(3)">NIP Pembimbing TA</th>
+								<th style="width: 150px;text-align: center" onclick="sortTable(0)">Publish Date</th>
+								<th style="width: 500px;text-align: center" onclick="sortTable(1)">Judul Tugas Akhir</th>
+								<th style="width: 150px;text-align: center" onclick="sortTable(2)">Nim Mahasiswa</th>
+								<th style="width: 150px;text-align: center" onclick="sortTable(3)">NIP Pembimbing TA</th>
 								<th onclick="sortTable(4)">Angkatan</th>
 								
-								<th onclick="sortTable(5)">Verifikasi</th>
-								<th>Action</th>
+								<th style="text-align: center" onclick="sortTable(5)">Verifikasi</th>
+								<th style="width:200px;text-align: center">Action</th>
 							</tr>
 						</thead>
 						<tbody id="tblDokumen">
@@ -59,8 +64,11 @@
 									
 								</td>
 								<td style="text-align: center">
+									<a  href="<?php echo base_url()?>admin/detail_ta/<?php echo $key['path'] ?>" title="">
+										<button class="btn" style="color:blue;">View</button>
+									</a>
 									<a  href="<?php echo base_url()?>admin/action_delete_dokumen/<?php echo $key['id'] ?>" title="">
-										<button class="btn-danger">Hapus</button>
+										<button class="btn" style="color:red;">Hapus</button>
 									</a>
 								</td>
 							</tr>

@@ -32,14 +32,14 @@
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th style="width: 100px" onclick="sortTable(0)">Publish Date</th>
-								<th style="width: 600px" onclick="sortTable(1)">Judul Tugas Akhir</th>
-								<th style="width: 200px" onclick="sortTable(2)">NIP Pembimbing TA</th>
+								<th style="width: 100px;text-align: center" onclick="sortTable(0)">Publish Date</th>
+								<th style="width: 500px;text-align: center" onclick="sortTable(1)">Judul Tugas Akhir</th>
+								<th style="width: 200px;text-align: center" onclick="sortTable(2)">NIP Pembimbing TA</th>
 								<th style="width: 200px" onclick="sortTable(2)">Nama Pembimbing TA</th>
 								<th onclick="sortTable(3)">Angkatan</th>
 								
 								<th onclick="sortTable(4)">Verifikasi</th>
-								<th> Action</th>							
+								<th style="text-align: center"> Action</th>							
 							</tr>
 						</thead>
 						<tbody id="tblDokumen">
@@ -60,7 +60,7 @@
 								</td>
 								<td>
 									<a style="text-decoration: none" href="<?php echo base_url()?>mahasiswa/detail_ta/<?php echo $key['path'] ?>" title="">
-									<i class="fa fa-file-pdf-o"  title="View"></i>
+									<button class="btn" style="color: blue;text-align: center">View</button>
 									</a>
 								</td>
 							</tr>
