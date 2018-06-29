@@ -492,14 +492,9 @@ class Admin extends CI_Controller{
 			'nim' => $nim, 
 		);
 
+
 		$data['content'] = $this->m_admin->ubah_mahasiswa($data);
 		$data['dosen'] = $this->m_admin->get_nip();
-		// $query = $this->m_admin->get_nip();
-		// $hasil = $query->result();
-		// $num_rows = $query->num_rows();
-		
-		// echo $num_rows;
-
 		
 		$data['user'] = $this->user;
 

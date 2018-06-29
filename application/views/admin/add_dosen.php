@@ -22,8 +22,13 @@
 	</head>
 	<body>
 		<div class="content" id="fullpage">
+<<<<<<< HEAD
 			<div class="container-fluid">
 				<h2><i class="fa fa-cog"> </i> Add Admin</h2>
+=======
+			<div class="w3-container">
+				<h2><i class="fa fa-user"> </i> Add Dosen</h2>
+>>>>>>> e2a1fb11b319394149a78a78a1c7c9c3c0ff8969
 				<hr>
 				
 				<div class="container ubah" >
